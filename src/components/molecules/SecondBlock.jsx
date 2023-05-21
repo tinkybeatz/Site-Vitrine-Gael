@@ -1,4 +1,4 @@
-import { Timeline } from "./timeline/Timeline";
+import { Timeline } from "../molecules/timeline/Timeline";
 
 export function SecondBlock({ deploy }) {
   //state
