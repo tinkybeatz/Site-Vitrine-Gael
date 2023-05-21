@@ -19,7 +19,7 @@ export function Navbar({}) {
 
   //affichage
   return (
-    <div class="w-[20vw] h-[7vh] bg-purple-500 grid grid-cols-4 rounded rounded-md fixed z-50 bottom-5 py-2">
+    <div class="w-[20vw] h-[8vh] bg-purple-500 grid grid-cols-4 rounded rounded-md fixed z-50 bottom-5 py-2">
       <div class="col-span-1 grid text-center items-center text-2xl font-extrabold dark:text-black transition-all duration-500 text-white border-r-2 border-purple-900">
         <p>Gaël</p>
       </div>
@@ -32,8 +32,8 @@ export function Navbar({}) {
           My resume
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
+            width="18"
+            height="18"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
