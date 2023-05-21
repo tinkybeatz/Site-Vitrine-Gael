@@ -1,4 +1,4 @@
-import { ProgressBar } from "../atoms/progressBar";
+import { ProgressBar } from "../atoms/ProgressBar";
 
 export function ThirdBlock({ deploy }) {
   //state
