@@ -1,4 +1,4 @@
-import { Timeline } from "../molecules/timeline/Timeline";
+import { TimelineComponent } from "../molecules/timeline/Timeline";
 
 export function SixthBlock({ deploy }) {
   //state
@@ -17,7 +17,7 @@ export function SixthBlock({ deploy }) {
           ))}
         </div>
         <div className="flex col-span-1 items-center justify-center transition-all duration-500">
-          <Timeline timelineInfo={deploy.timelineInfo} />
+          <TimelineComponent timelineInfo={deploy.timelineInfo} />
         </div>
       </div>
     </div>

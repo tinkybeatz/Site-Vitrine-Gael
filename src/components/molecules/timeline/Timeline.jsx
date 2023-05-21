@@ -1,6 +1,6 @@
 import { Timeline } from "antd";
 
-export function Timeline({ timelineInfo }) {
+export function TimelineComponent({ timelineInfo }) {
   //state
 
   //comportements

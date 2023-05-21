@@ -1,4 +1,4 @@
-import { Timeline } from "../molecules/timeline/Timeline";
+import { TimelineComponent } from "../molecules/timeline/Timeline";
 
 export function SecondBlock({ deploy }) {
   //state
@@ -10,7 +10,7 @@ export function SecondBlock({ deploy }) {
     <div class="pt-4">
       <div class="grid grid-cols-3 place-items-center rounded-md bg-gray-300 transition-all duration-500 text-black dark:text-white dark:bg-zinc-600">
         <div className="flex col-span-1">
-          <Timeline timelineInfo={deploy.timelineInfo} />
+          <TimelineComponent timelineInfo={deploy.timelineInfo} />
         </div>
         <div className="grid col-span-2 grid-cols-1 h-full w-full justify-center items-center p-2">
           {deploy.texts.map((nb) => (
