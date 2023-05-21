@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css?family=Kanit");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.grow-enter {
+  max-height: 0;
+  overflow: hidden;
+}
+
+.grow-enter-active {
+  max-height: 1500px;
+  transition: max-height 1s;
+}
+
+.grow-exit {
+  max-height: 1500px;
+  overflow: hidden;
+}
+
+.grow-exit-active {
+  max-height: 0;
+  transition: max-height 1s;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scroll-track {
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8b5cf6;
+  border-radius: 5px;
+}
