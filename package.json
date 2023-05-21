@@ -2,7 +2,7 @@
   "name": "site-vitrine-gael-parcel",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
+  "main": "src/index.html",
   "source": "src/index.html",
   "scripts": {
     "start": "parcel",
