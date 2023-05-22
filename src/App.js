@@ -317,11 +317,10 @@ function App() {
     <div className="justify-items-center w-{90%} grid font-primary" key="1">
       <Navbar />
       <div className="flex-row dark:text-white transition-all duration-200 w-{90%} h-[100vh] pb-5">
-        <div
-          className="flex h-1/4 justify-center items-center font-bold py-2 mb-5"
-          ref={horRef}
-        >
-          <h1 className="text-8xl">Welcome to my portfolio!</h1>
+        <div className="flex h-1/4 justify-center items-center font-bold py-2 mb-5">
+          <h1 ref={horRef} className="text-8xl">
+            Welcome to my portfolio!
+          </h1>
         </div>
         <div className="grid grid-cols-3 h-3/4 pb-10 px-10">
           <div class="col-span-1 h-full grid mr-10">
@@ -335,9 +334,20 @@ function App() {
             <div class="h-1/3 flex items-center place-content-center font-bold text-center text-6xl px-5">
               First of all, thank you for coming on my website!
             </div>
-            <div class="h-2/3 flex place-content-center text-center px-5">
-              On this website, you are going to learn a bit more about me. I am
-              going to share my Professional Experience.
+            <div class="h-2/3 text-2xl flex place-content-center text-center px-28">
+              <p>
+                On this website, you are going to learn a bit more about me and
+                I am going to share my Professional Experience. This is kind of
+                an extension of my resume (that you can download in the navbar
+                downhere). This website is divided in 7 blocks that you can open
+                in order to see the informations contained in it.
+                <br></br>
+                <br></br>
+                You can also toggle the dark mode if you eyes struggle to read
+                properly the informations, using the button also located in the
+                navbar. I will continue to update this site in the future to add
+                few more features
+              </p>
             </div>
           </div>
         </div>
