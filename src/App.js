@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import React from "react";
-import MainPagePic from "../public/images/MainPage.jpg";
+import MainPagePic from "../public/images/FleurMario.png";
 import { MainSpace } from "./components/organisms/MainSpace";
 import { Navbar } from "./components/molecules/navbar/Navbar";
 import { vertFadeInPres, vertFadeInScroll } from "../gsap/verticalFadeIn";
