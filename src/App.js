@@ -1,18 +1,97 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import React from "react";
 import MainPagePic from "../public/images/MainPage.jpg";
 import { MainSpace } from "./components/organisms/MainSpace";
 import { Navbar } from "./components/molecules/navbar/Navbar";
+import { vertFadeInPres, vertFadeInScroll } from "../gsap/verticalFadeIn";
+import { horFadeInPres } from "../gsap/horizontalFadeIn";
+import {
+  MailOutlined,
+  PhoneOutlined,
+  GithubOutlined,
+  LinkedinOutlined,
+} from "@ant-design/icons";
 
 function App() {
   // constantes (état, données)
+  let verRef = React.useRef(null);
+  let horRef = React.useRef(null);
+
+  React.useEffect(() => {
+    vertFadeInPres(verRef, 2, 0);
+    horFadeInPres(horRef, 2, 0);
+  }, []);
+
   const nbMainSpace = [
     {
       key: 1,
       name: "About Me",
       deploy: {
-        image:
-          "https://t4.ftcdn.net/jpg/01/36/70/67/360_F_136706734_KWhNBhLvY5XTlZVocpxFQK1FfKNOYbMj.jpg",
-        text: "",
+        text: "Hello and welcome to my portfolio !! Thanks for coming here and taking the time to know me better ! while strolling between the menus you can learn a little more about me, my ambitions and my passions!",
+        passions: [
+          {
+            key: 1,
+            image: "",
+            text: "Computer Science & IT",
+          },
+          {
+            key: 2,
+            image: "",
+            text: "Mechanics & Automobile Preparation",
+          },
+          {
+            key: 3,
+            image: "",
+            text: "Fashion & Haute Couture",
+          },
+          {
+            key: 4,
+            image: "",
+            text: "Music",
+          },
+          {
+            key: 5,
+            image: "",
+            text: "Sports & Video Games",
+          },
+          {
+            key: 6,
+            image: "",
+            text: "Travelling",
+          },
+        ],
+        softSkills: [
+          {
+            key: 1,
+            image: "",
+            text: "Creative",
+          },
+          {
+            key: 2,
+            image: "",
+            text: "Public Speaker",
+          },
+          {
+            key: 3,
+            image: "",
+            text: "Autonomous",
+          },
+          {
+            key: 4,
+            image: "",
+            text: "Applied",
+          },
+          {
+            key: 5,
+            image: "",
+            text: "Active Listener",
+          },
+          {
+            key: 6,
+            image: "",
+            text: "Open Minded",
+          },
+        ],
       },
     },
     {
@@ -57,11 +136,11 @@ function App() {
           },
         ],
         texts: [
-          "here i did this",
-          "here that",
-          "there this",
-          "now that",
-          "this again ! damn it !",
+          "First Profesionnal Experience",
+          "During this internship, i was a system administrator and had to configure serveral servers, help the collegues and fix their computer problems.",
+          "I got this job because i needed experience and money to pay my appartement to be fair, though i can say this experience ended-up being very fun.",
+          "This was my favourite profesionnal experience so-far ! the mission was very interesting and the team I worked with was very nice to me",
+          "I did my first Free-Lance mission to see how it would fit with my schedule, my team and i ended-up finishing the mission in only a week.",
         ],
       },
     },
@@ -69,7 +148,7 @@ function App() {
       key: 3,
       name: "IT Hard Skills",
       deploy: {
-        text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo debitis, iste quod asperiores culpa ipsa quidem odit a dolores repudiandae accusamus, fuga totam rem modi nostrum quaerat tempore! Laudantium, tempore. Nostrum fugiat aspernatur explicabo magni, sunt vitae quis vel voluptatum, dolores tenetur incidunt numquam minima eius fuga unde sed quae ipsa iste adipisci velit maxime! Modi suscipit aut repudiandae pariatur. Repudiandae sed enim, totam accusamus quidem adipisci hic deleniti exercitationem impedit ad labore nam id et veniam necessitatibus dolorum? Harum eveniet in reprehenderit blanditiis omnis! Blanditiis quidem dicta quos adipisci. Nemo incidunt expedita a non dolores blanditiis alias quibusdam iusto esse excepturi dolorum quas vel, commodi iure itaque maxime illum praesentium recusandae iste, dignissimos aliquam laborum? Eum inventore accusamus omnis. Illo praesentium, numquam explicabo vero quam suscipit tempora ad sunt excepturi iste dolores repellendus cupiditate, alias accusantium natus dicta sint autem. Sed, facere neque? Quod animi culpa veniam nam rerum.",
+        text: "During my studies at CESI and throughout my personnal projects, i've gained quite a few Hard Skills which are displayed on the right. I absolutely love coding and trying to make things work, thinking about algorithm stimulates my brain and i'm starting to get used to certain languages which allow me to go a bit deeperx",
         list: [
           "HTML",
           "CSS (and TailwindCSS)",
@@ -168,36 +247,27 @@ function App() {
       name: "Education",
       deploy: {
         texts: [
-          "here i did this",
-          "here that",
-          "there this",
-          "now that",
-          "this again ! damn it !",
+          "Option 'Computer Science and Digital Science' for 3 years.",
+          "PBL Method (Problem Based Learning), with group projects and diverse Engineering topics in General",
+          "Continuing the PBL Method, only working on IT projects. The last two years are going to be more focused on a specialty that we're supposed to pick in the beginning of the 4th year",
         ],
         timelineInfo: [
           {
             key: 1,
-            title: "Brevet National des Collèges",
-            location: "Collège Monjous",
-            location2: "Gradignan, France",
-            dates: "2013-2017",
-          },
-          {
-            key: 2,
             title: "General Scientific Baccalaureate",
             location: "Lycée des Graves",
             location2: "Gradignan, France",
             dates: "2017-2020",
           },
           {
-            key: 3,
+            key: 2,
             title: "Integrated Preparatory Class",
             location: "CESI Bordeaux",
             location2: "Bordeaux, France",
             dates: "2020-2022",
           },
           {
-            key: 4,
+            key: 3,
             title: "Computer Science Engineering Degree",
             location: "CESI Bordeaux",
             location2: "Bordeaux, France",
@@ -209,7 +279,36 @@ function App() {
     {
       key: 7,
       name: "Contact Me",
-      text: "",
+      deploy: [
+        {
+          key: 1,
+          title: "Mail Pro",
+          value: "gael.delouis@viacesi.fr",
+          href: "",
+          img: <MailOutlined style={{ fontSize: "24px" }} />,
+        },
+        {
+          key: 2,
+          title: "Phone Number",
+          value: "0762358100",
+          href: "",
+          img: <PhoneOutlined style={{ fontSize: "24px" }} />,
+        },
+        {
+          key: 3,
+          title: "LinkedIn",
+          value: "",
+          href: "https://www.linkedin.com/in/ga%C3%ABl-delouis-534509212/",
+          img: <LinkedinOutlined style={{ fontSize: "24px" }} />,
+        },
+        {
+          key: 4,
+          title: "GitHub",
+          value: "",
+          href: "https://github.com/tinkybeatz",
+          img: <GithubOutlined style={{ fontSize: "24px" }} />,
+        },
+      ],
     },
   ];
 
@@ -217,8 +316,11 @@ function App() {
   return (
     <div className="justify-items-center w-{90%} grid font-primary" key="1">
       <Navbar />
-      <div className="flex-row dark:text-white transition-all duration-500 w-{90%} h-[100vh] pb-5">
-        <div className="flex h-1/4 justify-center items-center font-bold py-2 mb-5">
+      <div className="flex-row dark:text-white transition-all duration-200 w-{90%} h-[100vh] pb-5">
+        <div
+          className="flex h-1/4 justify-center items-center font-bold py-2 mb-5"
+          ref={horRef}
+        >
           <h1 className="text-8xl">Welcome to my portfolio!</h1>
         </div>
         <div className="grid grid-cols-3 h-3/4 pb-10 px-10">
@@ -229,7 +331,7 @@ function App() {
               class="h-full col-span-1 object-cover rounded rounded-md drop-shadow-md"
             />
           </div>
-          <div class="col-span-2 rounded rounded-md bg-gray-200 dark:bg-zinc-500 dark:text-white text-black transition duration-500 drop-shadow-md flex-row">
+          <div class="col-span-2 rounded rounded-md bg-gray-200 dark:bg-zinc-500 dark:text-white text-black transition duration-200 drop-shadow-md flex-row">
             <div class="h-1/3 flex items-center place-content-center font-bold text-center text-6xl px-5">
               First of all, thank you for coming on my website!
             </div>

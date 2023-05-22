@@ -37,3 +37,7 @@
   background: #8b5cf6;
   border-radius: 5px;
 }
+
+.parent-container .content {
+  display: none;
+}

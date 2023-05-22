@@ -1,7 +1,8 @@
 import { DarkModeSwitch } from "react-toggle-dark-mode";
-import { useState } from "react";
+import { React, useState, useRef } from "react";
 import Resume from "../../../../public/my_resume/CV_English_Gael_DELOUIS_2023.pdf";
 import useDarkSide from "../../../hooks/useDarkSide";
+import { horFadeInScroll } from "../../../../gsap/horizontalFadeIn";
 
 export function Navbar({}) {
   //state
@@ -12,6 +13,12 @@ export function Navbar({}) {
     colorTheme === "light" ? true : false
   );
 
+  // let horRefNav = React.useRef(null);
+
+  // React.useEffect(() => {
+  //   horFadeInScroll(horRefNav.current, +20);
+  // }, []);
+
   const toggleDarkMode = (checked) => {
     setTheme(colorTheme);
     setDarkSide(checked);
@@ -19,14 +26,17 @@ export function Navbar({}) {
 
   //affichage
   return (
-    <div class="w-[20vw] h-[8vh] bg-purple-500 grid grid-cols-4 rounded rounded-md fixed z-50 bottom-5 py-2">
-      <div class="col-span-1 grid text-center items-center text-2xl font-extrabold dark:text-black transition-all duration-500 text-white border-r-2 border-purple-900">
+    <div
+      class="w-[20vw] h-[7vh] bg-purple-500 grid grid-cols-4 rounded rounded-md fixed z-50 bottom-6 py-2"
+      // ref={horRefNav}
+    >
+      <div class="col-span-1 grid text-center items-center text-2xl font-extrabold dark:text-black transition-all duration-200 text-white border-r-2 border-purple-900">
         <p>Gaël</p>
       </div>
       <div class="col-span-2 border-r-2 border-purple-900 flex items-center text-center justify-center">
         <a
           href={Resume}
-          class="flex rounded rounded-md dark:bg-zinc-600 w-auto text-purple-500 justify-items-center align-items-center dark:text-white bg-white py-2 px-3 transition-all duration-500 font-bold col-span-1 leading-normal"
+          class="flex rounded rounded-md dark:bg-zinc-600 w-auto text-purple-500 justify-items-center align-items-center dark:text-white bg-white py-2 px-3 transition-all duration-200 font-bold col-span-1 leading-normal"
           download="Resume Gael"
         >
           My resume
@@ -50,7 +60,7 @@ export function Navbar({}) {
         </a>
       </div>
       <div class="col-span-1 grid items-center place-content-center">
-        <div class="hover:cursor-pointer w-auto py-2 px-3 flex rounded rounded-md bg-white dark:bg-zinc-600 transition-all duration-500 items-center">
+        <div class="hover:cursor-pointer w-auto py-2 px-3 flex rounded rounded-md bg-white dark:bg-zinc-600 transition-all duration-200 items-center">
           <DarkModeSwitch
             style={{}}
             key={"darkModeSwitch"}

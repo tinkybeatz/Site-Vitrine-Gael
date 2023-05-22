@@ -22,6 +22,7 @@
     "react": "^18.2.0",
     "react-css-transition-replace": "^5.0.1",
     "react-dom": "^18.2.0",
+    "react-expand-animated": "^1.0.2",
     "react-toggle-dark-mode": "^1.1.1",
     "react-transition-group": "^4.4.5"
   }

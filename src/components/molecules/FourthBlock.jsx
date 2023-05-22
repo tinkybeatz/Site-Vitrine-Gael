@@ -7,17 +7,14 @@ export function FourthBlock({ deploy }) {
 
   //affichage
   return (
-    <div className="pt-4">
+    <div className="">
       <div
         className="
       flex
       rounded-md
 
-      pl-4
-      py-4
-
       transition-all 
-      duration-500 
+      duration-200 
 
       text-black 
       dark:text-white 
