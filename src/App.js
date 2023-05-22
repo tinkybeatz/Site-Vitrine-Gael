@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import React from "react";
-import MainPagePic from "../public/images/FleurMario.png";
+import MainPagePic from "../public/images/imageGael.jpg";
 import { MainSpace } from "./components/organisms/MainSpace";
 import { Navbar } from "./components/molecules/navbar/Navbar";
 import { vertFadeInPres, vertFadeInScroll } from "../gsap/verticalFadeIn";
@@ -148,7 +148,7 @@ function App() {
       key: 3,
       name: "IT Hard Skills",
       deploy: {
-        text: "During my studies at CESI and throughout my personnal projects, i've gained quite a few Hard Skills which are displayed on the right. I absolutely love coding and trying to make things work, thinking about algorithm stimulates my brain and i'm starting to get used to certain languages which allow me to go a bit deeperx",
+        text: "During my studies at CESI and throughout my personnal projects, i've gained quite a few Hard Skills which are displayed on the right. I absolutely love coding and trying to make things work, thinking about algorithm stimulates my brain and i'm starting to get used to certain languages which allows me to go a bit deeper",
         list: [
           "HTML",
           "CSS (and TailwindCSS)",
@@ -319,7 +319,7 @@ function App() {
       <div className="flex-row dark:text-white transition-all duration-200 w-{90%} h-[100vh] pb-5">
         <div className="flex h-1/4 justify-center items-center font-bold py-2 mb-5">
           <h1 ref={horRef} className="text-8xl">
-            Welcome to my portfolio!
+            Welcome to Gaël's portfolio!
           </h1>
         </div>
         <div className="grid grid-cols-3 h-3/4 pb-10 px-10">
@@ -327,7 +327,7 @@ function App() {
             <img
               src={MainPagePic}
               alt="image"
-              class="h-full col-span-1 object-cover rounded rounded-md drop-shadow-md"
+              class="h-full w-full obj col-span-1 object-cover rounded rounded-md drop-shadow-md"
             />
           </div>
           <div class="col-span-2 rounded rounded-md bg-gray-200 dark:bg-zinc-500 dark:text-white text-black transition duration-200 drop-shadow-md flex-row">
@@ -346,7 +346,7 @@ function App() {
                 You can also toggle the dark mode if you eyes struggle to read
                 properly the informations, using the button also located in the
                 navbar. I will continue to update this site in the future to add
-                few more features
+                few more features.
               </p>
             </div>
           </div>
