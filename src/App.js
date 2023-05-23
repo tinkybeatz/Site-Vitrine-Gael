@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import { inject } from '@vercel/analytics';
 import React from "react";
 import MainPagePic from "../public/images/imageGael.jpg";
 import { MainSpace } from "./components/organisms/MainSpace";
@@ -13,11 +14,10 @@ import {
 } from "@ant-design/icons";
 
 function App() {
+  inject();
   // constantes (état, données)
   let verRef = React.useRef(null);
   let horRef = React.useRef(null);
-
-
 
   React.useEffect(() => {
     vertFadeInPres(verRef, 2, 0);
