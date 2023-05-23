@@ -77,7 +77,7 @@ export function MainSpace({ nb }) {
 
   //affichage
   return (
-    <div className="w-[90%] h-auto mt-10 drop-shadow-md" ref={horRef}>
+    <div className="w-[90%] h-auto mt-10 drop-shadow-md" ref={horRef} id={nb.key}>
       <div className="parent-container grid p-4 grid-cols-9 drop-shadow-md bg-gray-200 dark:bg-zinc-500 dark:text-white transition duration-200 rounded-md">
         <div className="font-primary text-2xl border-r-2 border-gray-300 justify-center items-center flex col-span-1">
           <p>{nb.key}</p>
@@ -107,7 +107,7 @@ export function MainSpace({ nb }) {
           className="font-primary text-2xl justify-center items-center flex col-span-1"
           ref={triggerDeploy}
         >
-          <Button1 text="+" />
+          <Button1 href={nb.key} text="+" onClick="" />
         </div>
         <div
           className="content col-span-9 font-primary rounded rounded-b-md bg-gray-300 dark:bg-zinc-600 transition-all duration-200 grid overflow-hidden"

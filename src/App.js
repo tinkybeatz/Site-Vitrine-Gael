@@ -17,6 +17,8 @@ function App() {
   let verRef = React.useRef(null);
   let horRef = React.useRef(null);
 
+
+
   React.useEffect(() => {
     vertFadeInPres(verRef, 2, 0);
     horFadeInPres(horRef, 2, 0);
@@ -327,15 +329,20 @@ function App() {
             <img
               src={MainPagePic}
               alt="image"
-              class="h-full w-full obj col-span-1 object-cover rounded rounded-md drop-shadow-md"
+              class="h-full w-full obj col-span-1 object-cover rounded-md drop-shadow-md"
             />
           </div>
-          <div class="col-span-2 rounded rounded-md bg-gray-200 dark:bg-zinc-500 dark:text-white text-black transition duration-200 drop-shadow-md flex-row">
-            <div class="h-1/3 flex items-center place-content-center font-bold text-center text-6xl px-5">
+          <div class="col-span-2 rounded-md bg-gray-200 dark:bg-zinc-500 dark:text-white text-black transition duration-200 drop-shadow-md flex-row">
+            <div class="h-1/4 flex items-center place-content-center font-bold text-center text-4xl px-4">
               First of all, thank you for coming on my website!
             </div>
-            <div class="h-2/3 text-2xl flex place-content-center text-center px-28">
+            <div class="h-3/4 text-xl flex place-content-center text-center px-20">
               <p>
+                My name is Gaël DELOUIS and I am an Student in an IT Engineering School. 
+                I am currently comming to the end of my 3rd year out of the whole 5 years of the formation. 
+                I love coding and made this website in order to learn how to use ReactJS !
+                <br></br>
+                <br></br>
                 On this website, you are going to learn a bit more about me and
                 I am going to share my Professional Experience. This is kind of
                 an extension of my resume (that you can download in the navbar
@@ -343,10 +350,11 @@ function App() {
                 in order to see the informations contained in it.
                 <br></br>
                 <br></br>
-                You can also toggle the dark mode if you eyes struggle to read
+                <span className="text-lg">You can also toggle the dark mode if you eyes struggle to read
                 properly the informations, using the button also located in the
                 navbar. I will continue to update this site in the future to add
                 few more features.
+                </span>
               </p>
             </div>
           </div>
