@@ -49,7 +49,7 @@ export const vertFadeInDeploy = (content, heightHere) => {
       height: "auto",
       marginTop: "14px",
       opacity: 1,
-      duration: 1,
+      duration: 0.5,
       ease: Power3.easeIn,
       display: "block",
     });
