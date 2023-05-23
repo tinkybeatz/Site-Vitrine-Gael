@@ -333,10 +333,10 @@ function App() {
             />
           </div>
           <div class="col-span-2 rounded-md bg-gray-200 dark:bg-zinc-500 dark:text-white text-black transition duration-200 drop-shadow-md flex-row">
-            <div class="h-1/4 flex items-center place-content-center font-bold text-center text-4xl px-4">
+            <div class="h-1/3 flex items-center place-content-center font-bold text-center text-6xl px-4">
               First of all, thank you for coming on my website!
             </div>
-            <div class="h-3/4 text-xl flex place-content-center text-center px-20">
+            <div class="h-2/3 text-xl flex place-content-center text-center px-28">
               <p>
                 My name is Gaël DELOUIS and I am an Student in an IT Engineering School. 
                 I am currently comming to the end of my 3rd year out of the whole 5 years of the formation. 
@@ -350,7 +350,7 @@ function App() {
                 in order to see the informations contained in it.
                 <br></br>
                 <br></br>
-                <span className="text-lg">You can also toggle the dark mode if you eyes struggle to read
+                <span className="text-xl">You can also toggle the dark mode if you eyes struggle to read
                 properly the informations, using the button also located in the
                 navbar. I will continue to update this site in the future to add
                 few more features.
