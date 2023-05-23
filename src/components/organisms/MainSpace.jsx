@@ -110,7 +110,7 @@ export function MainSpace({ nb }) {
           <Button1 href={nb.key} text="+" onClick="" />
         </div>
         <div
-          className="content col-span-9 font-primary rounded rounded-b-md bg-gray-300 dark:bg-zinc-600 transition-all duration-200 grid overflow-hidden"
+          className="content opacity-0 col-span-9 font-primary rounded rounded-b-md bg-gray-300 dark:bg-zinc-600 transition-all duration-200 grid overflow-hidden"
           ref={content}
         >
           <div className="p-4">{nbDeploy}</div>
