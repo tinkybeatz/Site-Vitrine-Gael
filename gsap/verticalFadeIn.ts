@@ -57,7 +57,7 @@ export const vertFadeInDeploy = (content, heightHere) => {
     // Animation de fermeture de la div de contenu avec GSAP
     gsap.to(content.current, {
       height: 0,
-      marginTop: "0px",
+      marginTop: "-100px",
       opacity: 0,
       duration: 0.5,
       ease: Power3.easeOut,
