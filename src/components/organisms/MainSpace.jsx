@@ -77,12 +77,12 @@ export function MainSpace({ nb }) {
 
   //affichage
   return (
-    <div className="w-[90%] h-auto mt-10 drop-shadow-md" ref={horRef} id={nb.key}>
-      <div className="parent-container grid p-4 grid-cols-9 drop-shadow-md bg-gray-200 dark:bg-zinc-500 dark:text-white transition duration-200 rounded-md">
-        <div className="font-primary text-2xl border-r-2 border-gray-300 justify-center items-center flex col-span-1">
+    <div className="w-[90%] h-auto xl:mt-10 lg:mt-8 sm:mt-8 drop-shadow-md" ref={horRef} id={nb.key}>
+      <div className="parent-container grid xl:p-4 lg:p-4 sm:px-2 sm:py-3 grid-cols-9 drop-shadow-md bg-gray-200 dark:bg-zinc-500 dark:text-white transition duration-200 rounded-md">
+        <div className="font-primary xl:text-2xl lg:text-2xl sm:text-lg border-r-2 border-gray-300 justify-center items-center flex xl:col-span-1 lg:col-span-1 sm:col-span-2">
           <p>{nb.key}</p>
         </div>
-        <div className="font-primary text-3xl border-r-2 border-gray-300 justify-center items-center flex col-span-7">
+        <div className="font-primary xl:text-3xl lg:text-2xl sm:text-sm border-r-2 border-gray-300 justify-center items-center flex xl:col-span-7 lg:col-span-7 sm:col-span-5">
           <p>{nb.name}</p>
         </div>
         {/* <div className="font-primary text-2xl justify-center items-center flex col-span-1">
@@ -104,7 +104,7 @@ export function MainSpace({ nb }) {
           </div>
         </CSSTransition> */}
         <div
-          className="font-primary text-2xl justify-center items-center flex col-span-1"
+          className="font-primary text-2xl justify-center items-center flex xl:col-span-1 lg:col-span-1 sm:col-span-2"
           ref={triggerDeploy}
         >
           <Button1 href={nb.key} text="+" onClick="" />

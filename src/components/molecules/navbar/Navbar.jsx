@@ -27,30 +27,30 @@ export function Navbar({}) {
   //affichage
   return (
     <div
-      class="w-[20vw] h-[8vh] bg-purple-500 grid grid-cols-4 rounded-md fixed z-50 bottom-6 py-2"
+      class="xl:w-[320px] lg:w-[230px] sm:w-[180px] xl:h-[60px] lg:h-[40px] sm:h-[35px] bg-purple-500 grid grid-cols-4 rounded-md fixed z-50 bottom-4 xl:py-2 lg:py-1 sm:py-0.5"
       // ref={horRefNav}
     >
-      <div class="col-span-1 grid text-center items-center text-2xl font-extrabold dark:text-black transition-all duration-200 text-white border-r-2 border-purple-900">
+      <div class="col-span-1 grid justify-center items-center xl:text-2xl lg:text-lg sm:text-[13px] font-extrabold dark:text-black transition-all duration-200 text-white xl:border-r-2 lg:border-r-2 sm:border-0 border-purple-900">
         <p>Gaël</p>
       </div>
-      <div class="col-span-2 border-r-2 border-purple-900 flex items-center text-center justify-center">
+      <div class="col-span-2 xl:border-r-2 lg:border-r-2 sm:border-0 border-purple-900 flex items-center text-center justify-center">
         <a
           href={Resume}
-          class="flex rounded-md dark:bg-zinc-600 w-auto text-purple-500 justify-items-center align-items-center dark:text-white bg-white py-2 px-3 transition-all duration-200 font-bold col-span-1 leading-normal"
+          class="flex rounded-md dark:bg-zinc-600 w-auto text-purple-500 justify-items-center lg:text-xs sm:text-[12px] align-items-center dark:text-white bg-white xl:py-2 xl:px-3 lg:px-2 lg:py-1 sm:px-1.5 sm:py-0.5 transition-all duration-200 xl:font-bold lg:font-semi-bold col-span-1 leading-normal"
           download="Resume Gael"
         >
           My resume
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            className="ml-2 mt-0.5"
+            className="mt-0.5 xl:ml-2 xl:h-[18px] xl:w-[18px]
+                      lg:ml-1 lg:h-[12px] lg:w-[12px]
+                      sm:ml-0.5 sm:mt-1 sm:h-[10px] sm:w-[10px]"
           >
             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"></path>
             <line x1="8" y1="10" x2="16" y2="10"></line>
@@ -60,13 +60,15 @@ export function Navbar({}) {
         </a>
       </div>
       <div class="col-span-1 grid items-center place-content-center">
-        <div class="hover:cursor-pointer w-auto py-2 px-3 flex rounded-md bg-white dark:bg-zinc-600 transition-all duration-200 items-center">
+        <div class="hover:cursor-pointer w-auto xl:py-2.5 xl:px-3 lg:py-1.5 lg:px-2 sm:py-1 sm:px-1.5 flex rounded-md bg-white dark:bg-zinc-600 transition-all duration-200 items-center">
           <DarkModeSwitch
             style={{}}
             key={"darkModeSwitch"}
             checked={darkSide}
             onChange={toggleDarkMode}
-            size={25}
+            className="xl:h-[18px] xl:w-[18px]
+                      lg:h-[13px] lg:w-[13px]
+                      sm:h-[12px] sm:w-[12px]"
             sunColor="#a855f7"
             moonColor="white"
           />

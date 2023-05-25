@@ -3,7 +3,7 @@ export function ProgressBar({ progress }) {
 
   //comportement
   const Parentdiv = {
-    height: "30px",
+    height: "xl:30px lg:25px sm:15px",
     width: "100%",
     backgroundColor: "white",
     borderRadius: 40,

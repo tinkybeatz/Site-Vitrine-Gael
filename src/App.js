@@ -285,30 +285,30 @@ function App() {
         {
           key: 1,
           title: "Mail Pro",
-          value: "gael.delouis@viacesi.fr",
+          value: "gaedelouis@gmail.com",
           href: "",
-          img: <MailOutlined style={{ fontSize: "24px" }} />,
+          img: <MailOutlined style={{ fontSize: "xl:24px lg:20px sm:12px" }} />,
         },
         {
           key: 2,
           title: "Phone Number",
           value: "0762358100",
           href: "",
-          img: <PhoneOutlined style={{ fontSize: "24px" }} />,
+          img: <PhoneOutlined style={{ fontSize: "xl:24px lg:20px sm:12px" }} />,
         },
         {
           key: 3,
           title: "LinkedIn",
           value: "",
           href: "https://www.linkedin.com/in/ga%C3%ABl-delouis-534509212/",
-          img: <LinkedinOutlined style={{ fontSize: "24px" }} />,
+          img: <LinkedinOutlined style={{ fontSize: "xl:24px lg:20px sm:12px" }} />,
         },
         {
           key: 4,
           title: "GitHub",
           value: "",
           href: "https://github.com/tinkybeatz",
-          img: <GithubOutlined style={{ fontSize: "24px" }} />,
+          img: <GithubOutlined style={{ fontSize: "xl:24px lg:20px sm:12px" }} />,
         },
       ],
     },
@@ -316,27 +316,29 @@ function App() {
 
   // affichage (render)
   return (
-    <div className="justify-items-center w-{90%} grid font-primary" key="1">
+    <div className="justify-items-center xl:w-{80%} lg:w-{85%}  grid font-primary" key="1">
       <Navbar />
-      <div className="flex-row dark:text-white transition-all duration-200 w-{90%} h-[100vh] pb-5">
-        <div className="flex h-1/4 justify-center items-center font-bold py-2 mb-5">
-          <h1 ref={horRef} className="text-8xl">
+      <div className="flex-row dark:text-white transition-all duration-200 xl:w-{70%} lg:w-{80%} sm:w-{70%} h-[100vh] pb-5">
+        <div className="flex xl:h-1/4 lg:h-1/5 sm:h-1/6 justify-center items-center font-bold xl:py-2 lg:py-4 sm:py-2 xl:mb-5 text-center lg:mb-5 sm:mb-0">
+          <h1 ref={horRef} className="xl:text-8xl lg:text-6xl sm:text-4xl">
             Welcome to Gaël's portfolio!
           </h1>
         </div>
-        <div className="grid grid-cols-3 h-3/4 pb-10 px-10">
-          <div class="col-span-1 h-full grid mr-10">
+        <div className="xl:grid lg:grid xl:grid-cols-3 lg:grid-cols-3 sm:flex-row xl:h-3/4 lg:h-4/5 sm:h-5/6 pb-10 px-10">
+          <div class="col-span-1 xl:h-full lg:h-full sm:h-52 grid xl:mr-10 lg:mr-10 sm:mb-4 rounded-md">
             <img
               src={MainPagePic}
               alt="image"
-              class="h-full w-full obj col-span-1 object-cover rounded-md drop-shadow-md"
+              class="xl:h-full xl:w-full xl:object-cover obj col-span-1 rounded-md drop-shadow-md
+                    lg:h-full lg:w-full lg:object-cover
+                    sm:h-52 sm:w-full sm:object-contain"
             />
           </div>
-          <div class="col-span-2 rounded-md bg-gray-200 dark:bg-zinc-500 dark:text-white text-black transition duration-200 drop-shadow-md flex-row">
-            <div class="h-1/3 flex items-center place-content-center font-bold text-center text-6xl px-4">
+          <div class="xl:col-span-2 lg:col-span-2 sm:col-span-1 rounded-md bg-gray-200 dark:bg-zinc-500 dark:text-white text-black transition duration-200 drop-shadow-md flex-row sm:mt-10 sm:h-[400px]">
+            <div class="xl:h-1/3 lg:h-1/4 sm:h-1/4 flex items-center place-content-center font-bold text-center xl:text-6xl lg:text-4xl sm:text-2xl xl:px-4 lg:px-2 sm:px-2 sm:py-4">
               First of all, thank you for coming on my website!
             </div>
-            <div class="h-2/3 text-xl flex place-content-center text-center px-28">
+            <div class="xl:h-2/3 lg:h-3/4 sm:h-3/4 xl:text-xl lg:text-[13px] sm:text-[10px] flex place-content-center text-center xl:px-28 lg:px-20 sm:px-10">
               <p>
                 My name is Gaël DELOUIS and I am an Student in an IT Engineering School. 
                 I am currently comming to the end of my 3rd year out of the whole 5 years of the formation. 
@@ -350,11 +352,10 @@ function App() {
                 in order to see the informations contained in it.
                 <br></br>
                 <br></br>
-                <span className="text-xl">You can also toggle the dark mode if you eyes struggle to read
+                You can also toggle the dark mode if you eyes struggle to read
                 properly the informations, using the button also located in the
                 navbar. I will continue to update this site in the future to add
                 few more features.
-                </span>
               </p>
             </div>
           </div>
@@ -365,7 +366,7 @@ function App() {
           <MainSpace nb={nb} />
         ))}
       </div>
-      <div className="h-28 w-full grid grid-cols-2 items-center justify-items-center">
+      <div className="xl:h-28 lg:h-28 sm:h-28 w-full grid grid-cols-2 items-center mb-10 justify-items-center">
         <div className="text-sm text-gray-400">Gaël DELOUIS</div>
         <div className="text-sm text-gray-400">gael.delouis@viacesi.fr</div>
       </div>
