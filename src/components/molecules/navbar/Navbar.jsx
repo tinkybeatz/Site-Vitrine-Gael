@@ -27,7 +27,7 @@ export function Navbar({}) {
   //affichage
   return (
     <div
-      class="xl:w-[320px] lg:w-[230px] sm:w-[180px] xl:h-[60px] lg:h-[40px] sm:h-[35px] bg-purple-500 grid grid-cols-4 rounded-md fixed z-50 bottom-4 xl:py-2 lg:py-1 sm:py-0.5"
+      class="xl:w-[320px] lg:w-[230px] sm:w-[180px] xl:h-[60px] lg:h-[40px] sm:h-[35px] bg-purple-500 grid grid-cols-4 rounded-md fixed z-50 bottom-4 inset-x-0 mx-auto xl:py-2 lg:py-1 sm:py-0.5"
       // ref={horRefNav}
     >
       <div class="col-span-1 grid justify-center items-center xl:text-2xl lg:text-lg sm:text-[13px] font-extrabold dark:text-black transition-all duration-200 text-white xl:border-r-2 lg:border-r-2 sm:border-0 border-purple-900">

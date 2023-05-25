@@ -335,7 +335,7 @@ function App() {
             />
           </div>
           <div class="xl:col-span-2 lg:col-span-2 sm:col-span-1 rounded-md bg-gray-200 dark:bg-zinc-500 dark:text-white text-black transition duration-200 drop-shadow-md flex-row sm:mt-10 sm:h-[400px]">
-            <div class="xl:h-1/3 lg:h-1/4 sm:h-1/5 flex items-center place-content-center font-bold text-center xl:text-6xl lg:text-4xl sm:text-2xl xl:px-4 lg:px-2 sm:px-2 sm:py-4">
+            <div class="xl:h-1/3 lg:h-1/4 sm:h-1/5 flex items-center place-content-center font-bold text-center xl:text-6xl lg:text-4xl sm:text-lg xl:px-4 lg:px-2 sm:px-2 sm:py-4">
               First of all, thank you for coming on my website!
             </div>
             <div class="xl:h-2/3 lg:h-3/4 sm:h-4/5 xl:text-xl lg:text-[13px] sm:text-[10px] flex place-content-center text-center xl:px-28 lg:px-20 sm:px-10">
