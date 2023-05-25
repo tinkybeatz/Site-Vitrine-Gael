@@ -14,7 +14,7 @@ export function FirstBlock({ deploy }) {
           <div className="h-3/4 xl:ml-10 lg:ml-10 sm:m-0">
             <ul className="list-inside">
               {deploy.passions.map((nb) => (
-                <li className="xl:text-lg lg:text-lg sm:text-sm">
+                <li className="xl:text-lg lg:text-lg sm:text-xs">
                   <span className="dark:text-yellow-500 text-red-500 transition-all duration-200">
                     {nb.key}.{" "}
                   </span>{" "}
@@ -24,7 +24,7 @@ export function FirstBlock({ deploy }) {
             </ul>
           </div>
         </div>
-        <div className="flex h-full xl:text-lg lg:text-lg sm:text-sm sm:mb-4 sm:py-4 text-black dark:text-white items-center rounded-md drop-shadow-md col-span-1 bg-gray-200 dark:bg-zinc-500 transition-all duration-200 px-10 text-center">
+        <div className="flex h-full xl:text-lg lg:text-lg sm:text-xs sm:mb-4 sm:py-4 text-black dark:text-white items-center rounded-md drop-shadow-md col-span-1 bg-gray-200 dark:bg-zinc-500 transition-all duration-200 px-10 text-center">
           {deploy.text}
         </div>
         <div className="xl:col-span-1 lg:col-span-1 xl:w-2/3 lg:w-5/6 sm:w-full sm:flex-row">
@@ -34,7 +34,7 @@ export function FirstBlock({ deploy }) {
           <div className="h-3/4 xl:ml-10 lg:ml-10 sm:m-0">
             <ul className="list-inside">
               {deploy.softSkills.map((nb) => (
-                <li className="xl:text-lg lg:text-lg sm:text-sm">
+                <li className="xl:text-lg lg:text-lg sm:text-xs">
                   <span className="dark:text-yellow-500 text-red-500 transition-all duration-200">
                     {nb.key}.{" "}
                   </span>{" "}
