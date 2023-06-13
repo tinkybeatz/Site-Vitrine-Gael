@@ -292,7 +292,7 @@ function App() {
         {
           key: 2,
           title: "Phone Number",
-          value: "0762358100",
+          value: "+33 7 62 35 81 00",
           href: "",
           img: <PhoneOutlined style={{ fontSize: "xl:24px lg:20px sm:12px" }} />,
         },
