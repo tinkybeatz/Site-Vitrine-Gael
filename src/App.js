@@ -136,13 +136,21 @@ function App() {
             location2: "Bordeaux, France",
             dates: "March 2023 - May 2023",
           },
+          {
+            key: 6,
+            title: "Engineer Full-Stack Web Developper - Intern",
+            location: "Foleon",
+            location2: "Amsterdam, Netherlands",
+            dates: "September 2023 - February 2024",
+          },
         ],
         texts: [
-          "First Profesionnal Experience",
+          "First Profesionnal Experience.",
           "During this internship, i was a system administrator and had to configure serveral servers, help the collegues and fix their computer problems.",
           "I got this job because i needed experience and money to pay my appartement to be fair, though i can say this experience ended-up being very fun.",
-          "This was my favourite profesionnal experience so-far ! the mission was very interesting and the team I worked with was very nice to me",
+          "This was my favourite profesionnal experience so-far ! the mission was very interesting and the team I worked with was very nice to me.",
           "I did my first Free-Lance mission to see how it would fit with my schedule, my team and i ended-up finishing the mission in only a week.",
+          "First internation Professionnal Experience. Worked on a complex Digital Content Platform Creation for an important Fullstack feature.",
         ],
       },
     },
@@ -152,17 +160,17 @@ function App() {
       deploy: {
         text: "During my studies at CESI and throughout my personnal projects, i've gained quite a few Hard Skills which are displayed on the right. I absolutely love coding and trying to make things work, thinking about algorithm stimulates my brain and i'm starting to get used to certain languages which allows me to go a bit deeper",
         list: [
-          "HTML",
-          "CSS (and TailwindCSS)",
-          "JS (and ReactJS)",
+          "HTML, CSS (and TailwindCSS, Bootstrap)",
+          "JS / TS (and ReactJS, NestJS, CucumberJS)",
           "PHP (and Laravel, Symfony)",
-          "WordPress",
+          "C++ / C# (and .NET) / C Arduino",
+          "WordPress / Wix",
         ],
         progress: [
           {
             nline:
               "Programing (C, Python, SQL, C++, Arduino, JavaScript, C#, PHP, Windows, PowerShell)",
-            progress: 70,
+            progress: 75,
           },
           {
             nline:
@@ -178,42 +186,48 @@ function App() {
       deploy: [
         {
           id: 1,
+          title: "Real-Time editing feature on Content Creation Platform",
+          desc: "I had the opportunity to work on a 'Real-Time editing feature' on a complex Digital Content Creation Platform during my last internship. This feature was Full-Stack, I had to create the whole features logic. Project was very important for the company so i'm glad I could have a great impact for their platform.",
+          techno: "ReactTS, NestTS, CucumberTS, Kubernetes",
+        },
+        {
+          id: 2,
           title: "This Website !",
           desc: "This website is my personnal favourite. It's the one I've learned how to use ReactJS, the one I spent the most time on to make it look like nice (I've always focused more on the back-end, working on the front-end is very interesting as well !)",
           techno: "ReactJS, Parcel, Vercel",
         },
         {
-          id: 2,
+          id: 3,
           title: "Websites (Full Stack)",
           desc: "I've developped many websites for many reasons during my life, some were for school projects, others were training projects, some others were professionnal projects...",
           techno: "HTML, CSS, PHP, JS, Laravel, Symfony, Wordpress",
         },
         {
-          id: 3,
+          id: 4,
           title: "Weather Station",
           desc: "Creation and developement of a weather station using several sensors",
           techno: "C/Arduino",
         },
         {
-          id: 4,
+          id: 5,
           title: "Audio encryptor/decryptor",
           desc: "Creation and developement of an audio signal encryption/decryption system",
           techno: "Python",
         },
         {
-          id: 5,
+          id: 6,
           title: "CRUD Softwares",
           desc: "Creation and developement of a database management application (and many more CRUDs)",
           techno: "C++, C#",
         },
         {
-          id: 6,
+          id: 7,
           title: "VM Server",
           desc: "Configuration of a VM Server during an internship (also including the server bios update, whole server firmware configuration, RAID configuration, proxy configuration)",
           techno: "Proxmox VE",
         },
         {
-          id: 7,
+          id: 8,
           title: "Digital Password Vault",
           desc: "Coding of a digital password vault using arduino online IDE, simulating the hardware, 4 digits password",
           techno: "Autodesk TinkerCAD, C/Arduino",
@@ -341,8 +355,8 @@ function App() {
             <div class="xl:h-2/3 lg:h-3/4 sm:h-4/5 xl:text-xl lg:text-[13px] sm:text-[11px] flex place-content-center text-center xl:px-28 lg:px-20 sm:px-5">
               <p>
                 My name is Gaël DELOUIS and I am an Student in an IT Engineering School. 
-                I am currently comming to the end of my 3rd year out of the whole 5 years of the formation. 
-                I love coding and made this website in order to learn how to use ReactJS !
+                I am currently comming to the end of my 4th year out of the whole 5 years of the formation. 
+                I love coding and made this website in order to present myself !
                 <br></br>
                 <br></br>
                 On this website, you are going to learn a bit more about me and

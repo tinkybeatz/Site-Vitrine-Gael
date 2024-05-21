@@ -22,7 +22,8 @@ export function FourthBlock({ deploy }) {
       dark:bg-zinc-600
       
       flex-nowrap
-      overflow-x-auto"
+      overflow-x-auto
+      "
       >
         {deploy.map((nb) => (
           <CardProject cardInfo={nb} />
