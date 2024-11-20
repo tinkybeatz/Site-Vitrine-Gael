@@ -19,13 +19,6 @@ export function TimelineComponent({ timelineInfo }) {
           {key}. {newText} <span className="text-green-500 ml-1">- Freelance</span>
         </p>
       );
-    } else if (text.endsWith("- Ryss")) {
-      const newText = text.substring(0, text.length - 7);
-      return (
-        <p>
-          {key}. {newText} <span className="text-blue-500 ml-1">- Ryss</span>
-        </p>
-      );
     } else {
       return (
         <div>
