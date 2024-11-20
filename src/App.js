@@ -148,7 +148,7 @@ function App() {
             title: "Full Stack Web Developper - Freelance",
             location: "Kamileon Fitness",
             location2: "Kuala Lumpur, Malaysia",
-            dates: "April 2024 - December 2024",
+            dates: "April 2024 - January 2025",
           },
         ],
         texts: [
