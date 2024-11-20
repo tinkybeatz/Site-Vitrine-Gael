@@ -131,7 +131,7 @@ function App() {
           },
           {
             key: 5,
-            title: "Web Developper Free-Lance",
+            title: "Web Developper - Freelance",
             location: "TB PAYE Conseils",
             location2: "Bordeaux, France",
             dates: "March 2023 - May 2023",
@@ -143,6 +143,13 @@ function App() {
             location2: "Amsterdam, Netherlands",
             dates: "September 2023 - February 2024",
           },
+          {
+            key: 7,
+            title: "Full Stack Web Developper - Freelance",
+            location: "Kamileon Fitness",
+            location2: "Kuala Lumpur, Malaysia",
+            dates: "April 2024 - December 2024",
+          },
         ],
         texts: [
           "First Profesionnal Experience.",
@@ -150,7 +157,8 @@ function App() {
           "I got this job because i needed experience and money to pay my appartement to be fair, though i can say this experience ended-up being very fun.",
           "This was my favourite profesionnal experience so-far ! the mission was very interesting and the team I worked with was very nice to me.",
           "I did my first Free-Lance mission to see how it would fit with my schedule, my team and i ended-up finishing the mission in only a week.",
-          "First internation Professionnal Experience. Worked on a complex Digital Content Platform Creation for an important Fullstack feature.",
+          "First internation Professionnal Experience. Added a Realtime Edition feature on an existing online content creation platform.",
+          "Worked on a few websites for a fitness company in Malaysia. Some of them contain booking systems and online shoping.",
         ],
       },
     },
@@ -192,42 +200,48 @@ function App() {
         },
         {
           id: 2,
+          title: "Online Platform Game (Fall-Guys style) and VR Map Editor",
+          desc: "Created an online platform game (Fall-Guys style) and a VR Map Editor for that same game. Project was made for a school project, we had a lot of fun working on it and learning a lot about Unity.",
+          techno: "Unity, C#, Photon Unity, XR Interaction Toolkit",
+        },
+        {
+          id: 3,
           title: "This Website !",
           desc: "This website is my personnal favourite. It's the one I've learned how to use ReactJS, the one I spent the most time on to make it look like nice (I've always focused more on the back-end, working on the front-end is very interesting as well !)",
           techno: "ReactJS, Parcel, Vercel",
         },
         {
-          id: 3,
+          id: 4,
           title: "Websites (Full Stack)",
           desc: "I've developped many websites for many reasons during my life, some were for school projects, others were training projects, some others were professionnal projects...",
           techno: "HTML, CSS, PHP, JS, Laravel, Symfony, Wordpress",
         },
         {
-          id: 4,
+          id: 5,
           title: "Weather Station",
           desc: "Creation and developement of a weather station using several sensors",
           techno: "C/Arduino",
         },
         {
-          id: 5,
+          id: 6,
           title: "Audio encryptor/decryptor",
           desc: "Creation and developement of an audio signal encryption/decryption system",
           techno: "Python",
         },
         {
-          id: 6,
+          id: 7,
           title: "CRUD Softwares",
           desc: "Creation and developement of a database management application (and many more CRUDs)",
           techno: "C++, C#",
         },
         {
-          id: 7,
+          id: 8,
           title: "VM Server",
           desc: "Configuration of a VM Server during an internship (also including the server bios update, whole server firmware configuration, RAID configuration, proxy configuration)",
           techno: "Proxmox VE",
         },
         {
-          id: 8,
+          id: 9,
           title: "Digital Password Vault",
           desc: "Coding of a digital password vault using arduino online IDE, simulating the hardware, 4 digits password",
           techno: "Autodesk TinkerCAD, C/Arduino",
@@ -264,8 +278,9 @@ function App() {
       deploy: {
         texts: [
           "Option 'Computer Science and Digital Science' for 3 years.",
-          "PBL Method (Problem Based Learning), with group projects and diverse Engineering topics in General",
-          "Continuing the PBL Method, only working on IT projects. The last two years are going to be more focused on a specialty that we're supposed to pick in the beginning of the 4th year",
+          "PBL Method (Problem Based Learning), with group projects and diverse Engineering topics in General.",
+          "Continuing the PBL Method, only working on IT projects and project management. The last two years are going to be more focused on a specialty that we're supposed to pick in the beginning of the 4th year.",
+          "Academic Semester abroad in Malaysia, in a University that is specialized in IT, with a focus on AI and Entrepreneurship. Also did a thesis on 'Use of AI to help foreigners relocate into a new country'.",
         ],
         timelineInfo: [
           {
@@ -288,6 +303,13 @@ function App() {
             location: "CESI Bordeaux",
             location2: "Bordeaux, France",
             dates: "2022-2025",
+          },
+          {
+            key: 4,
+            title: "Abroad IT Master Academic Semester",
+            location: "UniKL MIIT",
+            location2: "Kuala Lumpur, Malaysia",
+            dates: "2024",
           },
         ],
       },

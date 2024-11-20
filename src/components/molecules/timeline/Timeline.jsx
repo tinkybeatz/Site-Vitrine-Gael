@@ -4,12 +4,26 @@ export function TimelineComponent({ timelineInfo }) {
   //state
 
   //comportements
-  const endsByIntern = (key, text) => {
+  const endsByType = (key, text) => {
     if (text.endsWith("- Intern")) {
       const newText = text.substring(0, text.length - 8);
       return (
         <p>
           {key}. {newText} <span className="text-red-500 ml-1">- Intern</span>
+        </p>
+      );
+    } else if (text.endsWith("- Freelance")) {
+      const newText = text.substring(0, text.length - 11);
+      return (
+        <p>
+          {key}. {newText} <span className="text-green-500 ml-1">- Freelance</span>
+        </p>
+      );
+    } else if (text.endsWith("- Ryss")) {
+      const newText = text.substring(0, text.length - 7);
+      return (
+        <p>
+          {key}. {newText} <span className="text-blue-500 ml-1">- Ryss</span>
         </p>
       );
     } else {
@@ -31,7 +45,7 @@ export function TimelineComponent({ timelineInfo }) {
             {nb.dates}
           </time>
           <h2 class="xl:text-xl lg:text-lg sm:text-xs font-semibold text-gray-900 drop-shadow-md dark:text-white transition-all duration-200">
-            <span>{endsByIntern(nb.key, nb.title)}</span>
+            <span>{endsByType(nb.key, nb.title)}</span>
           </h2>
           <p class="xl:flex lg:flex sm:flex-row text-black dark:text-white transition-all drop-shadow-sm duration-200">
             <p className="xl:text-base lg:text-base sm:text-xs font-normal text-yellow-500 transition-all duration-200 mr-1">
