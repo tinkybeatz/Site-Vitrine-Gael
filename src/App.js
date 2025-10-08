@@ -1,9 +1,10 @@
 import { useState, useRef } from "react";
-import { inject } from '@vercel/analytics';
+import { inject } from "@vercel/analytics";
 import React from "react";
 import MainPagePic from "../public/images/imageGael.jpg";
 import { MainSpace } from "./components/organisms/MainSpace";
 import { Navbar } from "./components/molecules/navbar/Navbar";
+import { SideNavbar } from "./components/molecules/navbar/SideNavbar";
 import { vertFadeInPres, vertFadeInScroll } from "../gsap/verticalFadeIn";
 import { horFadeInPres } from "../gsap/horizontalFadeIn";
 import {
@@ -27,34 +28,36 @@ function App() {
   const nbMainSpace = [
     {
       key: 1,
-      name: "About Me",
+      name: "👤 About Me",
       deploy: {
-        text: "Hello and welcome to my portfolio !! Thanks for coming here and taking the time to know me better ! while strolling between the menus you can learn a little more about me, my ambitions and my passions!",
+        text: "I'm Gaël, also known as 'Tinky'. I'm a full-stack web developer 💻 and i just graduated from an IT Engineering school in Bordeaux, France 🎓. I'm passionate about tech, problem solving and mostly coding.",
+        text2:
+          "Even though i'm passionate about IT, I also have other passions and personality traits that make me who I am today.",
         passions: [
           {
             key: 1,
             image: "",
-            text: "Computer Science & IT",
+            text: "Crossfit",
           },
           {
             key: 2,
             image: "",
-            text: "Mechanics & Automobile Preparation",
+            text: "Sports in general",
           },
           {
             key: 3,
             image: "",
-            text: "Fashion & Haute Couture",
+            text: "Motorsports",
           },
           {
             key: 4,
             image: "",
-            text: "Music",
+            text: "Music production",
           },
           {
             key: 5,
             image: "",
-            text: "Sports & Video Games",
+            text: "Haute couture",
           },
           {
             key: 6,
@@ -66,30 +69,25 @@ function App() {
           {
             key: 1,
             image: "",
-            text: "Creative",
+            text: "Communicative",
           },
           {
             key: 2,
             image: "",
-            text: "Public Speaker",
+            text: "Autonomous",
           },
           {
             key: 3,
             image: "",
-            text: "Autonomous",
+            text: "Diligent",
           },
           {
             key: 4,
             image: "",
-            text: "Applied",
-          },
-          {
-            key: 5,
-            image: "",
             text: "Active Listener",
           },
           {
-            key: 6,
+            key: 5,
             image: "",
             text: "Open Minded",
           },
@@ -98,73 +96,73 @@ function App() {
     },
     {
       key: 2,
-      name: "My Professional Experience",
+      name: "💼 My Professional Experiences",
       deploy: {
         timelineInfo: [
           {
             key: 1,
-            title: "Butcher at the outdoor market",
-            location: "Boucherie Marques",
-            location2: "Gradignan, France",
-            dates: "2020-2021",
-          },
-          {
-            key: 2,
-            title: "System Administrator and Internal IT Support - Intern",
+            title: "System Administrator, IT Support - Intern",
             location: "Omnitech Security",
             location2: "Bordeaux, France",
             dates: "April 2022 - July 2022",
           },
           {
-            key: 3,
+            key: 2,
             title: "Self-Service Employee",
             location: "Carrefour Bordeaux",
             location2: "Bordeaux, France",
             dates: "September 2022 - January 2023",
           },
           {
-            key: 4,
+            key: 3,
             title: "Web Developper BAC +3 - Intern",
             location: "Orange SA",
             location2: "Pessac, France",
             dates: "January 2023 - April 2023",
           },
           {
-            key: 5,
+            key: 4,
             title: "Web Developper - Freelance",
             location: "TB PAYE Conseils",
             location2: "Bordeaux, France",
             dates: "March 2023 - May 2023",
           },
           {
-            key: 6,
+            key: 5,
             title: "Engineer Full-Stack Web Developper - Intern",
             location: "Foleon",
             location2: "Amsterdam, Netherlands",
             dates: "September 2023 - February 2024",
           },
           {
-            key: 7,
+            key: 6,
             title: "Full Stack Web Developper - Freelance",
             location: "Kamileon Fitness",
             location2: "Kuala Lumpur, Malaysia",
             dates: "April 2024 - January 2025",
           },
+          {
+            key: 7,
+            title: "Product Engineer - Full Stack Web Developper",
+            location: "Hager Group",
+            location2: "Pessac, France",
+            dates: "February 2025 - August 2025",
+          },
         ],
         texts: [
-          "First Profesionnal Experience.",
           "During this internship, i was a system administrator and had to configure serveral servers, help the collegues and fix their computer problems.",
           "I got this job because i needed experience and money to pay my appartement to be fair, though i can say this experience ended-up being very fun.",
           "This was my favourite profesionnal experience so-far ! the mission was very interesting and the team I worked with was very nice to me.",
           "I did my first Free-Lance mission to see how it would fit with my schedule, my team and i ended-up finishing the mission in only a week.",
           "First internation Professionnal Experience. Added a Realtime Edition feature on an existing online content creation platform.",
-          "Worked on a few websites for a fitness company in Malaysia. Some of them contain booking systems and online shoping.",
+          "Revamped a few websites for a fitness company in Malaysia. Some of them contain booking systems and online shoping.",
+          "Worked on the engineering and developpement of a new internal tool for Hager Group. Worked on CI/CD, DB, Unit tests, automations, etc... So far this was the most complete experience i've had.",
         ],
       },
     },
     {
       key: 3,
-      name: "IT Hard Skills",
+      name: "🛠️ IT Hard Skills",
       deploy: {
         text: "During my studies at CESI and throughout my personnal projects, i've gained quite a few Hard Skills which are displayed on the right. I absolutely love coding and trying to make things work, thinking about algorithm stimulates my brain and i'm starting to get used to certain languages which allows me to go a bit deeper",
         list: [
@@ -190,7 +188,7 @@ function App() {
     },
     {
       key: 4,
-      name: "My Best Projects",
+      name: "📁 My Best Projects",
       deploy: [
         {
           id: 1,
@@ -250,31 +248,7 @@ function App() {
     },
     {
       key: 5,
-      name: "My Future Career Goals",
-      deploy: [
-        {
-          key: 1,
-          job: "Full Stack Web Developper",
-          stack: "JS (Any Framework), PHP (Symfony)",
-          more: "I'm not very good at front-end developping but I like trying and learning",
-        },
-        {
-          key: 2,
-          job: "Software Developper",
-          stack: "C#, C++",
-          more: "I've always wanted to developp softwares in a tech company, in the car industry mainly",
-        },
-        {
-          key: 3,
-          job: "On-Board Electronics Engineer",
-          stack: "Electronics, C",
-          more: "On-board electronics is incredible in my opinion, having skills and working in this industry would allow me to work on any personnal projects",
-        },
-      ],
-    },
-    {
-      key: 6,
-      name: "Education",
+      name: "🎓 Education",
       deploy: {
         texts: [
           "Option 'Computer Science and Digital Science' for 3 years.",
@@ -316,7 +290,7 @@ function App() {
     },
     {
       key: 7,
-      name: "Contact Me",
+      name: "📞 Contact Me",
       deploy: [
         {
           key: 1,
@@ -330,21 +304,27 @@ function App() {
           title: "Phone Number",
           value: "+33 7 62 35 81 00",
           href: "",
-          img: <PhoneOutlined style={{ fontSize: "xl:24px lg:20px sm:12px" }} />,
+          img: (
+            <PhoneOutlined style={{ fontSize: "xl:24px lg:20px sm:12px" }} />
+          ),
         },
         {
           key: 3,
           title: "LinkedIn",
           value: "",
           href: "https://www.linkedin.com/in/ga%C3%ABl-delouis-534509212/",
-          img: <LinkedinOutlined style={{ fontSize: "xl:24px lg:20px sm:12px" }} />,
+          img: (
+            <LinkedinOutlined style={{ fontSize: "xl:24px lg:20px sm:12px" }} />
+          ),
         },
         {
           key: 4,
           title: "GitHub",
           value: "",
           href: "https://github.com/tinkybeatz",
-          img: <GithubOutlined style={{ fontSize: "xl:24px lg:20px sm:12px" }} />,
+          img: (
+            <GithubOutlined style={{ fontSize: "xl:24px lg:20px sm:12px" }} />
+          ),
         },
       ],
     },
@@ -352,60 +332,102 @@ function App() {
 
   // affichage (render)
   return (
-    <div className="justify-items-center xl:w-{80%} lg:w-{85%} grid font-primary" key="1">
-      <Navbar />
-      <div className="flex-row dark:text-white transition-all duration-200 xl:w-{70%} lg:w-{80%} sm:w-{70%} xl:h-[100vh] lg:h-[110vh] sm:h-[100vh] pb-5">
-        <div className="flex xl:h-1/4 lg:h-1/5 sm:h-1/6 justify-center items-center font-bold xl:py-2 lg:py-4 sm:py-2 xl:mb-5 text-center lg:mb-5 sm:mb-0">
-          <h1 ref={horRef} className="xl:text-8xl lg:text-6xl sm:text-4xl">
-            Welcome to Gaël's portfolio!
+    <div
+      className="justify-items-center xl:w-{80%} lg:w-{85%} grid font-primary scroll-smooth snap-y snap-mandatory"
+      key="1"
+    >
+      {/* <Navbar /> */}
+      <SideNavbar nbMainSpace={nbMainSpace} />
+      <div className="flex-row dark:text-white transition-all duration-200 xl:w-{70%} lg:w-{80%} sm:w-{70%} h-[100vh]">
+        <div className="flex xl:h-[40%] lg:h-1/5 sm:h-1/6 items-end xl:py-2 lg:py-4 sm:py-2 text-center">
+          <h1
+            ref={horRef}
+            className="font-scrib tracking-extra-tight xl:text-8xl font-light w-full lg:text-6xl sm:text-4xl"
+          >
+            GAËL DELOUIS
           </h1>
         </div>
-        <div className="xl:grid lg:grid xl:grid-cols-3 lg:grid-cols-3 sm:flex-row xl:h-3/4 lg:h-4/5 sm:h-5/6 xl:pb-10 lg:pb-10 px-10">
-          <div class="col-span-1 xl:h-full lg:h-full sm:h-36 grid xl:mr-10 lg:mr-10 rounded-md">
+        <div className="text-xl font-light flex xl:h-[15%] justify-center">
+          Full-Stack Web Developper | Product Engineer | Your next best hire
+        </div>
+        <div className="items-center text-xl font-light flex flex-col xl:h-[45%]">
+          <p class="text-center text-lg">Learn more about me :</p>
+          <div className="flex flex-wrap w-[60%] justify-center gap-3 mt-2">
+            {nbMainSpace.map((section) => (
+              <a
+                key={section.key}
+                href={`#section-${section.key}`}
+                className="px-4 py-2 border border-gray-100 shadow-sm text-black rounded-full hover:bg-gray-100 hover:shadow-none transition-colors duration-200 text-base"
+              >
+                {section.name}
+              </a>
+            ))}
+          </div>
+        </div>
+        {/* <div className="xl:grid lg:grid xl:grid-cols-3 lg:grid-cols-3 sm:flex-row xl:h-3/4 lg:h-4/5 sm:h-5/6 xl:pb-10 lg:pb-10 px-10">
+          <div class="col-span-1 xl:h-full lg:h-full sm:h-36 grid xl:mr-10 lg:mr-10 rounded-lg">
             <img
               src={MainPagePic}
               alt="image"
-              class="xl:h-full xl:w-full xl:object-cover obj col-span-1 rounded-md drop-shadow-md
-                    lg:h-full lg:w-full lg:object-cover
+              class="xl:h-[69vh] xl:w-full xl:object-cover obj col-span-1 rounded-lg shadow-xl
+                    lg:h-96 lg:w-full lg:object-cover
                     sm:h-36 sm:w-full sm:object-contain"
             />
           </div>
-          <div class="xl:col-span-2 lg:col-span-2 sm:col-span-1 rounded-md bg-gray-200 dark:bg-zinc-500 dark:text-white text-black transition duration-200 drop-shadow-md flex-row sm:mt-4 sm:pb-10 sm:h-[400px]">
+          <div class="xl:col-span-2 lg:col-span-2 sm:col-span-1 rounded-lg bg-white dark:bg-zinc-500 dark:text-white text-black transition duration-200 shadow-xl flex-row sm:mt-4 sm:pb-10 sm:h-[400px] border border-gray-100">
             <div class="xl:h-1/3 lg:h-1/4 sm:h-1/5 flex items-center place-content-center font-bold text-center xl:text-6xl lg:text-4xl sm:text-lg xl:px-4 lg:px-2 sm:px-2 sm:py-4">
-              First of all, thank you for coming on my website!
-            </div>
-            <div class="xl:h-2/3 lg:h-3/4 sm:h-4/5 xl:text-xl lg:text-[13px] sm:text-[11px] flex place-content-center text-center xl:px-28 lg:px-20 sm:px-5">
               <p>
-                My name is Gaël DELOUIS and I am an Student in an IT Engineering School. 
-                I am currently comming to the end of my 4th year out of the whole 5 years of the formation. 
-                I love coding and made this website in order to present myself !
-                <br></br>
-                <br></br>
-                On this website, you are going to learn a bit more about me and
-                I am going to share my Professional Experience. This is kind of
-                an extension of my resume (that you can download in the navbar
-                downhere). This website is divided in 7 blocks that you can open
-                in order to see the informations contained in it.
-                <br></br>
-                <br></br>
-                You can also toggle the dark mode if you eyes struggle to read
-                properly the informations, using the button also located in the
-                navbar. I will continue to update this site in the future to add
-                few more features.
+                Welcome here ! <br /> Glad to see you !
               </p>
             </div>
+            <div class="xl:h-2/3 lg:h-3/4 sm:h-4/5 xl:text-2xl lg:text-[13px] sm:text-[11px] flex flex-col place-content-center text-center xl:px-28 lg:px-20 sm:px-5">
+              <p>
+                My name is Gaël DELOUIS, I just graduated from CESI Engineering
+                school, and specialized in Web Developing.
+                <br></br>
+                <br></br>
+                This website is here to help you learn about me a little more,
+                you can find all my professional experiences, my skills, my
+                ambitions and my projects.
+                <br></br>
+                <br></br>
+              </p>
+              <div className="flex flex-wrap justify-center gap-3 mt-4">
+                {nbMainSpace.map((section) => (
+                  <a
+                    key={section.key}
+                    href={`#section-${section.key}`}
+                    className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors duration-200 xl:text-lg lg:text-sm sm:text-xs"
+                  >
+                    {section.name}
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
+        </div> */}
       </div>
-      <div class="z-10 w-full grid justify-items-center">
+      <div class="w-full">
         {nbMainSpace.map((nb) => (
-          <MainSpace nb={nb} />
+          <div
+            id={`section-${nb.key}`}
+            class="flex flex-col items-center justify-center w-full h-screen snap-start"
+          >
+            <div class="w-full max-w-[90rem] h-full max-h-full py-10 flex flex-col">
+              <div class="text-2xl tracking-extra-tight font-scrib mb-4 transition-colors dark:text-white text-black">
+                {nb.key}. {nb.name.toUpperCase()}
+              </div>
+              <div class="flex w-full h-full">
+                <MainSpace nb={nb} />
+              </div>
+            </div>
+          </div>
         ))}
       </div>
-      <div className="xl:h-28 lg:h-28 sm:h-28 w-full grid grid-cols-2 items-center sm:mb-10 justify-items-center">
-        <div className="text-sm text-gray-400">Gaël DELOUIS</div>
-        <div className="text-sm text-gray-400">gael.delouis@viacesi.fr</div>
-      </div>
+      {/* <div class="xl:h-28 lg:h-28 sm:h-28 w-full grid grid-cols-2 items-center sm:mb-10 justify-items-center">
+        <div class="text-sm text-gray-400">Gaël DELOUIS</div>
+        <div class="text-sm text-gray-400">gael.delouis@viacesi.fr</div>
+      </div> */}
     </div>
   );
 }

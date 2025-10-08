@@ -11,7 +11,7 @@ export function FourthBlock({ deploy }) {
       <div
         className="
       flex
-      rounded-md
+      rounded-lg
 
       transition-all 
       duration-200 

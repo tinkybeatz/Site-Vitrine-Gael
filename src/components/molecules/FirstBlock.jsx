@@ -1,48 +1,99 @@
+import crossfitImage from "../../../public/images/crossfit.png";
+import musicImage from "../../../public/images/music.png";
+import mechanicImage from "../../../public/images/mechanic.png";
+import gaelImage from "../../../public/images/imageGael.jpg";
+import { useState, useRef } from "react";
+
 export function FirstBlock({ deploy }) {
   //state
+  const [topImage, setTopImage] = useState("crossfit"); // Default top image
+  const prevTopImageRef = useRef("mechanic");
 
   //comportements
+  const handleImageClick = (imageName) => {
+    prevTopImageRef.current = topImage;
+    setTopImage(imageName);
+  };
+
+  const getZIndex = (imageName) => {
+    if (imageName === topImage) {
+      return 30;
+    } else if (imageName === prevTopImageRef.current) {
+      return 20;
+    } else {
+      return 10;
+    }
+  };
 
   //affichage
   return (
-    <div className="">
-      <div className="xl:grid lg:grid xl:grid-cols-3 lg:grid-cols-3 sm:flex-row place-items-center rounded-md bg-gray-300 transition-all duration-200 text-black dark:text-white dark:bg-zinc-600">
-        <div className="xl:col-span-1 lg:col-span-1 xl:w-2/3 lg:w-5/6 sm:w-full sm:flex-row sm:mb-4">
-          <div className="xl:text-xl lg:text-xl sm:text-md font-bold p-2 rounded-md drop-shadow-md bg-gray-200 dark:bg-zinc-500 text-black dark:text-white transition-all duration-200 text-center mb-2">
-            My passions :
+    <div className="flex w-full h-full">
+      <div className="grid grid-cols-3 gap-4 p-4 w-full">
+        <div className="rounded-lg flex bg-blue-400 shadow-xl overflow-hidden">
+          <img
+            className="object-cover rounded-lg"
+            src={gaelImage}
+            alt="Gael Image"
+          />
+        </div>
+        <div className="flex flex-col p-4 h-full overflow-auto">
+          <p class="text-2xl dark:text-white pb-2 text-black duration-200">
+            Gaël DELOUIS
+          </p>
+          <div class="flex flex-col pb-4">
+            <div class="flex">
+              <p class="text-gray-400 font-light pr-2">🎂 22 years old</p>
+              <p class="pr-2">&bull;</p>
+              <p class="text-gray-400 font-light pr-2">
+                📍 Kuala Lumpur, Malaysia
+              </p>
+            </div>
+            <p class="text-gray-400 font-light pr-2">💻 Full-Stack Web Developer</p>
           </div>
-          <div className="h-3/4 xl:ml-10 lg:ml-10 sm:m-0">
-            <ul className="list-inside">
-              {deploy.passions.map((nb) => (
-                <li className="xl:text-lg lg:text-lg sm:text-xs">
-                  <span className="dark:text-yellow-500 text-red-500 transition-all duration-200">
-                    {nb.key}.{" "}
-                  </span>{" "}
-                  {nb.text}
-                </li>
-              ))}
-            </ul>
+          <div class="flex flex-col pb-6">
+            <p class="pb-2">Hey 👋</p>
+            <p class="pb-4">{deploy.text}</p>
+            <p>{deploy.text2}</p>
+          </div>
+          <div class="text-lg font-medium pb-2">
+            My passions
+          </div>
+          <div class="flex flex-wrap gap-2 pb-6">
+            {deploy.passions.map((passion) => (
+              <div class="rounded-full text-sm bg-white border border-gray-100 px-4 py-2 shadow-sm">{passion.key}. {passion.text}</div>
+            ))}
+          </div>
+          <div class="text-lg font-medium pb-2">
+            My personality traits
+          </div>
+          <div class="flex flex-wrap gap-2 pb-4">
+            {deploy.softSkills.map((softSkill) => (
+              <div class="rounded-full text-sm bg-white border border-gray-100 px-4 py-2 shadow-sm">{softSkill.key}. {softSkill.text}</div>
+            ))}
           </div>
         </div>
-        <div className="flex h-full xl:text-lg lg:text-lg sm:text-xs sm:mb-4 sm:py-4 text-black dark:text-white items-center rounded-md drop-shadow-md col-span-1 bg-gray-200 dark:bg-zinc-500 transition-all duration-200 px-10 text-center">
-          {deploy.text}
-        </div>
-        <div className="xl:col-span-1 lg:col-span-1 xl:w-2/3 lg:w-5/6 sm:w-full sm:flex-row">
-          <div className="xl:text-xl lg:text-xl sm:text-md font-bold p-2 rounded-md drop-shadow-md bg-gray-200 dark:bg-zinc-500 text-black dark:text-white transition-all duration-200 text-center mb-2">
-            My Soft Skills :
-          </div>
-          <div className="h-3/4 xl:ml-10 lg:ml-10 sm:m-0">
-            <ul className="list-inside">
-              {deploy.softSkills.map((nb) => (
-                <li className="xl:text-lg lg:text-lg sm:text-xs">
-                  <span className="dark:text-yellow-500 text-red-500 transition-all duration-200">
-                    {nb.key}.{" "}
-                  </span>{" "}
-                  {nb.text}
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div className="relative">
+          <img
+            src={crossfitImage}
+            alt="crossfit"
+            className="absolute w-64 h-auto top-5 left-8 transform rotate-[-5deg] shadow-2xl rounded-lg border-4 border-gray-100 dark:border-zinc-100 duration-200 cursor-pointer"
+            style={{ zIndex: getZIndex("crossfit") }}
+            onClick={() => handleImageClick("crossfit")}
+          />
+          <img
+            src={musicImage}
+            alt="music"
+            className="absolute w-64 h-auto top-[150px] left-[160px] transform rotate-[5deg] shadow-2xl rounded-lg border-4 border-gray-100 dark:border-zinc-100 duration-200 cursor-pointer"
+            style={{ zIndex: getZIndex("music") }}
+            onClick={() => handleImageClick("music")}
+          />
+          <img
+            src={mechanicImage}
+            alt="mechanic"
+            className="absolute w-64 h-auto top-[300px] left-[80px] transform shadow-2xl rounded-lg border-4 border-gray-100 dark:border-zinc-100 duration-200 cursor-pointer"
+            style={{ zIndex: getZIndex("mechanic") }}
+            onClick={() => handleImageClick("mechanic")}
+          />
         </div>
       </div>
     </div>

@@ -1,8 +1,23 @@
-@import url("https://fonts.googleapis.com/css?family=Kanit");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@100..900&display=swap");
+
+/* ScribSans font (for titles) */
+@font-face {
+  font-family: 'ScribSans';
+  src: url('../public/fonts/ScribSans.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Roboto Flex', sans-serif;
+  }
+}
 
 .grow-enter {
   max-height: 0;
@@ -38,6 +53,5 @@
   border-radius: 5px;
 }
 
-.parent-container .content {
-  display: none;
-}
+/* The parent-container class has been removed from MainSpace.jsx */
+/* If any content elements need to be hidden initially, use a more specific selector */

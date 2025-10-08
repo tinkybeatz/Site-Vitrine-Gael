@@ -4,7 +4,9 @@ module.exports = {
   darkMode: "class",
   theme: {
     fontFamily: {
-      primary: '"Kanit"',
+      roboto: ['"Roboto Flex"', 'sans-serif'],
+      title: ['"ScribSans"', 'cursive'], // Using ScribSans font for titles
+      scrib: ['"ScribSans"', 'cursive'], // ScribSans font
     },
     screens: {
       'xl': {'min': '1520px'},
@@ -23,6 +25,9 @@ module.exports = {
     extend: {
       backgroundImage: {
         "main-page-back": "url('../images/MainPage.jpg')",
+      },
+      letterSpacing: {
+        'extra-tight': '-0.08em',  // Custom even tighter tracking
       },
     },
   },
