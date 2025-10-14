@@ -28,8 +28,8 @@ export function FirstBlock({ deploy }) {
   //affichage
   return (
     <div className="flex w-full h-full">
-      <div className="grid grid-cols-3 gap-4 p-4 w-full">
-        <div className="rounded-lg flex bg-blue-400 shadow-xl overflow-hidden">
+      <div className="grid grid-cols-3 gap-4 w-full">
+        <div className="rounded-lg flex shadow-xl overflow-hidden">
           <img
             className="object-cover rounded-lg"
             src={gaelImage}
@@ -37,7 +37,7 @@ export function FirstBlock({ deploy }) {
           />
         </div>
         <div className="flex flex-col p-4 h-full overflow-auto">
-          <p class="text-2xl dark:text-white pb-2 text-black duration-200">
+          <p class="text-2xl font-medium dark:text-white pb-2 text-black duration-200">
             Gaël DELOUIS
           </p>
           <div class="flex flex-col pb-4">
@@ -48,27 +48,33 @@ export function FirstBlock({ deploy }) {
                 📍 Kuala Lumpur, Malaysia
               </p>
             </div>
-            <p class="text-gray-400 font-light pr-2">💻 Full-Stack Web Developer</p>
+            <div class="flex">
+              <p class="text-gray-400 font-light pr-2">
+                💻 Full-Stack Web Developer
+              </p>
+              <p class="pr-2">&bull;</p>
+              <p class="text-gray-400 font-light pr-2">🇫🇷 French</p>
+            </div>
           </div>
           <div class="flex flex-col pb-6">
             <p class="pb-2">Hey 👋</p>
             <p class="pb-4">{deploy.text}</p>
             <p>{deploy.text2}</p>
           </div>
-          <div class="text-lg font-medium pb-2">
-            My passions
-          </div>
+          <div class="text-lg font-medium pb-2">My passions</div>
           <div class="flex flex-wrap gap-2 pb-6">
             {deploy.passions.map((passion) => (
-              <div class="rounded-full text-sm bg-white border border-gray-100 px-4 py-2 shadow-sm">{passion.key}. {passion.text}</div>
+              <div class="rounded-full text-sm bg-white border border-gray-200 px-4 py-2">
+                {passion.key}. {passion.text}
+              </div>
             ))}
           </div>
-          <div class="text-lg font-medium pb-2">
-            My personality traits
-          </div>
+          <div class="text-lg font-medium pb-2">My personality traits</div>
           <div class="flex flex-wrap gap-2 pb-4">
             {deploy.softSkills.map((softSkill) => (
-              <div class="rounded-full text-sm bg-white border border-gray-100 px-4 py-2 shadow-sm">{softSkill.key}. {softSkill.text}</div>
+              <div class="rounded-full text-sm bg-white border border-gray-200 px-4 py-2">
+                {softSkill.key}. {softSkill.text}
+              </div>
             ))}
           </div>
         </div>

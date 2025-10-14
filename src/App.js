@@ -14,6 +14,37 @@ import {
   LinkedinOutlined,
 } from "@ant-design/icons";
 
+// Import des logos
+import javascriptLogo from "../public/images/logos/javascript.png";
+import typescriptLogo from "../public/images/logos/typescript.png";
+import phpLogo from "../public/images/logos/php.png";
+import angularLogo from "../public/images/logos/angular.png";
+import reactLogo from "../public/images/logos/react.png";
+import symfonyLogo from "../public/images/logos/symfony.png";
+import laravelLogo from "../public/images/logos/laravel.png";
+import tailwindcssLogo from "../public/images/logos/tailwindcss.png";
+import bootstrapLogo from "../public/images/logos/bootstrap.svg";
+import nextjsLogo from "../public/images/logos/next-js.svg";
+import blazorLogo from "../public/images/logos/blazor.png";
+import pythonLogo from "../public/images/logos/python.webp";
+import flaskLogo from "../public/images/logos/flask.png";
+import nestjsLogo from "../public/images/logos/nest-js.svg";
+import nodejsLogo from "../public/images/logos/node-js.webp";
+import cLogo from "../public/images/logos/C.png";
+import cppLogo from "../public/images/logos/Cpp.png";
+import csLogo from "../public/images/logos/Cs.png";
+import gitLogo from "../public/images/logos/git.png";
+import gitlabLogo from "../public/images/logos/gitlab.png";
+import githubLogo from "../public/images/logos/github.svg";
+import jiraLogo from "../public/images/logos/jira.png";
+import azureLogo from "../public/images/logos/azure.png";
+import azureDevopsLogo from "../public/images/logos/azureDevops.webp";
+import kubernetesLogo from "../public/images/logos/kubernetes.png";
+import dockerLogo from "../public/images/logos/docker.png";
+import cArduinoLogo from "../public/images/logos/cArduino.svg";
+import unityLogo from "../public/images/logos/unity.png";
+import dotnetcoreLogo from "../public/images/logos/dotnetcore.png";
+
 function App() {
   inject();
   // constantes (état, données)
@@ -105,20 +136,29 @@ function App() {
             location: "Omnitech Security",
             location2: "Bordeaux, France",
             dates: "April 2022 - July 2022",
+            img: "https://media.glassdoor.com/sqll/5208811/omnitech-security-squarelogo-1646217837429.png",
+            imgAlt: "Omnitech Security Logo",
+            text: "During this internship, i was a system administrator and had to configure serveral servers, help the collegues and fix their computer problems 🛠️. This was my first real professionnal experience, and even if it doesnt reallt match my current ambitions, it was a great experience to start with 👍.",
           },
-          {
-            key: 2,
-            title: "Self-Service Employee",
-            location: "Carrefour Bordeaux",
-            location2: "Bordeaux, France",
-            dates: "September 2022 - January 2023",
-          },
+          // {
+          //   key: 2,
+          //   title: "Self-Service Employee - Not IT related",
+          //   location: "Carrefour Bordeaux",
+          //   location2: "Bordeaux, France",
+          //   dates: "September 2022 - January 2023",
+          //   img: "https://recrute.carrefour.fr/wp-content/uploads/2023/10/carrefour-city-horizontal.png",
+          //   imgAlt: "Carrefour City Logo",
+          //   text: "Fun experience, met a lot of great people and learned a lot about customer service and how to work in a team 🤝. This was a student job so I don't have much more to tell you about it 😁.",
+          // },
           {
             key: 3,
             title: "Web Developper BAC +3 - Intern",
-            location: "Orange SA",
+            location: "Orange",
             location2: "Pessac, France",
             dates: "January 2023 - April 2023",
+            img: "https://freelogopng.com/images/all_img/1683000849orange-telecom-logo.png",
+            imgAlt: "Orange Logo",
+            text: "First real experience as a web developper. Worked on an internal platform, designed from scratch, to help handle all telecom subscriptions 📞. Learned a lot about web developpement and project management methodologies.",
           },
           {
             key: 4,
@@ -126,6 +166,9 @@ function App() {
             location: "TB PAYE Conseils",
             location2: "Bordeaux, France",
             dates: "March 2023 - May 2023",
+            img: "",
+            imgAlt: "",
+            text: "This was my first freelance job. Team of 3 working on a Wordpress website for an accounting company. Made some custom plugins and themes to fit the client's needs 🔌.",
           },
           {
             key: 5,
@@ -133,6 +176,9 @@ function App() {
             location: "Foleon",
             location2: "Amsterdam, Netherlands",
             dates: "September 2023 - February 2024",
+            img: "https://thewealthmosaic.s3.amazonaws.com/media/Logo_Foleon.png",
+            imgAlt: "Foleon Logo",
+            text: "First international Professionnal Experience. Added a 'Realtime Edition' feature on an existing online content creation platform ⏱️⚡. Fascinating project (still my favourite experience so far ❤️), worked on the whole stack (ReactTS, NestTS, CucumberTS, Kubernetes).",
           },
           {
             key: 6,
@@ -140,6 +186,9 @@ function App() {
             location: "Kamileon Fitness",
             location2: "Kuala Lumpur, Malaysia",
             dates: "April 2024 - January 2025",
+            img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnEHAJ3G4R89WRUbWjn4cqQdtE1X4Eeviwyg&s",
+            imgAlt: "Kamileon Fitness Logo",
+            text: "Revamped a few websites for a fitness company in Malaysia 🏋️‍♂️. Some of them contain booking systems and online shoping.",
           },
           {
             key: 7,
@@ -147,16 +196,10 @@ function App() {
             location: "Hager Group",
             location2: "Pessac, France",
             dates: "February 2025 - August 2025",
+            img: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Hager_Group_Logo.svg/2560px-Hager_Group_Logo.svg.png",
+            imgAlt: "Hager Group Logo",
+            text: "Worked on the engineering and developpement of a new internal tool for Hager Group. Worked on CI/CD, DB, Unit tests, automations, etc... Fortified even more my web developpement (Angular, Python Flask, Azure DevOps and Azure, Jasmine, CI/CD automations, SQL) and agile management skills.",
           },
-        ],
-        texts: [
-          "During this internship, i was a system administrator and had to configure serveral servers, help the collegues and fix their computer problems.",
-          "I got this job because i needed experience and money to pay my appartement to be fair, though i can say this experience ended-up being very fun.",
-          "This was my favourite profesionnal experience so-far ! the mission was very interesting and the team I worked with was very nice to me.",
-          "I did my first Free-Lance mission to see how it would fit with my schedule, my team and i ended-up finishing the mission in only a week.",
-          "First internation Professionnal Experience. Added a Realtime Edition feature on an existing online content creation platform.",
-          "Revamped a few websites for a fitness company in Malaysia. Some of them contain booking systems and online shoping.",
-          "Worked on the engineering and developpement of a new internal tool for Hager Group. Worked on CI/CD, DB, Unit tests, automations, etc... So far this was the most complete experience i've had.",
         ],
       },
     },
@@ -164,31 +207,265 @@ function App() {
       key: 3,
       name: "🛠️ IT Hard Skills",
       deploy: {
-        text: "During my studies at CESI and throughout my personnal projects, i've gained quite a few Hard Skills which are displayed on the right. I absolutely love coding and trying to make things work, thinking about algorithm stimulates my brain and i'm starting to get used to certain languages which allows me to go a bit deeper",
-        list: [
-          "HTML, CSS (and TailwindCSS, Bootstrap)",
-          "JS / TS (and ReactJS, NestJS, CucumberJS)",
-          "PHP (and Laravel, Symfony)",
-          "C++ / C# (and .NET) / C Arduino",
-          "WordPress / Wix",
-        ],
-        progress: [
+        skills: [
           {
-            nline:
-              "Programing (C, Python, SQL, C++, Arduino, JavaScript, C#, PHP, Windows, PowerShell)",
-            progress: 75,
+            name: "JavaScript",
+            img: javascriptLogo,
+            imgAlt: "JavaScript Logo",
+            description: "Classic web scripting language",
+            linkTo: "",
+            categories: ["Programming Language"],
           },
           {
-            nline:
-              "System and Networks (Acitve Directory, Creating and Setting up Servers (Windows/Linux))",
-            progress: 60,
+            name: "TypeScript",
+            img: typescriptLogo,
+            imgAlt: "TypeScript Logo",
+            description: "Modern typed JS superset",
+            linkTo: "https://www.typescriptlang.org",
+            categories: ["Programming Language"],
+          },
+          {
+            name: "Angular",
+            img: angularLogo,
+            imgAlt: "Angular Logo",
+            description: "Famous JS Framework (personnal favourite)",
+            linkTo: "https://angular.dev",
+            categories: ["Front-end"],
+          },
+          {
+            name: "React",
+            img: reactLogo,
+            imgAlt: "React Logo",
+            description: "Another Famous JS Framework",
+            linkTo: "https://react.dev",
+            categories: ["Front-end"],
+          },
+          {
+            name: "NextJS",
+            img: nextjsLogo,
+            imgAlt: "NextJS Logo",
+            description: "Full-Stack React framework",
+            linkTo: "https://nextjs.org",
+            categories: ["Front-end", "Back-end"],
+          },
+          {
+            name: "PHP",
+            img: phpLogo,
+            imgAlt: "PHP Logo",
+            description: "Web server scripting language",
+            linkTo: "https://www.php.net",
+            categories: ["Programming Language"],
+          },
+          {
+            name: "Symfony",
+            img: symfonyLogo,
+            imgAlt: "Symfony Logo",
+            description: "Famous PHP Framework",
+            linkTo: "https://symfony.com",
+            categories: ["Front-end"],
+          },
+          {
+            name: "Laravel",
+            img: laravelLogo,
+            imgAlt: "Laravel Logo",
+            description: "Another Famous PHP Framework",
+            linkTo: "https://laravel.com",
+            categories: ["Front-end"],
+          },
+          {
+            name: "TailwindCSS",
+            img: tailwindcssLogo,
+            imgAlt: "TailwindCSS Logo",
+            description: "Utility-first CSS Framework",
+            linkTo: "https://tailwindcss.com",
+            categories: ["Front-end"],
+          },
+          {
+            name: "Bootstrap",
+            img: bootstrapLogo,
+            imgAlt: "Bootstrap Logo",
+            description: "Popular CSS Framework",
+            linkTo: "https://getbootstrap.com",
+            categories: ["Front-end"],
+          },
+          {
+            name: "C",
+            img: cLogo,
+            imgAlt: "C Logo",
+            description: "Language for low-level programming",
+            linkTo: "https://www.c-language.org",
+            categories: ["Programming Language"],
+          },
+          {
+            name: "C++",
+            img: cppLogo,
+            imgAlt: "C++ Logo",
+            description: "Object-oriented extension of the C language",
+            linkTo: "https://isocpp.org",
+            categories: ["Programming Language"],
+          },
+          {
+            name: "C#",
+            img: csLogo,
+            imgAlt: "C# Logo",
+            description: "Modern, object-oriented language by Microsoft",
+            linkTo: "https://dotnet.microsoft.com/en-us/languages/csharp",
+            categories: ["Programming Language"],
+          },
+          {
+            name: ".NET Core C#",
+            img: dotnetcoreLogo,
+            imgAlt: ".NET Logo",
+            description: "Cross-platform framework for C# applications",
+            linkTo: "https://dotnet.microsoft.com/en-us/",
+            categories: ["Programming Language", "Back-end", "Front-end"],
+          },
+          {
+            name: "Blazor",
+            img: blazorLogo,
+            imgAlt: "Blazor Logo",
+            description: "Popular C# front framework",
+            linkTo:
+              "https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor",
+            categories: ["Front-end"],
+          },
+          {
+            name: "C Arduino",
+            img: cArduinoLogo,
+            imgAlt: "Arduino Logo",
+            description: "C-based language for embedded devices",
+            linkTo: "https://www.arduino.cc",
+            categories: ["Programming Language"],
+          },
+          {
+            name: "Unity C#",
+            img: unityLogo,
+            imgAlt: "Unity Logo",
+            description: "Game development platform using C#",
+            linkTo: "https://unity.com",
+            categories: ["Programming Language"],
+          },
+          {
+            name: "Python",
+            img: pythonLogo,
+            imgAlt: "Python Logo",
+            description: "High-level language for general programming",
+            linkTo: "https://www.python.org",
+            categories: ["Programming Language"],
+          },
+          {
+            name: "Flask",
+            img: flaskLogo,
+            imgAlt: "Flask Logo",
+            description: "Lightweight Python framework for web apps",
+            linkTo: "https://flask.palletsprojects.com/en/stable",
+            categories: ["Back-end"],
+          },
+          {
+            name: "NestJS",
+            img: nestjsLogo,
+            imgAlt: "NestJS Logo",
+            description: "Back-end framework for JS",
+            linkTo: "https://nestjs.com",
+            categories: ["Back-end"],
+          },
+          {
+            name: "NodeJS",
+            img: nodejsLogo,
+            imgAlt: "NodeJS Logo",
+            description: "Another Back-end framework for JS",
+            linkTo: "https://nodejs.org",
+            categories: ["Back-end"],
+          },
+          {
+            name: "Git",
+            img: gitLogo,
+            imgAlt: "Git Logo",
+            description: "Distributed version control system",
+            linkTo: "https://git-scm.com",
+            categories: ["Project Management", "CI/CD"],
+          },
+          {
+            name: "GitLab",
+            img: gitlabLogo,
+            imgAlt: "GitLab Logo",
+            description: "DevOps platform for CI/CD pipelines",
+            linkTo: "https://about.gitlab.com",
+            categories: ["CI/CD", "Project Management"],
+          },
+          {
+            name: "GitHub",
+            img: githubLogo,
+            imgAlt: "GitHub Logo",
+            description: "Collaboration and version control platform",
+            linkTo: "https://github.com/tinkybeatz",
+            categories: ["Project Management", "CI/CD"],
+          },
+          {
+            name: "Jira",
+            img: jiraLogo,
+            imgAlt: "Jira Logo",
+            description: "Agile project and issue management",
+            linkTo: "https://www.atlassian.com/software/jira",
+            categories: ["Project Management"],
+          },
+          {
+            name: "Azure",
+            img: azureLogo,
+            imgAlt: "Microsoft Azure Logo",
+            description: "Microsoft cloud computing platform",
+            linkTo: "https://azure.microsoft.com",
+            categories: ["Project Management"],
+          },
+          {
+            name: "Azure DevOps",
+            img: azureDevopsLogo,
+            imgAlt: "Azure DevOps Logo",
+            description: "Integrated tools for CI/CD pipelines",
+            linkTo: "https://azure.microsoft.com/products/devops",
+            categories: ["Project Management", "CI/CD"],
+          },
+          {
+            name: "Kubernetes",
+            img: kubernetesLogo,
+            imgAlt: "Kubernetes Logo",
+            description: "Container orchestration for scalable deployments",
+            linkTo: "https://kubernetes.io",
+            categories: ["CI/CD"],
+          },
+          {
+            name: "Docker",
+            img: dockerLogo,
+            imgAlt: "Docker Logo",
+            description: "Containerization for portable applications",
+            linkTo: "https://www.docker.com",
+            categories: ["CI/CD"],
           },
         ],
+        // list: [
+        //   "HTML, CSS (and TailwindCSS, Bootstrap)",
+        //   "JS / TS (and ReactJS, NestJS, CucumberJS)",
+        //   "PHP (and Laravel, Symfony)",
+        //   "C++ / C# (and .NET) / C Arduino",
+        //   "WordPress / Wix",
+        // ],
+        // progress: [
+        //   {
+        //     nline:
+        //       "Programing (C, Python, SQL, C++, Arduino, JavaScript, C#, PHP, Windows, PowerShell)",
+        //     progress: 75,
+        //   },
+        //   {
+        //     nline:
+        //       "System and Networks (Acitve Directory, Creating and Setting up Servers (Windows/Linux))",
+        //     progress: 60,
+        //   },
+        // ],
       },
     },
     {
       key: 4,
-      name: "📁 My Best Projects",
+      name: "📁 My Work",
       deploy: [
         {
           id: 1,
@@ -289,7 +566,7 @@ function App() {
       },
     },
     {
-      key: 7,
+      key: 6,
       name: "📞 Contact Me",
       deploy: [
         {
@@ -354,13 +631,20 @@ function App() {
           <p class="text-center text-lg">Learn more about me :</p>
           <div className="flex flex-wrap w-[60%] justify-center gap-3 mt-2">
             {nbMainSpace.map((section) => (
-              <a
+              <button
                 key={section.key}
-                href={`#section-${section.key}`}
-                className="px-4 py-2 border border-gray-100 shadow-sm text-black rounded-full hover:bg-gray-100 hover:shadow-none transition-colors duration-200 text-base"
+                onClick={() => {
+                  const sectionElement = document.getElementById(
+                    `section-${section.key}`
+                  );
+                  if (sectionElement) {
+                    sectionElement.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
+                className="px-4 py-2 border border-gray-100 shadow-sm text-black rounded-full hover:bg-gray-100 hover:shadow-none transition-colors duration-200 text-base cursor-pointer"
               >
                 {section.name}
-              </a>
+              </button>
             ))}
           </div>
         </div>
