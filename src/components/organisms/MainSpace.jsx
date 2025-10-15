@@ -17,33 +17,61 @@ import "./MainSpace.css";
 export function MainSpace({ nb }) {
   let horRef = React.useRef(null);
   const [isWiggling, setIsWiggling] = useState(false);
+  const [timerRef, setTimerRef] = useState(null);
   
   // Use the navigation context
-  const { goToNextSection } = useNavigation();
+  const { goToNextSection, activeSection } = useNavigation();
 
   // Effect for the horizontal fade in
   React.useEffect(() => {
     horFadeInScroll(horRef.current, +80);
   }, []);
   
-  // Effect for the wiggle animation
-  useEffect(() => {    
-    // Reset wiggling state when section changes
+  // Function to reset and start wiggle timer
+  const resetAndStartWiggleTimer = () => {
+    // Clear any existing timer
+    if (timerRef) {
+      clearInterval(timerRef);
+    }
+    
+    // Reset wiggle state
     setIsWiggling(false);
     
-    // Start a new timer for this section
-    const wiggleInterval = setInterval(() => {
+    // Start a new timer
+    const newTimer = setInterval(() => {
       setIsWiggling(true);
       setTimeout(() => {
         setIsWiggling(false);
       }, 800);
     }, 10000);
     
-    // Clean up the interval when component unmounts or section changes
+    // Save the timer reference
+    setTimerRef(newTimer);
+    
+    return newTimer;
+  };
+  
+  // Effect to handle wiggle animation based on active section
+  useEffect(() => {
+    // Reset and start the timer when the component mounts or section changes
+    const timer = resetAndStartWiggleTimer();
+    
+    // Clean up on unmount
     return () => {
-      clearInterval(wiggleInterval);
+      if (timer) {
+        clearInterval(timer);
+      }
     };
-  }, [nb.key]);
+  }, [activeSection, nb.key]);
+  
+  // Clean up when component unmounts
+  useEffect(() => {
+    return () => {
+      if (timerRef) {
+        clearInterval(timerRef);
+      }
+    };
+  }, []);
 
   let nbDeploy;
   switch (nb.key) {
