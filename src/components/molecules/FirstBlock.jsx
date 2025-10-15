@@ -27,7 +27,7 @@ export function FirstBlock({ deploy }) {
 
   //affichage
   return (
-    <div className="flex w-full h-full">
+    <div className="flex w-full h-full p-4">
       <div className="grid grid-cols-3 gap-4 w-full">
         <div className="rounded-lg flex shadow-xl overflow-hidden">
           <img

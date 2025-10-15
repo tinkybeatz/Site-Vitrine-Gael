@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./FlipCard.css";
 
-export function FlipCard({ frontContent, backTitle, backDescription, backExtra }) {
+export function FlipCard({ content }) {
   //state
   const [isFlipped, setIsFlipped] = useState(false);
 
@@ -19,10 +19,10 @@ export function FlipCard({ frontContent, backTitle, backDescription, backExtra }
         style={{ transform: isFlipped ? "rotateY(180deg)" : "" }}
       >
         <div className="flip-card-front">
-          Front
+          {content.id} - {content.title}
         </div>
         <div className="flip-card-back">
-          Back
+          {content.description}
         </div>
       </div>
     </div>

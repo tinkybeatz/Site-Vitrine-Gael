@@ -1,26 +1,98 @@
+import { useState, useEffect } from "react";
+import ReactDOM from "react-dom";
+import { ImageCarousel } from "../carousel/Carousel";
+
 export function CardProject({ cardInfo }) {
   //state
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   //comportements
+  const closePopup = () => {
+    setIsPopupOpen(false);
+  };
+
+  // Close popup when clicking escape key
+  useEffect(() => {
+    const handleEscKey = (event) => {
+      if (event.key === "Escape") {
+        closePopup();
+      }
+    };
+
+    if (isPopupOpen) {
+      document.addEventListener("keydown", handleEscKey);
+    }
+
+    return () => {
+      document.removeEventListener("keydown", handleEscKey);
+    };
+  }, [isPopupOpen]);
 
   //affichage
   return (
-    <div className="shrink-0 divide flex-row relative rounded-lg drop-shadow-md xl:h-96 xl:w-80 lg:h-96 lg:w-80 sm:h-72 sm:w-60 bg-white dark:bg-zinc-700 text-black dark:text-white transition-all duration-200 mr-4">
-      <div className="flex xl:text-xl lg:text-lg sm:text-md px-2 h-1/5 font-bold items-center justify-center text-center">
-        {cardInfo.id}. {cardInfo.title}
+    <>
+      <div onClick={() => setIsPopupOpen(true)} 
+        className="shrink-0 divide relative cursor-pointer border border-gray-200 rounded-lg xl:h-auto xl:w-[25rem] lg:h-96 lg:w-80 sm:h-72 sm:w-60 bg-white dark:bg-zinc-700 text-black dark:text-white transition-all duration-200">
+          <div className="flex h-4/5 w-full">
+            <img src={cardInfo.images[0].img} alt={cardInfo.images[0].imgAlt} className="rounded-lg" />
+          </div>
+          <div className="flex h-1/5 w-full items-center justify-center text-center font-medium">
+            {cardInfo.id}. {cardInfo.title}
+          </div>
       </div>
-      <div className="flex-row h-4/5 p-4 bg-gray-100 transition-all duration-200 dark:bg-zinc-800 rounded-b-md">
-        <p className="text-black dark:text-white font-normal transition-all duration-200 mb-4 xl:text-md lg:text-md sm:text-xs">
-          <span className="text-red-600 font-bold">- Description : </span>
-          {cardInfo.desc}
-        </p>
-        <p className="text-black dark:text-white font-normal transition-all duration-200 mb-4 xl:text-md lg:text-md sm:text-xs">
-          <span className="text-yellow-500 font-bold">
-            - Technology(ies) used :{" "}
-          </span>
-          {cardInfo.techno}
-        </p>
-      </div>
-    </div>
+
+      {/* Popup Modal */}
+      {isPopupOpen && ReactDOM.createPortal(
+        <>
+          {/* Backdrop - blurred and gray overlay */}
+          <div 
+            className="fixed inset-0 z-[9998] bg-gray-900/50 backdrop-blur-sm" 
+            onClick={closePopup}
+          ></div>
+          
+          {/* Modal Container */}
+          <div className="fixed inset-0 z-[9999] flex items-center justify-center"
+               onClick={closePopup}>
+            {/* Modal Content */}
+            <div 
+              className="relative w-3/4 h-3/4 bg-white dark:bg-zinc-800 rounded-xl p-6 shadow-2xl overflow-y-hidden"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close button */}
+              <button 
+                className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+                onClick={closePopup}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+              
+              {/* Modal Header */}
+              <div className="h-[8%]">
+                <h2 className="text-2xl font-bold text-black dark:text-white">
+                  {cardInfo.title}
+                </h2>
+              </div>
+              
+              {/* Modal Body - You can customize this part as needed */}
+              <div className="text-black dark:text-white border border-gray-200 rounded-lg h-[92%] p-4 overflow-auto">
+                {/* Project details will go here */}
+                {cardInfo.description && <p className="mb-4">{cardInfo.description}</p>}
+                
+                {/* Image carousel if available */}
+                {cardInfo.images && cardInfo.images.length > 0 && (
+                  <ImageCarousel images={cardInfo.images} />
+                )}
+                <div class="flex w-full h-auto overflow-auto mt-4">
+                  testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest
+                </div>
+              </div>
+            </div>
+          </div>
+        </>,
+        document.body
+      )}
+    </>
   );
 }

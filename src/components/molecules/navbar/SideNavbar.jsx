@@ -1,9 +1,10 @@
 import { DarkModeSwitch } from "react-toggle-dark-mode";
-import { React, useState, useRef, useEffect } from "react";
+import { React, useState } from "react";
 import Resume from "../../../../public/my_resume/CV_English_Gael_DELOUIS_2023.pdf";
 import Github from "../../../../public/images/GitHub-Logo.png";
 import useDarkSide from "../../../hooks/useDarkSide";
 import { horFadeInScroll } from "../../../../gsap/horizontalFadeIn";
+import { useNavigation } from "../../../context/NavigationContext"; // Import the navigation hook
 
 export function SideNavbar({ nbMainSpace }) {
   //state
@@ -11,99 +12,15 @@ export function SideNavbar({ nbMainSpace }) {
   const [darkSide, setDarkSide] = useState(
     colorTheme === "light" ? true : false
   );
-  const [activeSection, setActiveSection] = useState("home");
+  
+  // Use the navigation context
+  const { activeSection, goToSection, goToPrevSection, goToNextSection } = useNavigation();
 
   //comportements
   const toggleDarkMode = (checked) => {
     setTheme(colorTheme);
     setDarkSide(checked);
   };
-
-  function goToSection(direction) {
-    if (direction === "up") {
-      if (activeSection === "home") return; // Already at the top
-      else {
-        let currentKey = parseInt(activeSection.replace("section-", ""));
-        if (currentKey === 1) {
-          setActiveSection("home");
-          window.scrollTo({ top: 0, behavior: "smooth" });
-          return;
-        }
-        let newKey = currentKey - 1;
-        const newSection = `section-${newKey}`;
-        setActiveSection(newSection);
-
-        // Scroll to the new section
-        const sectionElement = document.getElementById(newSection);
-        if (sectionElement) {
-          sectionElement.scrollIntoView({ behavior: "smooth" });
-        }
-      }
-    } else if (direction === "down") {
-      if (activeSection === `section-${nbMainSpace.length}`)
-        return; // Already at the bottom
-      else {
-        let currentKey =
-          activeSection === "home"
-            ? 0
-            : parseInt(activeSection.replace("section-", ""));
-        let newKey = currentKey + 1;
-        const newSection = `section-${newKey}`;
-        setActiveSection(newSection);
-
-        // Scroll to the new section
-        const sectionElement = document.getElementById(newSection);
-        if (sectionElement) {
-          sectionElement.scrollIntoView({ behavior: "smooth" });
-        }
-      }
-    } else {
-      console.error("Invalid direction. Use 'up' or 'down'.");
-      return;
-    }
-  }
-
-  // Track scroll position to update active section
-  useEffect(() => {
-    const handleScroll = () => {
-      // Get current scroll position
-      const scrollPosition = window.scrollY;
-
-      // Check if we're at the top
-      if (scrollPosition < 100) {
-        setActiveSection("home");
-        return;
-      }
-
-      // Check each section
-      const sections = nbMainSpace.map((section) => ({
-        id: `section-${section.key}`,
-        key: section.key,
-      }));
-
-      for (const section of sections) {
-        const element = document.getElementById(section.id);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          // If the top of the section is within viewport and not too far below
-          if (rect.top <= 200 && rect.bottom >= 200) {
-            setActiveSection(`section-${section.key}`);
-            break;
-          }
-        }
-      }
-    };
-
-    // Add scroll event listener
-    window.addEventListener("scroll", handleScroll);
-    // Initial check
-    handleScroll();
-
-    // Clean up
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [nbMainSpace]);
 
   //affichage
   return (
@@ -113,9 +30,7 @@ export function SideNavbar({ nbMainSpace }) {
     >
       <div class="flex items-center text-center justify-center">
         <button
-          onClick={() => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          }}
+          onClick={() => goToSection("home")}
           class={`flex rounded-full hover:bg-gray-100 ${
             activeSection === "home"
               ? "bg-gray-100 dark:bg-gray-700"
@@ -135,14 +50,7 @@ export function SideNavbar({ nbMainSpace }) {
           key={section.key}
         >
           <button
-            onClick={() => {
-              const sectionElement = document.getElementById(
-                `section-${section.key}`
-              );
-              if (sectionElement) {
-                sectionElement.scrollIntoView({ behavior: "smooth" });
-              }
-            }}
+            onClick={() => goToSection(`section-${section.key}`)}
             class={`flex rounded-full hover:bg-gray-100 ${
               activeSection === `section-${section.key}`
                 ? "bg-gray-100 dark:bg-gray-700"
@@ -158,18 +66,14 @@ export function SideNavbar({ nbMainSpace }) {
       <div class="w-3/4 h-[1px] bg-gray-200 dark:bg-zinc-500"></div>
 
       <button
-        onClick={() => {
-          goToSection("up");
-        }}
+        onClick={() => goToPrevSection()}
         class={`flex rounded-full hover:bg-gray-100 border border-gray-100 shadow-sm hover:shadow-none w-auto justify-items-center lg:text-xs sm:text-[14px] align-items-center dark:text-white py-2 px-3 transition-all duration-200 font-semi-bold leading-normal cursor-pointer`}
       >
         ⬆️
       </button>
 
       <button
-        onClick={() => {
-          goToSection("down");
-        }}
+        onClick={() => goToNextSection()}
         class={`flex rounded-full hover:bg-gray-100 border border-gray-100 shadow-sm hover:shadow-none w-auto justify-items-center lg:text-xs sm:text-[14px] align-items-center dark:text-white py-2 px-3 transition-all duration-200 font-semi-bold leading-normal cursor-pointer`}
       >
         ⬇️
@@ -204,15 +108,6 @@ export function SideNavbar({ nbMainSpace }) {
       >
         CV
       </a>
-
-      {/* <div class="flex items-center text-center justify-center">
-        <a
-          href="#contact"
-          class="flex rounded-lg dark:bg-zinc-600 w-auto text-purple-500 justify-items-center lg:text-xs sm:text-[14px] align-items-center dark:text-white bg-white py-2 px-3 transition-all duration-200 font-semi-bold leading-normal"
-        >
-          Contact
-        </a>
-      </div> */}
     </div>
   );
 }

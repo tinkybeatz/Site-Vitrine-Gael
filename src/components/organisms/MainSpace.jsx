@@ -10,11 +10,15 @@ import { gsap } from "gsap";
 
 import { vertFadeInScroll } from "../../../gsap/verticalFadeIn";
 import { horFadeInScroll } from "../../../gsap/horizontalFadeIn";
+import { useNavigation } from "../../context/NavigationContext"; // Import the navigation hook
 
 import "./MainSpaceBackground.css";
 
 export function MainSpace({ nb }) {
   let horRef = React.useRef(null);
+  
+  // Use the navigation context
+  const { goToNextSection } = useNavigation();
 
   React.useEffect(() => {
     horFadeInScroll(horRef.current, +80);
@@ -56,10 +60,22 @@ export function MainSpace({ nb }) {
 
   //affichage
   return (
-    <div className="flex w-full h-full overflow-hidden shadow-lg rounded-lg border border-gray-200 transition duration-200" ref={horRef}>
-      <div className="w-full h-full font-primary rounded bg-white dark:bg-zinc-600 transition-all duration-200">
-        <div className="p-4 h-full">{nbDeploy}</div>
+    <>
+      <div
+        className="flex w-full h-full max-h-full overflow-hidden shadow-lg rounded-lg border border-gray-200 transition duration-200"
+        ref={horRef}
+      >
+        <div className="flex w-full h-full max-h-full font-primary rounded bg-white dark:bg-zinc-600 transition-all duration-200">
+          <div className="flex h-full max-h-full w-full">{nbDeploy}</div>
+        </div>
+        {nb.key === 6 ? null : (
+        <div
+          onClick={goToNextSection}
+          class="absolute flex rounded-full px-3 py-2 bg-pink-500 text-white text-sm font-medium cursor-pointer -bottom-5 -right-5 z-[1000] select-none"
+        >
+          Next
+        </div>)}
       </div>
-    </div>
+    </>
   );
 }
