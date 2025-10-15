@@ -34,9 +34,9 @@ export function CardProject({ cardInfo }) {
   return (
     <>
       <div onClick={() => setIsPopupOpen(true)} 
-        className="shrink-0 divide relative cursor-pointer border border-gray-200 rounded-lg xl:h-auto xl:w-[25rem] lg:h-96 lg:w-80 sm:h-72 sm:w-60 bg-white dark:bg-zinc-700 text-black dark:text-white transition-all duration-200">
+        className="shrink-0 divide relative cursor-pointer border border-gray-200 rounded-lg xl:h-auto xl:w-[27rem] lg:h-96 lg:w-80 sm:h-72 sm:w-60 bg-white dark:bg-zinc-700 text-black dark:text-white transition-all duration-200">
           <div className="flex h-4/5 w-full">
-            <img src={cardInfo.images[0].img} alt={cardInfo.images[0].imgAlt} className="rounded-lg" />
+            <img src={cardInfo.images[0].img} alt={cardInfo.images[0].imgAlt} className="rounded-lg object-cover" />
           </div>
           <div className="flex h-1/5 w-full items-center justify-center text-center font-medium">
             {cardInfo.id}. {cardInfo.title}
