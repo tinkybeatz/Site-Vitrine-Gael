@@ -3,8 +3,8 @@ import { SecondBlock } from "../molecules/SecondBlock";
 import { ThirdBlock } from "../molecules/ThirdBlock";
 import { FourthBlock } from "../molecules/FourthBlock";
 // import { FifthBlock } from "../molecules/FifthBlock";
+import { FifthBlock } from "../molecules/FifthBlock";
 import { SixthBlock } from "../molecules/SixthBlock";
-import { SeventhBlock } from "../molecules/SeventhBlock";
 import React, { useState, useEffect } from "react";
 import { gsap } from "gsap";
 
@@ -91,16 +91,12 @@ export function MainSpace({ nb }) {
       nbDeploy = <FourthBlock deploy={nb.deploy} />;
       break;
 
-    // case 5:
-    //   nbDeploy = <FifthBlock deploy={nb.deploy} />;
-    //   break;
-
     case 5:
-      nbDeploy = <SixthBlock deploy={nb.deploy} />;
+      nbDeploy = <FifthBlock deploy={nb.deploy} />;
       break;
 
     case 6:
-      nbDeploy = <SeventhBlock deploy={nb.deploy} />;
+      nbDeploy = <SixthBlock deploy={nb.deploy} />;
       break;
 
     default:

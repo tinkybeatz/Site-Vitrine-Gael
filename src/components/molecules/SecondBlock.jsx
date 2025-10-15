@@ -7,9 +7,9 @@ export function SecondBlock({ deploy }) {
 
   //affichage
   return (
-    <div class="p-4">
-      <div class="grid xl:grid-cols-3 lg:grid-cols-3 sm:grid-cols-2 place-items-center rounded-lg transition-all duration-200 text-black dark:text-white dark:bg-zinc-600">
-        <div className="flex col-span-3 w-full xl:ml-14 lg:ml-2 sm:pr-4">
+    <div class="flex p-4 w-full h-full">
+      <div class="grid xl:grid-cols-3 lg:grid-cols-3 sm:grid-cols-2 h-full w-full place-items-center rounded-lg transition-all duration-200 text-black dark:text-white dark:bg-zinc-600">
+        <div className="flex col-span-3 h-full w-full">
           <TimelineComponent timelineInfo={deploy.timelineInfo} />
         </div>
       </div>

@@ -72,7 +72,7 @@ function App() {
             >
               <div class="flex flex-col w-full max-w-[90rem] h-[90%] max-h-[90%]">
                 <div class="flex items-start h-[8%] text-2xl tracking-extra-tight font-scrib transition-colors dark:text-white text-black">
-                  <div class="flex bg-white pl-3 pr-4 h-[75%] rounded-lg items-center border border-gray-200 shadow-md">
+                  <div class="flex bg-white px-5 h-[78%] rounded-lg items-center border border-gray-200 shadow-md">
                     {nb.key}. {nb.name.toUpperCase()}
                   </div>
                 </div>

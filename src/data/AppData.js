@@ -7,6 +7,10 @@ import {
 
 import SkillsData from "./SkillsData.js";
 
+// Education pictures imports
+import cesiLogo from "../../public/images/logos/cesi.png";
+import uniklLogo from "../../public/images/logos/unikl.png";
+
 // Projects pictures imports
 import foleon1Project from "../../public/images/projects/foleon-1.webp";
 import foleon2Project from "../../public/images/projects/foleon-2.webp";
@@ -322,6 +326,21 @@ export default nbMainSpace = [
             },
           ],
         },
+        {
+          id: 9,
+          title: "TiaGO Robot",
+          description:
+            "Creation of a demo program to make the TiaGO robot move, grab objects and interact with its environment for an open doors day at school",
+          techno: "Linux, Python, ROS1",
+          categories: ["School Project"],
+          images: [
+            {
+              key: 1,
+              img: "",
+              imgAlt: "",
+            },
+          ],
+        },
       ],
     },
   },
@@ -329,12 +348,12 @@ export default nbMainSpace = [
     key: 5,
     name: "🎓 Education",
     deploy: {
-      texts: [
-        "Option 'Computer Science and Digital Science' for 3 years.",
-        "PBL Method (Problem Based Learning), with group projects and diverse Engineering topics in General.",
-        "Continuing the PBL Method, only working on IT projects and project management. The last two years are going to be more focused on a specialty that we're supposed to pick in the beginning of the 4th year.",
-        "Academic Semester abroad in Malaysia, in a University that is specialized in IT, with a focus on AI and Entrepreneurship. Also did a thesis on 'Use of AI to help foreigners relocate into a new country'.",
-      ],
+      // texts: [
+      //   "Option 'Computer Science and Digital Science' for 3 years.",
+      //   "PBL Method (Problem Based Learning), with group projects and diverse Engineering topics in General.",
+      //   "Continuing the PBL Method, only working on IT projects and project management. The last two years are going to be more focused on a specialty that we're supposed to pick in the beginning of the 4th year.",
+      //   "Academic Semester abroad in Malaysia, in a University that is specialized in IT, with a focus on AI and Entrepreneurship. Also did a thesis on 'Use of AI to help foreigners relocate into a new country'.",
+      // ],
       timelineInfo: [
         {
           key: 1,
@@ -342,6 +361,9 @@ export default nbMainSpace = [
           location: "Lycée des Graves",
           location2: "Gradignan, France",
           dates: "2017-2020",
+          img: "",
+          ingAlt: "Lycée des Graves Logo",
+          text: "Scientific Baccalaureate with Option 'Computer Science and Digital Science' for 3 years.",
         },
         {
           key: 2,
@@ -349,6 +371,9 @@ export default nbMainSpace = [
           location: "CESI Bordeaux",
           location2: "Bordeaux, France",
           dates: "2020-2022",
+          img: cesiLogo,
+          ingAlt: "CESI Logo",
+          text: "PBL Method (Problem Based Learning), with group projects and diverse Engineering topics in General.",
         },
         {
           key: 3,
@@ -356,6 +381,9 @@ export default nbMainSpace = [
           location: "CESI Bordeaux",
           location2: "Bordeaux, France",
           dates: "2022-2025",
+          img: cesiLogo,
+          ingAlt: "CESI Logo",
+          text: "Continuing the PBL Method, only working on IT projects and project management. The last two years were more focused on a specialty picked in the beginning of the 4th year. (Software Engineering, Robotics)",
         },
         {
           key: 4,
@@ -363,6 +391,9 @@ export default nbMainSpace = [
           location: "UniKL MIIT",
           location2: "Kuala Lumpur, Malaysia",
           dates: "2024",
+          img: uniklLogo,
+          ingAlt: "UniKL MIIT Logo",
+          text: "Academic Semester abroad in Malaysia for my studies in France, in a University that is specialized in IT, with a focus on AI and Entrepreneurship. Also did a thesis on 'Use of AI to help foreigners relocate into a new country'.",
         },
       ],
     },

@@ -13,12 +13,6 @@ export function FourthBlock({ deploy }) {
 
   //affichage
   return (
-    // <div className="grid grid-rows-2 p-4 grid-flow-col gap-4 h-full w-auto overflow-x-auto overflow-y-hidden">
-    //   {deploy.map((nb) => (
-    //     // <FlipCard content={nb} />
-    //     <CardProject cardInfo={nb} />
-    //   ))}
-    // </div>
     <div class="flex flex-col h-full w-full max-h-full p-4">
       <div class="flex w-full h-[6%] mb-4 items-center">
         <div class="flex w-auto h-full divide-x divide-gray-200 border border-gray-200 rounded-lg justify-center items-center">
