@@ -5,24 +5,45 @@ import { FourthBlock } from "../molecules/FourthBlock";
 // import { FifthBlock } from "../molecules/FifthBlock";
 import { SixthBlock } from "../molecules/SixthBlock";
 import { SeventhBlock } from "../molecules/SeventhBlock";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { gsap } from "gsap";
 
 import { vertFadeInScroll } from "../../../gsap/verticalFadeIn";
 import { horFadeInScroll } from "../../../gsap/horizontalFadeIn";
 import { useNavigation } from "../../context/NavigationContext"; // Import the navigation hook
 
-import "./MainSpaceBackground.css";
+import "./MainSpace.css";
 
 export function MainSpace({ nb }) {
   let horRef = React.useRef(null);
+  const [isWiggling, setIsWiggling] = useState(false);
   
   // Use the navigation context
   const { goToNextSection } = useNavigation();
 
+  // Effect for the horizontal fade in
   React.useEffect(() => {
     horFadeInScroll(horRef.current, +80);
   }, []);
+  
+  // Effect for the wiggle animation
+  useEffect(() => {    
+    // Reset wiggling state when section changes
+    setIsWiggling(false);
+    
+    // Start a new timer for this section
+    const wiggleInterval = setInterval(() => {
+      setIsWiggling(true);
+      setTimeout(() => {
+        setIsWiggling(false);
+      }, 800);
+    }, 10000);
+    
+    // Clean up the interval when component unmounts or section changes
+    return () => {
+      clearInterval(wiggleInterval);
+    };
+  }, [nb.key]);
 
   let nbDeploy;
   switch (nb.key) {
@@ -62,18 +83,20 @@ export function MainSpace({ nb }) {
   return (
     <>
       <div
-        className="flex w-full h-full max-h-full overflow-hidden shadow-lg rounded-lg border border-gray-200 transition duration-200"
+        className="relative flex w-full h-full max-h-full overflow-visible"
         ref={horRef}
       >
-        <div className="flex w-full h-full max-h-full font-primary rounded bg-white dark:bg-zinc-600 transition-all duration-200">
-          <div className="flex h-full max-h-full w-full">{nbDeploy}</div>
+        <div className="flex w-full h-full max-h-full overflow-hidden shadow-lg rounded-lg border border-gray-200 transition duration-200">
+          <div className="flex w-full h-full max-h-full font-primary rounded bg-white dark:bg-zinc-600 transition-all duration-200">
+            <div className="flex h-full max-h-full w-full">{nbDeploy}</div>
+          </div>
         </div>
         {nb.key === 6 ? null : (
         <div
           onClick={goToNextSection}
-          class="absolute flex rounded-full px-3 py-2 bg-pink-500 text-white text-sm font-medium cursor-pointer -bottom-5 -right-5 z-[1000] select-none"
+          className={`absolute font-scrib flex rounded-full px-4 py-3 bg-red-500 text-white text-md cursor-pointer -bottom-5 -right-5 z-[1000] select-none hover:bg-red-600 active:scale-95 transition-all duration-200 shadow-md hover:shadow-sm active:shadow-none ${isWiggling ? 'wiggle-button' : ''}`}
         >
-          Next
+          Next section
         </div>)}
       </div>
     </>

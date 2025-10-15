@@ -286,4 +286,12 @@ export default SkillsData = [
     linkTo: "https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API",
     categories: ["Back-end", "Other"],
   },
+  {
+    name: "CucumberTS",
+    img: "",
+    imgAlt: "CucumberTS Logo",
+    description: "Testing framework for TypeScript",
+    linkTo: "https://cucumber.io/docs/installation/javascript/",
+    categories: ["Other"],
+  },
 ];

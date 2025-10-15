@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import { ImageCarousel } from "../carousel/Carousel";
+import SkillsData from "../../../data/SkillsData";
+import { SkillsCard } from "./SkillsCard";
 
 export function CardProject({ cardInfo }) {
   //state
@@ -55,7 +57,7 @@ export function CardProject({ cardInfo }) {
                onClick={closePopup}>
             {/* Modal Content */}
             <div 
-              className="relative w-3/4 h-3/4 bg-white dark:bg-zinc-800 rounded-xl p-6 shadow-2xl overflow-y-hidden"
+              className="relative w-4/5 h-4/5 bg-white dark:bg-zinc-800 rounded-xl p-6 shadow-2xl overflow-y-hidden"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close button */}
@@ -76,7 +78,7 @@ export function CardProject({ cardInfo }) {
               </div>
               
               {/* Modal Body - You can customize this part as needed */}
-              <div className="text-black dark:text-white border border-gray-200 rounded-lg h-[92%] p-4 overflow-auto">
+              <div className="text-black dark:text-white border shadow-inner border-gray-200 rounded-lg h-[92%] p-4 overflow-auto">
                 {/* Project details will go here */}
                 {cardInfo.description && <p className="mb-4">{cardInfo.description}</p>}
                 
@@ -84,8 +86,15 @@ export function CardProject({ cardInfo }) {
                 {cardInfo.images && cardInfo.images.length > 0 && (
                   <ImageCarousel images={cardInfo.images} />
                 )}
-                <div class="flex w-full h-auto overflow-auto mt-4">
-                  testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest
+                <div class="flex shadow-md flex-wrap gap-4 w-full h-auto mt-4 p-4 border border-gray-200 rounded-lg">
+                  {cardInfo.techno.map((tech) => {
+                    const skill = SkillsData.find((s) => s.name === tech);
+                    console.log(skill);
+                    if (!skill) return null;
+                    return (
+                      <SkillsCard skill={skill} />
+                    )
+                  })}
                 </div>
               </div>
             </div>

@@ -194,7 +194,7 @@ export default nbMainSpace = [
           title: "Real-time editing feature",
           description:
             "I had the opportunity to work on a 'Real-Time editing feature' on a complex Digital Content Creation Platform during my last internship. This feature was Full-Stack, I had to create the whole features logic. Project was very important for the company so i'm glad I could have a great impact for their platform.",
-          techno: "React, NestTS, CucumberTS, Kubernetes",
+          techno: ["React", "NestJS", "CucumberTS", "Kubernetes"],
           categories: ["Professionnal Project"],
           images: [
             {

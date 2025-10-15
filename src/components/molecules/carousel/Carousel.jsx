@@ -26,7 +26,7 @@ export function ImageCarousel({ images }) {
   };
   
   return (
-    <div className="relative w-full h-[35rem] border border-gray-200 rounded-lg">
+    <div className="relative w-full h-[35rem] border border-gray-200 shadow-md rounded-lg">
       {/* Main image display */}
       <div className="relative w-full h-[88%] overflow-hidden pt-4">
         <img 
