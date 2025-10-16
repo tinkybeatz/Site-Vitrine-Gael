@@ -35,7 +35,7 @@ export function SideNavbar({ nbMainSpace }) {
             activeSection === "home"
               ? "bg-gray-100 dark:bg-gray-700"
               : "bg-white dark:bg-zinc-600"
-          } border border-gray-100 shadow-sm hover:shadow-none w-auto justify-items-center lg:text-xs sm:text-[14px] align-items-center dark:text-white py-2 px-3 transition-all duration-200 font-semi-bold leading-normal cursor-pointer`}
+          } border border-gray-200 shadow-sm hover:shadow-none w-auto justify-items-center lg:text-xs sm:text-[14px] align-items-center dark:text-white py-2 px-3 transition-all duration-200 font-semi-bold leading-normal cursor-pointer`}
         >
           🏠
         </button>
@@ -55,7 +55,7 @@ export function SideNavbar({ nbMainSpace }) {
               activeSection === `section-${section.key}`
                 ? "bg-gray-100 dark:bg-gray-700"
                 : "bg-white dark:bg-zinc-600"
-            } border border-gray-100 shadow-sm hover:shadow-none w-auto justify-items-center lg:text-xs sm:text-[14px] align-items-center dark:text-white py-2 px-3 transition-all duration-200 font-semi-bold leading-normal cursor-pointer`}
+            } border border-gray-200 shadow-sm hover:shadow-none w-auto justify-items-center lg:text-xs sm:text-[14px] align-items-center dark:text-white py-2 px-3 transition-all duration-200 font-semi-bold leading-normal cursor-pointer`}
           >
             {section.name.match(/^\p{Emoji}/u)?.[0] || section.key}
           </button>
@@ -67,14 +67,14 @@ export function SideNavbar({ nbMainSpace }) {
 
       <button
         onClick={() => goToPrevSection()}
-        class={`flex rounded-full hover:bg-gray-100 border border-gray-100 shadow-sm hover:shadow-none w-auto justify-items-center lg:text-xs sm:text-[14px] align-items-center dark:text-white py-2 px-3 transition-all duration-200 font-semi-bold leading-normal cursor-pointer`}
+        class={`flex rounded-full hover:bg-gray-100 border border-gray-200 shadow-sm hover:shadow-none w-auto justify-items-center lg:text-xs sm:text-[14px] align-items-center dark:text-white py-2 px-3 transition-all duration-200 font-semi-bold leading-normal cursor-pointer`}
       >
         ⬆️
       </button>
 
       <button
         onClick={() => goToNextSection()}
-        class={`flex rounded-full hover:bg-gray-100 border border-gray-100 shadow-sm hover:shadow-none w-auto justify-items-center lg:text-xs sm:text-[14px] align-items-center dark:text-white py-2 px-3 transition-all duration-200 font-semi-bold leading-normal cursor-pointer`}
+        class={`flex rounded-full hover:bg-gray-100 border border-gray-200 shadow-sm hover:shadow-none w-auto justify-items-center lg:text-xs sm:text-[14px] align-items-center dark:text-white py-2 px-3 transition-all duration-200 font-semi-bold leading-normal cursor-pointer`}
       >
         ⬇️
       </button>
@@ -103,7 +103,7 @@ export function SideNavbar({ nbMainSpace }) {
 
       <a
         href={Resume}
-        class="flex dark:bg-zinc-600 hover:bg-gray-100 bg-white border border-gray-100 shadow-sm hover:shadow-none rounded-full w-auto text-black justify-items-center lg:text-xs sm:text-[14px] align-items-center dark:text-white py-2 px-[10px] transition-all duration-200 font-medium leading-normal cursor-pointer"
+        class="flex dark:bg-zinc-600 hover:bg-gray-100 bg-white border border-gray-200 shadow-sm hover:shadow-none rounded-full w-auto text-black justify-items-center lg:text-xs sm:text-[14px] align-items-center dark:text-white py-2 px-[10px] transition-all duration-200 font-medium leading-normal cursor-pointer"
         download="Resume Gael"
       >
         CV

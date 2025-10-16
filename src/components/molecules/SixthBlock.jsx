@@ -75,7 +75,7 @@ export function SixthBlock({ deploy }) {
                   {info.img && (
                     <div class="h-full aspect-square flex items-center justify-center">
                       {React.cloneElement(info.img, {
-                        style: { fontSize: "1.5rem" },
+                        style: { fontSize: "1rem" },
                       })}
                     </div>
                   )}
@@ -112,7 +112,7 @@ export function SixthBlock({ deploy }) {
                   class="bg-white border shadow-md cursor-pointer hover:bg-gray-200 border-gray-200 flex h-[2.5rem] w-[2.5rem] items-center justify-center rounded-full"
                 >
                   {React.cloneElement(connect.img, {
-                    style: { fontSize: "1.5rem" },
+                    style: { fontSize: "1rem" },
                   })}
                 </a>
               ))}
@@ -205,7 +205,7 @@ export function SixthBlock({ deploy }) {
                 className={`rounded-lg h-2/3 text-white text-sm shadow-md hover:shadow-none cursor-pointer ${
                   isSubmitting
                     ? "bg-gray-400 cursor-not-allowed"
-                    : "bg-blue-500 hover:bg-blue-600"
+                    : "bg-green-500 hover:bg-green-600"
                 }`}
               >
                 {isSubmitting ? "Sending..." : "Send"}

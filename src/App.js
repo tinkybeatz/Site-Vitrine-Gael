@@ -47,15 +47,25 @@ function App() {
               GAËL DELOUIS
             </h1>
           </div>
-          <div className="text-xl font-light flex xl:h-[15%] justify-center">
+          <div className="text-xl font-light flex xl:h-[15%] justify-center gap-3">
             <div class="flex h-min bg-white border border-gray-200 rounded-full pt-2 pb-2 pr-3 px-4 shadow-sm">
               Full-Stack Web Developper | Product Engineer | Your next{" "}
               <span class="pl-1 pr-2 font-semibold italic">best</span> hire
             </div>
+            <div class="flex h-min gap-2 items-center bg-white border border-gray-200 rounded-full pt-2 pb-2 pr-3 px-4 shadow-sm font-medium">
+              Available to work now
+              {/* <div class="blink_me"></div> */}
+              <div class="ring-container">
+                <div class="ringring"></div>
+                <div class="circle"></div>
+              </div>
+            </div>
           </div>
           <div className="items-center text-xl font-light flex flex-col xl:h-[45%]">
             <div class="flex flex-col items-center w-[60%] px-4 py-4 h-min rounded-[2rem] shadow-lg bg-white border border-gray-200">
-              <p class="text-center text-lg font-medium underline underline-offset-4 decoration-red-600">All sections</p>
+              <p class="text-center text-lg font-medium underline underline-offset-4 decoration-red-600">
+                All sections
+              </p>
               <div className="flex flex-wrap justify-center gap-3 mt-3">
                 {nbMainSpace.map((section) => (
                   <NavigationButtons section={section} />

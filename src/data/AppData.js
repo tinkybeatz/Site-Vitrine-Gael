@@ -97,13 +97,17 @@ export default nbMainSpace = [
       timelineInfo: [
         {
           key: 1,
-          title: "System Administrator, IT Support - Intern",
+          title: "System Administrator, IT Support",
           location: "Omnitech Security",
           location2: "Bordeaux, France",
           dates: "April 2022 - July 2022",
           img: "https://media.glassdoor.com/sqll/5208811/omnitech-security-squarelogo-1646217837429.png",
           imgAlt: "Omnitech Security Logo",
-          text: "During this internship, i was a system administrator and had to configure serveral servers, help the collegues and fix their computer problems 🛠️. This was my first real professionnal experience, and even if it doesnt reallt match my current ambitions, it was a great experience to start with 👍.",
+          text: [
+            "System administrator, configuration of several servers. 🌐",
+            "Helped the collegues and fix their computer problems. 🛠️",
+            "First real professionnal experience, great experience to start with 👍.",
+          ],
         },
         // {
         //   key: 2,
@@ -117,43 +121,59 @@ export default nbMainSpace = [
         // },
         {
           key: 3,
-          title: "Web Developper BAC +3 - Intern",
+          title: "Web Developper BAC +3",
           location: "Orange",
           location2: "Pessac, France",
           dates: "January 2023 - April 2023",
           img: "https://freelogopng.com/images/all_img/1683000849orange-telecom-logo.png",
           imgAlt: "Orange Logo",
-          text: "First real experience as a web developper. Worked on an internal platform, designed from scratch, to help handle all telecom subscriptions 📞. Learned a lot about web developpement and project management methodologies.",
+          text: [
+            "First real experience as a web developper. 💻",
+            "Worked on an internal platform, designed from scratch, to help handle all telecom subscriptions. 📞",
+            "Learned a lot about web developpement and project management methodologies. Agile, Scrum, Kanban, etc... 🏃‍♂️",
+          ],
         },
         {
           key: 4,
-          title: "Web Developper - Freelance",
+          title: "Web Developper",
           location: "TB PAYE Conseils",
           location2: "Bordeaux, France",
           dates: "March 2023 - May 2023",
           img: "",
           imgAlt: "",
-          text: "This was my first freelance job. Team of 3 working on a Wordpress website for an accounting company. Made some custom plugins and themes to fit the client's needs 🔌.",
+          text: [
+            "First freelance experience as a web developper. 💻",
+            "Team of 3 working on a Wordpress website for an accounting company. 💰",
+            "Made some custom plugins and themes to fit the client's needs. 🔌",
+          ],
         },
         {
           key: 5,
-          title: "Engineer Full-Stack Web Developper - Intern",
+          title: "Engineer Full-Stack Web Developper",
           location: "Foleon",
           location2: "Amsterdam, Netherlands",
           dates: "September 2023 - February 2024",
           img: "https://thewealthmosaic.s3.amazonaws.com/media/Logo_Foleon.png",
           imgAlt: "Foleon Logo",
-          text: "First international Professionnal Experience. Added a 'Realtime Edition' feature on an existing online content creation platform ⏱️⚡. Fascinating project (still my favourite experience so far ❤️), worked on the whole stack (ReactTS, NestTS, CucumberTS, Kubernetes).",
+          text: [
+            "First international Professionnal Experience. 🌍",
+            "Added a 'Realtime Edition' feature on an existing online content creation platform. ⏱️⚡",
+            "Fascinating project, still my favourite experience so far ❤️",
+          ],
         },
         {
           key: 6,
-          title: "Full Stack Web Developper - Freelance",
+          title: "Full Stack Web Developper",
           location: "Kamileon Fitness",
           location2: "Kuala Lumpur, Malaysia",
           dates: "April 2024 - January 2025",
           img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnEHAJ3G4R89WRUbWjn4cqQdtE1X4Eeviwyg&s",
           imgAlt: "Kamileon Fitness Logo",
-          text: "Revamped a few websites for a fitness company in Malaysia 🏋️‍♂️. Some of them contain booking systems and online shoping.",
+          text: [
+            "Second international Professionnal Experience. 🌍",
+            "Revamped a few websites for a fitness company in Malaysia. 🏋️‍♂️",
+            "Some of them contain booking systems and online shopping. 🛒",
+          ],
         },
         {
           key: 7,
@@ -163,7 +183,11 @@ export default nbMainSpace = [
           dates: "February 2025 - August 2025",
           img: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Hager_Group_Logo.svg/2560px-Hager_Group_Logo.svg.png",
           imgAlt: "Hager Group Logo",
-          text: "Worked on the engineering and developpement of a new internal tool for Hager Group. Worked on CI/CD, DB, Unit tests, automations, etc... Fortified even more my web developpement (Angular, Python Flask, Azure DevOps and Azure, Jasmine, CI/CD automations, SQL) and agile management skills.",
+          text: [
+            "Worked on the engineering and developpement of a new internal tool for Hager Group. ⚡",
+            "Did the CI/CD, DB, Unit tests, automations, etc... 🛠️",
+            "Fortified even more my web developpement and agile management skills. 💪",
+          ],
         },
       ],
     },
@@ -224,7 +248,7 @@ export default nbMainSpace = [
           title: "VR Online Game + Map Editor",
           description:
             "Created an online platform game (Fall-Guys style) and a VR Map Editor for that same game. Project was made for a school project, we had a lot of fun working on it and learning a lot about Unity.",
-          techno: "Unity, C#, Photon Unity, XR Interaction Toolkit",
+          techno: ["Unity", "C#", "Photon Unity", "XR Interaction Toolkit"],
           categories: ["School Project"],
           images: [
             {
@@ -247,7 +271,15 @@ export default nbMainSpace = [
           title: "Websites (Full Stack)",
           description:
             "I've developped many websites for many reasons during my life, some were for school projects, others were training projects, some others were professionnal projects...",
-          techno: "HTML, CSS, PHP, JS, Laravel, Symfony, Wordpress",
+          techno: [
+            "HTML",
+            "CSS",
+            "PHP",
+            "JS",
+            "Laravel",
+            "Symfony",
+            "Wordpress",
+          ],
           categories: ["School Project"],
           images: [
             {
@@ -262,7 +294,7 @@ export default nbMainSpace = [
           title: "Weather Station",
           description:
             "Creation and developement of a weather station using several sensors",
-          techno: "C/Arduino",
+          techno: ["C Arduino"],
           categories: ["School Project"],
           images: [
             {
@@ -277,7 +309,7 @@ export default nbMainSpace = [
           title: "Audio encryptor/decryptor",
           description:
             "Creation and developement of an audio signal encryption/decryption system",
-          techno: "Python",
+          techno: ["Python"],
           categories: ["School Project"],
           images: [
             {
@@ -292,7 +324,7 @@ export default nbMainSpace = [
           title: "CRUD Softwares",
           description:
             "Creation and developement of a database management application (and many more CRUDs)",
-          techno: "C++, C#",
+          techno: ["C++", "C#"],
           categories: ["School Project"],
           images: [
             {
@@ -307,7 +339,7 @@ export default nbMainSpace = [
           title: "VM Server",
           description:
             "Configuration of a VM Server during an internship (also including the server bios update, whole server firmware configuration, RAID configuration, proxy configuration)",
-          techno: "Proxmox VE",
+          techno: ["Proxmox VE"],
           categories: ["School Project"],
           images: [
             {
@@ -322,7 +354,7 @@ export default nbMainSpace = [
           title: "Digital Password Vault",
           description:
             "Coding of a digital password vault using arduino online IDE, simulating the hardware, 4 digits password",
-          techno: "Autodesk TinkerCAD, C/Arduino",
+          techno: ["Autodesk TinkerCAD", "C/Arduino"],
           categories: ["School Project"],
           images: [
             {
@@ -337,7 +369,7 @@ export default nbMainSpace = [
           title: "TiaGO Robot",
           description:
             "Creation of a demo program to make the TiaGO robot move, grab objects and interact with its environment for an open doors day at school",
-          techno: "Linux, Python, ROS1",
+          techno: ["Linux", "Python", "ROS1"],
           categories: ["School Project"],
           images: [
             {
@@ -369,7 +401,11 @@ export default nbMainSpace = [
           dates: "2017-2020",
           img: "",
           ingAlt: "Lycée des Graves Logo",
-          text: "Scientific Baccalaureate with Option 'Computer Science and Digital Science' for 3 years.",
+          text: [
+            "Scientific Baccalaureate. 🎓",
+            "Option 'Computer Science and Digital Science' for 3 years. 💻",
+            "Graduated with Honours (Mention Assez Bien). 👍",
+          ],
         },
         {
           key: 2,
@@ -379,7 +415,11 @@ export default nbMainSpace = [
           dates: "2020-2022",
           img: cesiLogo,
           ingAlt: "CESI Logo",
-          text: "PBL Method (Problem Based Learning), with group projects and diverse Engineering topics in General.",
+          text: [
+            "PBL Method (Problem Based Learning). 🧠",
+            "Group projects and diverse Engineering topics in General. 🎯",
+            "First time approaching professional IT topics. 💻",
+          ]
         },
         {
           key: 3,
@@ -389,7 +429,11 @@ export default nbMainSpace = [
           dates: "2022-2025",
           img: cesiLogo,
           ingAlt: "CESI Logo",
-          text: "Continuing the PBL Method, only working on IT projects and project management. The last two years were more focused on a specialty picked in the beginning of the 4th year. (Software Engineering, Robotics)",
+          text: [
+            "Continuing the PBL Method. 🧠",
+            "Last two years focused on Software Engineering, Robotics and mostly Project Management. 🚀",
+            "Graduating with an Engineering Degree (Master's equivalent). 🎓",
+          ]
         },
         {
           key: 4,
@@ -399,7 +443,12 @@ export default nbMainSpace = [
           dates: "2024",
           img: uniklLogo,
           ingAlt: "UniKL MIIT Logo",
-          text: "Academic Semester abroad in Malaysia for my studies in France, in a University that is specialized in IT, with a focus on AI and Entrepreneurship. Also did a thesis on 'Use of AI to help foreigners relocate into a new country'.",
+          text: [
+            "Academic Semester abroad in Malaysia for my studies in France. 🇲🇾🇫🇷",
+            "University specialized in IT, with a focus on AI and Entrepreneurship. 🤖",
+            "Did a thesis on 'Use of AI to help foreigners relocate into a new country'. 📜",
+          ]
+          // text: "Academic Semester abroad in Malaysia for my studies in France, in a University that is specialized in IT, with a focus on AI and Entrepreneurship. Also did a thesis on 'Use of AI to help foreigners relocate into a new country'.",
         },
       ],
     },

@@ -6,11 +6,17 @@ export function SkillsCard({ skill }) {
       }
       class="flex h-[5.5rem] shadow-sm w-auto rounded-lg border gap-2 border-gray-200 p-2"
     >
-      <img
-        src={skill.img}
-        alt={skill.imgAlt}
-        class="rounded-md aspect-square h-full"
-      />
+      {skill.img !== "" ? (
+        <img
+          src={skill.img}
+          alt={skill.imgAlt}
+          class="rounded-md aspect-square h-full"
+        />
+      ) : (
+        <div class="flex h-full aspect-square rounded-md items-center justify-center bg-gray-200">
+          No logo
+        </div>
+      )}
       <div class="flex flex-col justify-center">
         <p class="text-start leading-5">{skill.name}</p>
         <p class="text-sm text-start text-gray-400 pb-0.5 leading-4">
