@@ -423,7 +423,7 @@ export default nbMainSpace = [
         },
         {
           title: "Whatsapp",
-          value: "+60 17 749 0717",
+          value: "Send me a message on Whatsapp",
           href: "https://wa.me/60177490717",
           img: <WhatsAppOutlined />,
         },
@@ -437,13 +437,18 @@ export default nbMainSpace = [
       connect: [
         {
           title: "GitHub",
-          href: "",
+          href: "https://github.com/tinkybeatz",
           img: <GithubOutlined />,
         },
         {
           title: "LinkedIn",
-          href: "",
+          href: "https://www.linkedin.com/in/gaël-delouis-534509212",
           img: <LinkedinOutlined />,
+        },
+        {
+          title: "Mail",
+          href: "",
+          img: <MailOutlined />,
         },
       ],
       // {
