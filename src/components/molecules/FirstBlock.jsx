@@ -42,8 +42,6 @@ export function FirstBlock({ deploy }) {
           </p>
           <div class="flex flex-col pb-4">
             <div class="flex">
-              <p class="text-gray-400 font-light pr-2">🎂 22 years old</p>
-              <p class="pr-2">&bull;</p>
               <p class="text-gray-400 font-light pr-2">
                 📍 Kuala Lumpur, Malaysia
               </p>

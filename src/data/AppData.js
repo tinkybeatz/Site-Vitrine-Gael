@@ -3,6 +3,8 @@ import {
   PhoneOutlined,
   GithubOutlined,
   LinkedinOutlined,
+  WhatsAppOutlined,
+  EnvironmentOutlined,
 } from "@ant-design/icons";
 
 import SkillsData from "./SkillsData.js";
@@ -15,6 +17,10 @@ import uniklLogo from "../../public/images/logos/unikl.png";
 import foleon1Project from "../../public/images/projects/foleon-1.webp";
 import foleon2Project from "../../public/images/projects/foleon-2.webp";
 
+// // Icons import
+// import mailIcon from "../../public/images/icons/mail.png";
+// import phoneIcon from "../../public/images/icons/phone.png";
+
 export default nbMainSpace = [
   {
     key: 1,
@@ -22,7 +28,7 @@ export default nbMainSpace = [
     deploy: {
       text: "I'm Gaël, also known as 'Tinky'. I'm a full-stack web developer 💻 and i just graduated from an IT Engineering school in Bordeaux, France 🎓. I'm passionate about tech, problem solving and mostly coding.",
       text2:
-        "Even though i'm passionate about IT, I also have other passions and personality traits that make me who I am today.",
+        "Even though i'm passionate about IT, I also have other passions and personality traits.",
       passions: [
         {
           key: 1,
@@ -401,37 +407,75 @@ export default nbMainSpace = [
   {
     key: 6,
     name: "📞 Contact Me",
-    deploy: [
-      {
-        key: 1,
-        title: "Mail Pro",
-        value: "gaedelouis@gmail.com",
-        href: "",
-        img: <MailOutlined style={{ fontSize: "xl:24px lg:20px sm:12px" }} />,
-      },
-      {
-        key: 2,
-        title: "Phone Number",
-        value: "+33 7 62 35 81 00",
-        href: "",
-        img: <PhoneOutlined style={{ fontSize: "xl:24px lg:20px sm:12px" }} />,
-      },
-      {
-        key: 3,
-        title: "LinkedIn",
-        value: "",
-        href: "https://www.linkedin.com/in/ga%C3%ABl-delouis-534509212/",
-        img: (
-          <LinkedinOutlined style={{ fontSize: "xl:24px lg:20px sm:12px" }} />
-        ),
-      },
-      {
-        key: 4,
-        title: "GitHub",
-        value: "",
-        href: "https://github.com/tinkybeatz",
-        img: <GithubOutlined style={{ fontSize: "xl:24px lg:20px sm:12px" }} />,
-      },
-    ],
+    deploy: {
+      contact_informations: [
+        {
+          title: "Email",
+          value: "gael.delouis.pro@gmail.com",
+          href: "mailto:gael.delouis.pro@gmail.com",
+          img: <MailOutlined />,
+        },
+        {
+          title: "Phone",
+          value: "+60 17 749 0717",
+          href: "tel:+60177490717",
+          img: <PhoneOutlined />,
+        },
+        {
+          title: "Whatsapp",
+          value: "+60 17 749 0717",
+          href: "https://wa.me/60177490717",
+          img: <WhatsAppOutlined />,
+        },
+        {
+          title: "Location",
+          value: "Kuala Lumpur, Malaysia",
+          href: "",
+          img: <EnvironmentOutlined />,
+        },
+      ],
+      connect: [
+        {
+          title: "GitHub",
+          href: "",
+          img: <GithubOutlined />,
+        },
+        {
+          title: "LinkedIn",
+          href: "",
+          img: <LinkedinOutlined />,
+        },
+      ],
+      // {
+      //   key: 1,
+      //   title: "Mail Pro",
+      //   value: "gaedelouis@gmail.com",
+      //   href: "",
+      //   img: <MailOutlined style={{ fontSize: "xl:24px lg:20px sm:12px" }} />,
+      // },
+      // {
+      //   key: 2,
+      //   title: "Phone Number",
+      //   value: "+33 7 62 35 81 00",
+      //   href: "",
+      //   img: <PhoneOutlined style={{ fontSize: "xl:24px lg:20px sm:12px" }} />,
+      // },
+      // {
+      //   key: 3,
+      //   title: "LinkedIn",
+      //   value: "",
+      //   href: "https://www.linkedin.com/in/ga%C3%ABl-delouis-534509212/",
+      //   img: (
+      //     <LinkedinOutlined style={{ fontSize: "xl:24px lg:20px sm:12px" }} />
+      //   ),
+      // },
+      // {
+      //   key: 4,
+      //   title: "GitHub",
+      //   value: "",
+      //   href: "https://github.com/tinkybeatz",
+      //   img: <GithubOutlined style={{ fontSize: "xl:24px lg:20px sm:12px" }} />,
+      // },
+    },
   },
 ];
