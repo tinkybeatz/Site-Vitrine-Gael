@@ -7,7 +7,7 @@ export function SixthBlock({ deploy }) {
   return (
     <div class="">
       <div class="xl:flex lg:flex sm:flex-row justify-around rounded-lg bg-gray-300 transition-all duration-200 text-black dark:text-white dark:bg-zinc-600">
-        {deploy.map((nb) => (
+        {/* {deploy.map((nb) => (
           <a href={nb.href == "" ? nb.link : nb.href} target="_blank">
             <div
               className="flex justify-around transition-all text-black dark:text-white duration-200 bg-gray-200 dark:bg-zinc-500 p-2 rounded-lg drop-shadow-md
@@ -19,7 +19,7 @@ export function SixthBlock({ deploy }) {
               </div>
             </div>
           </a>
-        ))}
+        ))} */}
       </div>
     </div>
   );
