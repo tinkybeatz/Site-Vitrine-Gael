@@ -71,6 +71,15 @@ export function SkillsCard({ skill }) {
                       {category}
                     </div>
                   );
+                case "AI Tools":
+                  return (
+                    <div
+                      key={index}
+                      class="text-xs text-center py-0.5 px-2 w-fit rounded-full bg-pink-500 text-white"
+                    >
+                      {category}
+                    </div>
+                  );
                 case "Other":
                   return (
                     <div

@@ -16,6 +16,17 @@ import uniklLogo from "../../public/images/logos/unikl.png";
 // Projects pictures imports
 import foleon1Project from "../../public/images/projects/foleon-1.webp";
 import foleon2Project from "../../public/images/projects/foleon-2.webp";
+import spotifyInsights1 from "../../public/images/projects/spotify-insights-1.png";
+import spotifyInsights2 from "../../public/images/projects/spotify-insights-2.png";
+import foolGuys1 from "../../public/images/projects/fool-guys-1.gif";
+import foolGuys2 from "../../public/images/projects/fool-guys-2.png";
+import Tiago1 from "../../public/images/projects/tiago-1.gif";
+import Tiago2 from "../../public/images/projects/tiago-2.webp";
+import Arduino from "../../public/images/projects/arduino.jpg";
+import AudioEncryption from "../../public/images/projects/audio-encryption.png";
+import ProxmoxVE from "../../public/images/projects/proxmox.jpeg";
+import HagerProject from "../../public/images/projects/hager-project.png";
+import Orange from "../../public/images/projects/orange.jpeg";
 
 // // Icons import
 // import mailIcon from "../../public/images/icons/mail.png";
@@ -224,7 +235,6 @@ export default nbMainSpace = [
     deploy: {
       projects: [
         {
-          id: 1,
           title: "Real-time editing feature",
           description:
             "I had the opportunity to work on a 'Real-Time editing feature' on a complex Digital Content Creation Platform during my last internship. This feature was Full-Stack, I had to create the whole features logic. Project was very important for the company so i'm glad I could have a great impact for their platform.",
@@ -244,68 +254,106 @@ export default nbMainSpace = [
           ],
         },
         {
-          id: 2,
+          title: "Playlist Insights Web App",
+          description:
+            "Web application to analyze and visualize Spotify playlists using the Spotify API. Planning on adding more features : AI-powered analytics (mood, tempo, etc...), user authentification (required by the Spotify API to be able to analyse private playlists), and more... Personal project for fun, to learn more about web development.",
+          techno: ["Angular", "Flask"],
+          categories: ["Personal Project"],
+          link: "https://spotify-insights-ten.vercel.app",
+          images: [
+            {
+              key: 1,
+              img: spotifyInsights1,
+              imgAlt: "Spotify insights 1",
+            },
+            {
+              key: 2,
+              img: spotifyInsights2,
+              imgAlt: "Spotify insights 2",
+            },
+          ],
+        },
+        {
+          title: "Internal Platform for Domotics Catalog Management",
+          description:
+            "Worked on a platform to manage the domotics products catalog for Hager Group. The platform allows to create, update and delete products, categories, etc... It also allows to export data in a normalized format. Project was made using Angular for the front-end, Flask for the back-end and C# .NET Core for the DB extraction algorithm. (No picture because confidential project)",
+          techno: ["Angular", "Flask", "JasmineTS", "Azure", "Azure DevOps", "MySQL", "C#", "C# .NET Core"],
+          categories: ["Professionnal Project"],
+          images: [
+            {
+              key: 1,
+              img: HagerProject,
+              imgAlt: "Hager Project",
+            },
+          ],
+        },
+        {
+          title: "Internal Platform for Telecom Subscriptions",
+          description:
+            "Worked on a platform to manage telecom subscriptions for the biggest telecom operator in France. Engineered the platform from scratch, using Symfony for the back-end and Orange's version of Bootstrap for the front-end. (No picture because confidential project)",
+          techno: ["Symfony", "PHP", "Bootstrap", "Jira"],
+          categories: ["Professionnal Project"],
+          images: [
+            {
+              key: 1,
+              img: Orange,
+              imgAlt: "Orange",
+            },
+          ],
+        },
+        {
           title: "VR Online Game + Map Editor",
           description:
             "Created an online platform game (Fall-Guys style) and a VR Map Editor for that same game. Project was made for a school project, we had a lot of fun working on it and learning a lot about Unity.",
-          techno: ["Unity", "C#", "Photon Unity", "XR Interaction Toolkit"],
+          techno: ["Unity C#", "C#", "Photon Unity", "XR Interaction Toolkit"],
           categories: ["School Project"],
           images: [
             {
               key: 1,
-              img: "",
-              imgAlt: "",
+              img: foolGuys1,
+              imgAlt: "Fool Guys 1",
+            },
+            {
+              key: 2,
+              img: foolGuys2,
+              imgAlt: "Fool Guys 2",
             },
           ],
         },
-        // {
-        //   id: 3,
-        //   title: "This Website !",
-        //   description:
-        //     "This website is my personnal favourite. It's the one I've learned how to use ReactJS, the one I spent the most time on to make it look like nice (I've always focused more on the back-end, working on the front-end is very interesting as well !)",
-        //   techno: "ReactJS, Parcel, Vercel",
-        //   categories: ["School Project"]
-        // },
         {
-          id: 3,
-          title: "Websites (Full Stack)",
+          title: "TiaGO Robot",
           description:
-            "I've developped many websites for many reasons during my life, some were for school projects, others were training projects, some others were professionnal projects...",
-          techno: [
-            "HTML",
-            "CSS",
-            "PHP",
-            "JS",
-            "Laravel",
-            "Symfony",
-            "Wordpress",
-          ],
+            "Creation of a demo program to make the TiaGO robot move, grab objects and interact with its environment for an open doors day at school. The robot was programmed to give people flyers about the different courses available at school, with an AI voice assistant and automatic decision making.",
+          techno: ["Linux", "Python", "ROS 1"],
           categories: ["School Project"],
           images: [
             {
               key: 1,
-              img: "",
-              imgAlt: "",
+              img: Tiago1,
+              imgAlt: "TiaGO Robot 1",
+            },
+            {
+              key: 2,
+              img: Tiago2,
+              imgAlt: "TiaGO Robot 2",
             },
           ],
         },
         {
-          id: 4,
           title: "Weather Station",
           description:
             "Creation and developement of a weather station using several sensors",
-          techno: ["C Arduino"],
+          techno: ["Autodesk TinkerCAD", "C Arduino"],
           categories: ["School Project"],
           images: [
             {
               key: 1,
-              img: "",
-              imgAlt: "",
+              img: Arduino,
+              imgAlt: "Arduino Weather Station",
             },
           ],
         },
         {
-          id: 5,
           title: "Audio encryptor/decryptor",
           description:
             "Creation and developement of an audio signal encryption/decryption system",
@@ -314,68 +362,36 @@ export default nbMainSpace = [
           images: [
             {
               key: 1,
-              img: "",
-              imgAlt: "",
+              img: AudioEncryption,
+              imgAlt: "Audio Encryption/Decryption",
             },
           ],
         },
         {
-          id: 6,
-          title: "CRUD Softwares",
-          description:
-            "Creation and developement of a database management application (and many more CRUDs)",
-          techno: ["C++", "C#"],
-          categories: ["School Project"],
-          images: [
-            {
-              key: 1,
-              img: "",
-              imgAlt: "",
-            },
-          ],
-        },
-        {
-          id: 7,
           title: "VM Server",
           description:
             "Configuration of a VM Server during an internship (also including the server bios update, whole server firmware configuration, RAID configuration, proxy configuration)",
           techno: ["Proxmox VE"],
-          categories: ["School Project"],
+          categories: ["Professionnal Project"],
           images: [
             {
               key: 1,
-              img: "",
-              imgAlt: "",
+              img: ProxmoxVE,
+              imgAlt: "Proxmox VE",
             },
           ],
         },
         {
-          id: 8,
           title: "Digital Password Vault",
           description:
             "Coding of a digital password vault using arduino online IDE, simulating the hardware, 4 digits password",
-          techno: ["Autodesk TinkerCAD", "C/Arduino"],
+          techno: ["C Arduino"],
           categories: ["School Project"],
           images: [
             {
               key: 1,
-              img: "",
-              imgAlt: "",
-            },
-          ],
-        },
-        {
-          id: 9,
-          title: "TiaGO Robot",
-          description:
-            "Creation of a demo program to make the TiaGO robot move, grab objects and interact with its environment for an open doors day at school",
-          techno: ["Linux", "Python", "ROS1"],
-          categories: ["School Project"],
-          images: [
-            {
-              key: 1,
-              img: "",
-              imgAlt: "",
+              img: Arduino,
+              imgAlt: "Arduino Password Vault",
             },
           ],
         },
@@ -419,7 +435,7 @@ export default nbMainSpace = [
             "PBL Method (Problem Based Learning). 🧠",
             "Group projects and diverse Engineering topics in General. 🎯",
             "First time approaching professional IT topics. 💻",
-          ]
+          ],
         },
         {
           key: 3,
@@ -433,7 +449,7 @@ export default nbMainSpace = [
             "Continuing the PBL Method. 🧠",
             "Last two years focused on Software Engineering, Robotics and mostly Project Management. 🚀",
             "Graduating with an Engineering Degree (Master's equivalent). 🎓",
-          ]
+          ],
         },
         {
           key: 4,
@@ -447,7 +463,7 @@ export default nbMainSpace = [
             "Academic Semester abroad in Malaysia for my studies in France. 🇲🇾🇫🇷",
             "University specialized in IT, with a focus on AI and Entrepreneurship. 🤖",
             "Did a thesis on 'Use of AI to help foreigners relocate into a new country'. 📜",
-          ]
+          ],
           // text: "Academic Semester abroad in Malaysia for my studies in France, in a University that is specialized in IT, with a focus on AI and Entrepreneurship. Also did a thesis on 'Use of AI to help foreigners relocate into a new country'.",
         },
       ],

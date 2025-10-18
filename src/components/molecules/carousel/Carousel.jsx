@@ -28,7 +28,7 @@ export function ImageCarousel({ images }) {
   return (
     <div className="relative w-full h-[35rem] border border-gray-200 shadow-md rounded-lg">
       {/* Main image display */}
-      <div className="relative w-full h-[88%] overflow-hidden pt-4">
+      <div className={`relative w-full ${images.length > 1 ? "h-[88%] pt-4" : "h-[100%] p-4"} overflow-hidden`}>
         <img 
           src={images[currentIndex].img} 
           alt={images[currentIndex].imgAlt || `Image ${currentIndex + 1}`}

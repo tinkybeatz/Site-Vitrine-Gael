@@ -205,7 +205,7 @@ export function SixthBlock({ deploy }) {
                 className={`rounded-lg h-2/3 text-white text-sm shadow-md hover:shadow-none cursor-pointer ${
                   isSubmitting
                     ? "bg-gray-400 cursor-not-allowed"
-                    : "bg-green-500 hover:bg-green-600"
+                    : "bg-blue-500 hover:bg-blue-600"
                 }`}
               >
                 {isSubmitting ? "Sending..." : "Send"}

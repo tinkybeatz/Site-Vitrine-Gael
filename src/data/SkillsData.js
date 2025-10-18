@@ -28,6 +28,20 @@ import dockerLogo from "../../public/images/logos/docker.png";
 import cArduinoLogo from "../../public/images/logos/cArduino.svg";
 import unityLogo from "../../public/images/logos/unity.png";
 import dotnetcoreLogo from "../../public/images/logos/dotnetcore.png";
+import cursorLogo from "../../public/images/logos/cursor.png";
+import githugCopliotLogo from "../../public/images/logos/github-copilot.webp";
+import warpAiLogo from "../../public/images/logos/warp-ai.jpg";
+import chatgptLogo from "../../public/images/logos/chatgpt.jpg";
+import claudeAiLogo from "../../public/images/logos/claude-ai.png";
+import MySQLLogo from "../../public/images/logos/mysql.png";
+import vercelLogo from "../../public/images/logos/vercel.jpg";
+import websocketLogo from "../../public/images/logos/websocket.png";
+import cucumberLogo from "../../public/images/logos/cucumber.png";
+import jasmineLogo from "../../public/images/logos/jasmine.svg";
+import rosLogo from "../../public/images/logos/ros.png";
+import proxmoxLogo from "../../public/images/logos/proxmox.png";
+import tinkercadLogo from "../../public/images/logos/tinkercad.png";
+import fusion360Logo from "../../public/images/logos/fusion360.png";
 
 export default SkillsData = [
   {
@@ -103,6 +117,46 @@ export default SkillsData = [
     categories: ["Front-end"],
   },
   {
+    name: "Cursor",
+    img: cursorLogo,
+    imgAlt: "Cursor Logo",
+    description: "AI-powered coding assistant",
+    linkTo: "https://www.cursor.so/",
+    categories: ["AI Tools"],
+  },
+  {
+    name: "Github Copilot",
+    img: githugCopliotLogo,
+    imgAlt: "Microsoft Copilot Logo",
+    description: "AI-powered coding assistant",
+    linkTo: "https://copilot.microsoft.com/",
+    categories: ["AI Tools"],
+  },
+  {
+    name: "Warp AI",
+    img: warpAiLogo,
+    imgAlt: "Warp AI Logo",
+    description: "AI-powered terminal",
+    linkTo: "https://warp.dev/",
+    categories: ["AI Tools"],
+  },
+  {
+    name: "ChatGPT",
+    img: chatgptLogo,
+    imgAlt: "ChatGPT Logo",
+    description: "AI-powered conversational agent",
+    linkTo: "https://chat.openai.com/",
+    categories: ["AI Tools"],
+  },
+  {
+    name: "Claude AI",
+    img: claudeAiLogo,
+    imgAlt: "Claude AI Logo",
+    description: "AI-powered conversational agent",
+    linkTo: "https://claude.ai/",
+    categories: ["AI Tools"],
+  },
+  {
     name: "Bootstrap",
     img: bootstrapLogo,
     imgAlt: "Bootstrap Logo",
@@ -135,7 +189,7 @@ export default SkillsData = [
     categories: ["Programming Language"],
   },
   {
-    name: ".NET Core C#",
+    name: "C# .NET Core",
     img: dotnetcoreLogo,
     imgAlt: ".NET Logo",
     description: "Cross-platform framework for C# applications",
@@ -264,7 +318,7 @@ export default SkillsData = [
   },
   {
     name: "MySQL",
-    img: "",
+    img: MySQLLogo,
     imgAlt: "MySQL Logo",
     description: "Relational database for structured data",
     linkTo: "https://www.mysql.com",
@@ -272,7 +326,7 @@ export default SkillsData = [
   },
   {
     name: "Vercel",
-    img: "",
+    img: vercelLogo,
     imgAlt: "Vercel Logo",
     description: "Cloud platform for frontend deployments",
     linkTo: "https://vercel.com",
@@ -280,7 +334,7 @@ export default SkillsData = [
   },
   {
     name: "WebSocket",
-    img: "",
+    img: websocketLogo,
     imgAlt: "WebSocket Logo",
     description: "Protocol for real-time web communication",
     linkTo: "https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API",
@@ -288,10 +342,50 @@ export default SkillsData = [
   },
   {
     name: "CucumberTS",
-    img: "",
+    img: cucumberLogo,
     imgAlt: "CucumberTS Logo",
     description: "Testing framework for TypeScript",
     linkTo: "https://cucumber.io/docs/installation/javascript/",
+    categories: ["Other"],
+  },
+  {
+    name: "JasmineTS",
+    img: jasmineLogo,
+    imgAlt: "JasmineTS Logo",
+    description: "Testing framework for TypeScript",
+    linkTo: "https://jasmine.github.io/",
+    categories: ["Other"],
+  },
+  {
+    name: "ROS 1",
+    img: rosLogo,
+    imgAlt: "ROS 1 Logo",
+    description: "Robot Operating System 1",
+    linkTo: "https://www.ros.org/",
+    categories: ["Other"],
+  },
+  {
+    name: "Proxmox VE",
+    img: proxmoxLogo,
+    imgAlt: "Proxmox VE Logo",
+    description: "Open-source virtualization management platform",
+    linkTo: "https://www.proxmox.com/en/proxmox-ve",
+    categories: ["Other"],
+  },
+  {
+    name: "Autodesk TinkerCAD",
+    img: tinkercadLogo,
+    imgAlt: "Autodesk TinkerCAD Logo",
+    description: "Online 3D design and modeling tool",
+    linkTo: "https://www.tinkercad.com/",
+    categories: ["Other"],
+  },
+  {
+    name: "Autodesk Fusion 360",
+    img: fusion360Logo,
+    imgAlt: "Autodesk Fusion 360 Logo",
+    description: "Powerful CAD and 3D modeling software",
+    linkTo: "https://www.autodesk.com/products/fusion-360/overview",
     categories: ["Other"],
   },
 ];

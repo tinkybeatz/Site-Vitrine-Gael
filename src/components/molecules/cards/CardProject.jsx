@@ -38,11 +38,13 @@ export function CardProject({ cardInfo }) {
         className="shrink-0 divide relative cursor-pointer border border-gray-200 rounded-lg xl:h-auto xl:w-[27rem] lg:h-96 lg:w-80 sm:h-72 sm:w-60 bg-white dark:bg-zinc-700 text-black dark:text-white transition-all duration-200"
       >
         <div className="flex h-4/5 w-full">
-          {cardInfo.images && cardInfo.images.length > 0 && cardInfo.images[0].img !== "" ? (
+          {cardInfo.images &&
+          cardInfo.images.length > 0 &&
+          cardInfo.images[0].img !== "" ? (
             <img
               src={cardInfo.images[0].img}
               alt={cardInfo.images[0].imgAlt}
-              className="rounded-lg object-cover"
+              className="rounded-lg object-fill h-full w-full"
             />
           ) : (
             <div className="flex h-full w-full items-center justify-center bg-gray-200">
@@ -51,7 +53,7 @@ export function CardProject({ cardInfo }) {
           )}
         </div>
         <div className="flex h-1/5 w-full items-center justify-center text-center font-medium">
-          {cardInfo.id}. {cardInfo.title}
+          {cardInfo.title}
         </div>
       </div>
 
@@ -75,7 +77,7 @@ export function CardProject({ cardInfo }) {
                 className="relative w-4/5 h-4/5 bg-white dark:bg-zinc-800 rounded-xl p-6 shadow-2xl overflow-y-hidden"
                 onClick={(e) => e.stopPropagation()}
               >
-                {/* Close button */}
+                {/* Close button
                 <button
                   className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
                   onClick={closePopup}
@@ -94,13 +96,31 @@ export function CardProject({ cardInfo }) {
                       d="M6 18L18 6M6 6l12 12"
                     />
                   </svg>
-                </button>
+                </button> */}
 
                 {/* Modal Header */}
-                <div className="h-[8%]">
+                <div className="h-[8%] pb-4 flex justify-between items-center">
                   <h2 className="text-2xl font-bold text-black dark:text-white">
                     {cardInfo.title}
                   </h2>
+                  <div class="flex items-center gap-3 h-full">
+                    {cardInfo.link && (
+                      <a
+                        href={cardInfo.link}
+                        target="_blank"
+                        className="bg-blue-500 flex h-full content-center items-center justify-center px-3 rounded-full text-white text-sm hover:bg-blue-600 transition-all duration-200 shadow-md hover:shadow-none"
+                      >
+                        Visit Project Page
+                      </a>
+                    )}
+                    {/* Close button */}
+                    <button
+                      className="bg-red-500 flex h-full content-center items-center justify-center px-3 rounded-full text-white text-sm hover:bg-red-600 transition-all duration-200 shadow-md hover:shadow-none"
+                      onClick={closePopup}
+                    >
+                      Close
+                    </button>
+                  </div>
                 </div>
 
                 {/* Modal Body - You can customize this part as needed */}
@@ -111,10 +131,14 @@ export function CardProject({ cardInfo }) {
                   )}
 
                   {/* Image carousel if available */}
-                  {cardInfo.images && cardInfo.images.length > 0 && cardInfo.images[0].img !== "" ? (
+                  {cardInfo.images &&
+                  cardInfo.images.length > 0 &&
+                  cardInfo.images[0].img !== "" ? (
                     <ImageCarousel images={cardInfo.images} />
                   ) : (
-                    <div className="flex h-full w-full items-center justify-center bg-gray-200">No Images Available</div>
+                    <div className="flex h-full w-full items-center justify-center bg-gray-200">
+                      No Images Available
+                    </div>
                   )}
                   <div class="flex shadow-md flex-wrap gap-4 w-full h-auto mt-4 p-4 border border-gray-200 rounded-lg">
                     {cardInfo.techno.map((tech) => {

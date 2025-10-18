@@ -28,6 +28,16 @@ export function ThirdBlock({ deploy }) {
             All skills
           </div>
           <div
+            onClick={() => selectSkills("AI Tools")}
+            class={`flex whitespace-nowrap text-sm px-4 font-medium h-full justify-center items-center py-2 cursor-pointer ${
+              skillSelection === "AI Tools"
+                ? "bg-gray-100 shadow-inner"
+                : "bg-white"
+            }`}
+          >
+            AI Tools
+          </div>
+          <div
             onClick={() => selectSkills("Programming Language")}
             class={`flex whitespace-nowrap text-sm px-4 font-medium h-full justify-center items-center py-2 cursor-pointer ${
               skillSelection === "Programming Language"
