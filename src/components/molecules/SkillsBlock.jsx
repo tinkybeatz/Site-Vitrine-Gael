@@ -3,7 +3,7 @@ import { FlipCard } from "./cards/FlipCard";
 import { useState } from "react";
 import { SkillsCard } from "./cards/SkillsCard";
 
-export function ThirdBlock({ deploy }) {
+export function SkillsBlock({ deploy }) {
   //state
   const [skillSelection, setSkillSelection] = useState("All skills");
 

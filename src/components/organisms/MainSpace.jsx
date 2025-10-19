@@ -1,10 +1,9 @@
-import { FirstBlock } from "../molecules/FirstBlock";
-import { SecondBlock } from "../molecules/SecondBlock";
-import { ThirdBlock } from "../molecules/ThirdBlock";
-import { FourthBlock } from "../molecules/FourthBlock";
-// import { FifthBlock } from "../molecules/FifthBlock";
-import { FifthBlock } from "../molecules/FifthBlock";
-import { SixthBlock } from "../molecules/SixthBlock";
+import { AboutMeBlock } from "../molecules/AboutMeBlock";
+import { ExperiencesBlock } from "../molecules/ExperiencesBlock";
+import { SkillsBlock } from "../molecules/SkillsBlock";
+import { MyWorkBlock } from "../molecules/MyWorkBlock";
+import { EducationBlock } from "../molecules/EducationBlock";
+import { ContactBlock } from "../molecules/ContactBlock";
 import React, { useState, useEffect } from "react";
 import { gsap } from "gsap";
 
@@ -76,27 +75,27 @@ export function MainSpace({ nb }) {
   let nbDeploy;
   switch (nb.key) {
     case 1:
-      nbDeploy = <FirstBlock deploy={nb.deploy} />;
+      nbDeploy = <AboutMeBlock deploy={nb.deploy} />;
       break;
 
     case 2:
-      nbDeploy = <SecondBlock deploy={nb.deploy} />;
+      nbDeploy = <ExperiencesBlock deploy={nb.deploy} />;
       break;
 
     case 3:
-      nbDeploy = <ThirdBlock deploy={nb.deploy} />;
+      nbDeploy = <SkillsBlock deploy={nb.deploy} />;
       break;
 
     case 4:
-      nbDeploy = <FourthBlock deploy={nb.deploy} />;
+      nbDeploy = <MyWorkBlock deploy={nb.deploy} />;
       break;
 
     case 5:
-      nbDeploy = <FifthBlock deploy={nb.deploy} />;
+      nbDeploy = <EducationBlock deploy={nb.deploy} />;
       break;
 
     case 6:
-      nbDeploy = <SixthBlock deploy={nb.deploy} />;
+      nbDeploy = <ContactBlock deploy={nb.deploy} />;
       break;
 
     default:

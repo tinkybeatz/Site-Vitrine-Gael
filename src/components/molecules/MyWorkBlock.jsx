@@ -2,7 +2,7 @@ import { CardProject } from "./cards/CardProject";
 import { FlipCard } from "./cards/FlipCard";
 import { useState } from "react";
 
-export function FourthBlock({ deploy }) {
+export function MyWorkBlock({ deploy }) {
   //state
   const [projectSelection, setProjectSelection] = useState("All Projects");
 

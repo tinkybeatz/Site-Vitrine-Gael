@@ -1,6 +1,6 @@
 import { TimelineComponent } from "../molecules/timeline/Timeline";
 
-export function FifthBlock({ deploy }) {
+export function EducationBlock({ deploy }) {
   //state
 
   //comportements

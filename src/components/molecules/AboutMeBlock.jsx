@@ -4,7 +4,7 @@ import mechanicImage from "../../../public/images/mechanic.png";
 import gaelImage from "../../../public/images/imageGael.jpg";
 import { useState, useRef } from "react";
 
-export function FirstBlock({ deploy }) {
+export function AboutMeBlock({ deploy }) {
   //state
   const [topImage, setTopImage] = useState("crossfit"); // Default top image
   const prevTopImageRef = useRef("mechanic");

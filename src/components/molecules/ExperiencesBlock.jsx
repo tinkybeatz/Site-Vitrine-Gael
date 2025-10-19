@@ -1,6 +1,6 @@
 import { TimelineComponent } from "../molecules/timeline/Timeline";
 
-export function SecondBlock({ deploy }) {
+export function ExperiencesBlock({ deploy }) {
   //state
 
   //comportements

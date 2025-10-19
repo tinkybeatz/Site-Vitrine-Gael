@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 
-export function SixthBlock({ deploy }) {
+export function ContactBlock({ deploy }) {
   //state
   const [formData, setFormData] = useState({
     name: "",
