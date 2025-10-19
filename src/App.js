@@ -24,7 +24,7 @@ function App() {
   return (
     <NavigationProvider sections={nbMainSpace}>
       <div
-        className="justify-items-center xl:w-{80%} lg:w-{85%} grid font-primary scroll-smooth snap-y snap-mandatory relative"
+        className="justify-items-center grid font-primary scroll-smooth snap-y snap-mandatory relative"
         key="1"
       >
         <ParticlesBackground
@@ -35,16 +35,16 @@ function App() {
         />
         {/* <Navbar /> */}
         <SideNavbar nbMainSpace={nbMainSpace} />
-        <div className="flex-row dark:text-white transition-all duration-200 xl:w-[70%] lg:w-{80%} sm:w-{70%} h-[100vh] z-10">
-          <div className="flex xl:h-[40%] lg:h-1/5 sm:h-1/6 items-end xl:py-2 lg:py-4 sm:py-2 justify-center">
+        <div className="flex-row dark:text-white transition-all duration-200 xl:w-[70%] lg:w-[70%] sm:w-[70%] h-[100vh] z-10">
+          <div className="flex xl:h-[40%] lg:h-[40%] sm:h-1/6 items-end xl:py-2 lg:py-2 sm:py-2 justify-center">
             <h1
               ref={horRef}
-              className="font-scrib tracking-extra-tight mb-2 shadow-md bg-white border border-gray-200 rounded-full py-5 px-10 xl:text-8xl font-light lg:text-6xl sm:text-4xl"
+              className="font-scrib tracking-extra-tight mb-2 shadow-md bg-white border border-gray-200 rounded-full py-5 px-10 xl:text-8xl font-light lg:text-7xl sm:text-4xl"
             >
               GAËL DELOUIS
             </h1>
           </div>
-          <div className="text-xl font-light flex xl:h-[15%] justify-center gap-3">
+          <div className="text-xl font-light flex xl:h-[15%] lg:h-[15%] justify-center gap-3">
             <div class="flex h-min bg-white border border-gray-200 rounded-full pt-2 pb-2 pr-3 px-4 shadow-sm">
               Full-Stack Web Developper | Product Engineer | Your next{" "}
               <span class="pl-1 pr-2 font-semibold italic">best</span> hire
@@ -71,13 +71,13 @@ function App() {
             </div>
           </div>
         </div>
-        <div class="w-full z-10">
+        <div class="xl:w-[100%] lg:w-[100%] z-10 overflow-x-hidden overflow-y-hidden">
           {nbMainSpace.map((nb) => (
             <div
               id={`section-${nb.key}`}
-              class="flex flex-col items-center justify-center w-full h-screen snap-start"
+              class="flex flex-col items-center justify-center xl:w-[100%] lg:w-[100%] h-screen snap-start"
             >
-              <div class="flex flex-col w-full max-w-[90rem] h-[90%] max-h-[90%]">
+              <div class="flex flex-col xl:w-[88%] xl:max-w-[90rem] lg:w-[85%] h-[90%] max-h-[90%]">
                 <div class="flex items-start h-[8%] text-2xl tracking-extra-tight font-scrib transition-colors dark:text-white text-black">
                   <div class="flex bg-white px-5 h-[78%] rounded-lg items-center border border-gray-200 shadow-md">
                     {nb.key}. {nb.name.toUpperCase()}

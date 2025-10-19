@@ -112,25 +112,6 @@ export default nbMainSpace = [
     name: "🛠️ IT Hard Skills",
     deploy: {
       skills: SkillsData,
-      // list: [
-      //   "HTML, CSS (and TailwindCSS, Bootstrap)",
-      //   "JS / TS (and ReactJS, NestJS, CucumberJS)",
-      //   "PHP (and Laravel, Symfony)",
-      //   "C++ / C# (and .NET) / C Arduino",
-      //   "WordPress / Wix",
-      // ],
-      // progress: [
-      //   {
-      //     nline:
-      //       "Programing (C, Python, SQL, C++, Arduino, JavaScript, C#, PHP, Windows, PowerShell)",
-      //     progress: 75,
-      //   },
-      //   {
-      //     nline:
-      //       "System and Networks (Acitve Directory, Creating and Setting up Servers (Windows/Linux))",
-      //     progress: 60,
-      //   },
-      // ],
     },
   },
   {
@@ -152,16 +133,6 @@ export default nbMainSpace = [
             "First real professionnal experience, great experience to start with 👍.",
           ],
         },
-        // {
-        //   key: 2,
-        //   title: "Self-Service Employee - Not IT related",
-        //   location: "Carrefour Bordeaux",
-        //   location2: "Bordeaux, France",
-        //   dates: "September 2022 - January 2023",
-        //   img: "https://recrute.carrefour.fr/wp-content/uploads/2023/10/carrefour-city-horizontal.png",
-        //   imgAlt: "Carrefour City Logo",
-        //   text: "Fun experience, met a lot of great people and learned a lot about customer service and how to work in a team 🤝. This was a student job so I don't have much more to tell you about it 😁.",
-        // },
         {
           key: 3,
           title: "Web Developper BAC +3",
@@ -173,7 +144,7 @@ export default nbMainSpace = [
           text: [
             "First real experience as a web developper. 💻",
             "Worked on an internal platform, designed from scratch, to help handle all telecom subscriptions. 📞",
-            "Learned a lot about web developpement and project management methodologies. Agile, Scrum, Kanban, etc... 🏃‍♂️",
+            "Learned a lot about web developpement and project management : Agile, Scrum, etc... 🏃‍♂️",
           ],
         },
         {
@@ -274,7 +245,7 @@ export default nbMainSpace = [
           key: 5,
           icon: <CheckCircleOutlined />,
           iconStyling: "text-purple-500 bg-purple-500/25 border-purple-500 shadow-purple-500/25",
-          title: "Big & Small Company Experience",
+          title: "Various Experiences",
           text: "I've worked in both large corporations and smaller companies, giving me insight into different work cultures and processes. This makes me adaptable to any organizational structure.",
         },
         {

@@ -50,7 +50,7 @@ export function MyWorkBlock({ deploy }) {
       </div>
 
       {/* Projects */}
-      <div class="grid grid-rows-2 grid-flow-col border justify-start border-gray-200 gap-4 shadow-inner rounded-lg content-start p-4 min-h-[92%] max-h-[92%] h-[92%] w-auto overflow-x-auto overflow-y-hidden">
+      <div class="grid grid-rows-2 grid-flow-col border justify-start border-gray-200 gap-4 shadow-inner rounded-lg content-start p-4 min-h-[92%] max-h-[92%] h-[92%] w-full max-w-full overflow-x-auto overflow-y-hidden">
         {deploy.projects
           .filter((project) => {
             // Si "All skills" est sélectionné, afficher toutes les compétences
