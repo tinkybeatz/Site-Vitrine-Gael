@@ -35,7 +35,7 @@ export function CardProject({ cardInfo }) {
     <>
       <div
         onClick={() => setIsPopupOpen(true)}
-        className="shrink-0 divide relative cursor-pointer border border-gray-200 rounded-lg xl:h-auto xl:w-[27rem] lg:h-96 lg:w-80 sm:h-72 sm:w-60 bg-white dark:bg-zinc-700 text-black dark:text-white transition-all duration-200"
+        className="shrink-0 divide relative cursor-pointer border border-gray-200 rounded-lg xl:h-auto xl:w-[27rem] lg:h-96 lg:w-80 sm:h-72 sm:w-60 bg-white dark:bg-zinc-700 text-black dark:text-white transition-all duration-200 shadow-md hover:shadow-sm"
       >
         <div className="flex h-4/5 w-full">
           {cardInfo.images &&

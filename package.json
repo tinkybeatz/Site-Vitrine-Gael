@@ -5,7 +5,7 @@
   "source": "src/index.html",
   "scripts": {
     "start": "parcel",
-    "build": "parcel build"
+    "build": "rm -rf dist .parcel-cache && parcel build src/index.html"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +17,7 @@
     "tailwindcss": "^3.3.2"
   },
   "dependencies": {
+    "@ant-design/icons": "^5.6.1",
     "@emailjs/browser": "^4.4.1",
     "@vercel/analytics": "^1.0.1",
     "antd": "^5.5.0",

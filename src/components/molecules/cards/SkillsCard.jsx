@@ -4,7 +4,7 @@ export function SkillsCard({ skill }) {
       onClick={() =>
         skill.linkTo !== "" ? window.open(skill.linkTo, "_blank") : null
       }
-      class="flex h-[5.5rem] shadow-sm w-auto rounded-lg border gap-2 border-gray-200 p-2"
+      class="flex h-[5.5rem] shadow-md w-auto rounded-lg border gap-2 border-gray-200 p-2 hover:shadow-sm"
     >
       {skill.img !== "" ? (
         <img

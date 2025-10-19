@@ -5,6 +5,12 @@ import {
   LinkedinOutlined,
   WhatsAppOutlined,
   EnvironmentOutlined,
+  BulbOutlined,
+  OpenAIOutlined,
+  SyncOutlined,
+  TeamOutlined,
+  CheckCircleOutlined,
+  CloudServerOutlined,
 } from "@ant-design/icons";
 
 import SkillsData from "./SkillsData.js";
@@ -103,6 +109,32 @@ export default nbMainSpace = [
   },
   {
     key: 2,
+    name: "🛠️ IT Hard Skills",
+    deploy: {
+      skills: SkillsData,
+      // list: [
+      //   "HTML, CSS (and TailwindCSS, Bootstrap)",
+      //   "JS / TS (and ReactJS, NestJS, CucumberJS)",
+      //   "PHP (and Laravel, Symfony)",
+      //   "C++ / C# (and .NET) / C Arduino",
+      //   "WordPress / Wix",
+      // ],
+      // progress: [
+      //   {
+      //     nline:
+      //       "Programing (C, Python, SQL, C++, Arduino, JavaScript, C#, PHP, Windows, PowerShell)",
+      //     progress: 75,
+      //   },
+      //   {
+      //     nline:
+      //       "System and Networks (Acitve Directory, Creating and Setting up Servers (Windows/Linux))",
+      //     progress: 60,
+      //   },
+      // ],
+    },
+  },
+  {
+    key: 3,
     name: "💼 My Professional Experiences",
     deploy: {
       timelineInfo: [
@@ -204,33 +236,64 @@ export default nbMainSpace = [
     },
   },
   {
-    key: 3,
-    name: "🛠️ IT Hard Skills",
+    key: 4,
+    name: "💪 Why Hire Me?",
     deploy: {
-      skills: SkillsData,
-      // list: [
-      //   "HTML, CSS (and TailwindCSS, Bootstrap)",
-      //   "JS / TS (and ReactJS, NestJS, CucumberJS)",
-      //   "PHP (and Laravel, Symfony)",
-      //   "C++ / C# (and .NET) / C Arduino",
-      //   "WordPress / Wix",
-      // ],
-      // progress: [
-      //   {
-      //     nline:
-      //       "Programing (C, Python, SQL, C++, Arduino, JavaScript, C#, PHP, Windows, PowerShell)",
-      //     progress: 75,
-      //   },
-      //   {
-      //     nline:
-      //       "System and Networks (Acitve Directory, Creating and Setting up Servers (Windows/Linux))",
-      //     progress: 60,
-      //   },
-      // ],
-    },
+      text: "I am committed to not only deliver code.",
+      text2: "I focus on understanding requirements properly and thinking about future growth, building sustainable and modular solutions that accommodate future improvements.",
+      blocks: [
+        {
+          key: 1,
+          icon: <BulbOutlined />,
+          iconStyling: "text-yellow-400 bg-yellow-400/25 border-yellow-400 shadow-yellow-400/25",
+          title: "Problem Solver",
+          text: "I thrive on analyzing complex problems and finding effective solutions. My approach is to break down challenges into manageable parts and address them systematically.",
+        },
+        {
+          key: 2,
+          icon: <OpenAIOutlined />,
+          iconStyling: "text-blue-500 bg-blue-500/25 border-blue-500 shadow-blue-500/25",
+          title: "Use of AI Technologies",
+          text: "I leverage AI and machine learning tools to enhance development workflows and create innovative solutions. I actively stay updated with emerging technologies.",
+        },
+        {
+          key: 3,
+          icon: <SyncOutlined />,
+          iconStyling: "text-red-500 bg-red-500/25 border-red-500 shadow-red-500/25",
+          title: "Adaptability",
+          text: "My engineering education taught me how to learn, not just memorize technologies. This allows me to quickly adapt to any tech stack or framework requirement.",
+        },
+        {
+          key: 4,
+          icon: <TeamOutlined />,
+          iconStyling: "text-green-500 bg-green-500/25 border-green-500 shadow-green-500/25",
+          title: "Collaboration",
+          text: "I believe that great results come from teamwork. I actively collaborate with colleagues and stakeholders to ensure that all perspectives are considered and that we achieve the best outcomes together.",
+        },
+        // {
+        //   key: 4,
+        //   title: "Continuous Improvement",
+        //   text: "I am committed to continuous learning and improvement. I regularly seek feedback and stay updated with industry trends to enhance my skills and deliver cutting-edge solutions.",
+        // },
+        {
+          key: 5,
+          icon: <CheckCircleOutlined />,
+          iconStyling: "text-purple-500 bg-purple-500/25 border-purple-500 shadow-purple-500/25",
+          title: "Big & Small Company Experience",
+          text: "I've worked in both large corporations and smaller companies, giving me insight into different work cultures and processes. This makes me adaptable to any organizational structure.",
+        },
+        {
+          key: 6,
+          icon: <CloudServerOutlined />,
+          iconStyling: "text-cyan-400 bg-cyan-400/25 border-cyan-400 shadow-cyan-400/25",
+          title: "Cloud & DevOps Experience",
+          text: "I have hands-on experience with cloud platforms like Azure or Vercel, as well as containerization technologies. I also have experience setting up CI/CD pipelines for efficient software delivery.",
+        },
+      ]
+    }
   },
   {
-    key: 4,
+    key: 5,
     name: "📁 My Work",
     deploy: {
       projects: [
@@ -399,7 +462,7 @@ export default nbMainSpace = [
     },
   },
   {
-    key: 5,
+    key: 6,
     name: "🎓 Education",
     deploy: {
       // texts: [
@@ -470,7 +533,7 @@ export default nbMainSpace = [
     },
   },
   {
-    key: 6,
+    key: 7,
     name: "📞 Contact Me",
     deploy: {
       contact_informations: [

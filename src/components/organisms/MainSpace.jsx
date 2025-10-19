@@ -4,6 +4,7 @@ import { SkillsBlock } from "../molecules/SkillsBlock";
 import { MyWorkBlock } from "../molecules/MyWorkBlock";
 import { EducationBlock } from "../molecules/EducationBlock";
 import { ContactBlock } from "../molecules/ContactBlock";
+import { HireMeBlock } from "../molecules/HireMeBlock";
 import React, { useState, useEffect } from "react";
 import { gsap } from "gsap";
 
@@ -79,22 +80,26 @@ export function MainSpace({ nb }) {
       break;
 
     case 2:
-      nbDeploy = <ExperiencesBlock deploy={nb.deploy} />;
-      break;
-
-    case 3:
       nbDeploy = <SkillsBlock deploy={nb.deploy} />;
       break;
 
+    case 3:
+      nbDeploy = <ExperiencesBlock deploy={nb.deploy} />;
+      break;
+
     case 4:
-      nbDeploy = <MyWorkBlock deploy={nb.deploy} />;
+      nbDeploy = <HireMeBlock deploy={nb.deploy} />;
       break;
 
     case 5:
-      nbDeploy = <EducationBlock deploy={nb.deploy} />;
+      nbDeploy = <MyWorkBlock deploy={nb.deploy} />;
       break;
 
     case 6:
+      nbDeploy = <EducationBlock deploy={nb.deploy} />;
+      break;
+
+    case 7:
       nbDeploy = <ContactBlock deploy={nb.deploy} />;
       break;
 
@@ -114,7 +119,7 @@ export function MainSpace({ nb }) {
             <div className="flex h-full max-h-full w-full">{nbDeploy}</div>
           </div>
         </div>
-        {nb.key === 6 ? null : (
+        {nb.key === 7 ? null : (
         <div
           onClick={goToNextSection}
           className={`absolute font-scrib flex rounded-full px-4 py-3 bg-red-500 text-white text-md cursor-pointer -bottom-5 -right-5 z-[1000] select-none hover:bg-red-600 active:scale-95 transition-all duration-200 shadow-md hover:shadow-sm active:shadow-none ${isWiggling ? 'wiggle-button' : ''}`}

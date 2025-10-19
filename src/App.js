@@ -1,10 +1,7 @@
-import { useState, useRef } from "react";
 import { inject } from "@vercel/analytics";
 import React from "react";
-import MainPagePic from "../public/images/imageGael.jpg";
 import { MainSpace } from "./components/organisms/MainSpace";
 import nbMainSpace from "./data/AppData";
-import { Navbar } from "./components/molecules/navbar/Navbar";
 import { SideNavbar } from "./components/molecules/navbar/SideNavbar";
 import { vertFadeInPres, vertFadeInScroll } from "../gsap/verticalFadeIn";
 import { horFadeInPres } from "../gsap/horizontalFadeIn";
