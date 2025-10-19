@@ -270,11 +270,6 @@ export default nbMainSpace = [
           title: "Collaboration",
           text: "I believe that great results come from teamwork. I actively collaborate with colleagues and stakeholders to ensure that all perspectives are considered and that we achieve the best outcomes together.",
         },
-        // {
-        //   key: 4,
-        //   title: "Continuous Improvement",
-        //   text: "I am committed to continuous learning and improvement. I regularly seek feedback and stay updated with industry trends to enhance my skills and deliver cutting-edge solutions.",
-        // },
         {
           key: 5,
           icon: <CheckCircleOutlined />,
