@@ -8,7 +8,7 @@ const NavigationButtons = ({ section }) => {
     <button
       key={section.key}
       onClick={() => goToSection(`section-${section.key}`)}
-      className="px-4 py-2 border border-gray-200 shadow-sm text-black rounded-full hover:bg-gray-100 hover:shadow-none transition-colors duration-200 text-base cursor-pointer bg-white"
+      className="px-4 py-2 border border-gray-200 shadow-sm text-black rounded-full hover:bg-gray-100 hover:shadow-none transition-colors duration-200 xl:text-base lg:text-sm cursor-pointer bg-white"
     >
       {section.name}
     </button>

@@ -12,11 +12,11 @@ module.exports = {
       'xl': {'min': '1520px'},
       // => @media (min-width: 1520px) { ... }
 
-      'lg': {'min': '950px', 'max': '1520px'},
-      // => @media (min-width: 950px, max-width: 1520px) { ... }
+      'lg': {'min': '1200px', 'max': '1520px'},
+      // => @media (min-width: 1200px, max-width: 1520px) { ... }
 
-      'sm': {'max': '950px'},
-      // => @media (max-width: 950px) { ... }
+      'sm': {'max': '1200px'},
+      // => @media (max-width: 1200px) { ... }
     },
     safelist: [
       "animate-[fade-in_1s_ease-in-out]",

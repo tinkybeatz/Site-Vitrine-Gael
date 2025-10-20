@@ -44,7 +44,7 @@ function App() {
               GAËL DELOUIS
             </h1>
           </div>
-          <div className="text-xl font-light flex xl:h-[15%] lg:h-[15%] justify-center gap-3">
+          <div className="text-xl lg:text-lg font-light flex xl:h-[15%] lg:h-[15%] justify-center gap-3">
             <div class="flex h-min bg-white border border-gray-200 rounded-full pt-2 pb-2 pr-3 px-4 shadow-sm">
               Full-Stack Web Developper | Product Engineer | Your next{" "}
               <span class="pl-1 pr-2 font-semibold italic">best</span> hire

@@ -4,7 +4,7 @@ export function SkillsCard({ skill }) {
       onClick={() =>
         skill.linkTo !== "" ? window.open(skill.linkTo, "_blank") : null
       }
-      class="flex h-[5.5rem] shadow-md w-auto rounded-lg border gap-2 border-gray-200 p-2 hover:shadow-sm"
+      class="flex xl:h-[5.5rem] lg:h-[5rem] shadow-md w-auto rounded-lg border gap-2 border-gray-200 p-2 hover:shadow-sm"
     >
       {skill.img !== "" ? (
         <img
@@ -18,8 +18,8 @@ export function SkillsCard({ skill }) {
         </div>
       )}
       <div class="flex flex-col justify-center">
-        <p class="text-start leading-5">{skill.name}</p>
-        <p class="text-sm text-start text-gray-400 pb-0.5 leading-4">
+        <p class="text-start leading-5 lg:text-sm">{skill.name}</p>
+        <p class="xl:text-sm text-start text-gray-400 pb-0.5 leading-4 lg:text-xs">
           {skill.description}
         </p>
         <div class="flex flex-wrap gap-1 mt-1">
@@ -30,7 +30,7 @@ export function SkillsCard({ skill }) {
                   return (
                     <div
                       key={index}
-                      class="text-xs text-center py-0.5 px-2 w-fit rounded-full bg-red-500 text-white"
+                      class="xl:text-xs lg:text-[11px] text-center py-0.5 px-2 w-fit rounded-full bg-red-500 text-white"
                     >
                       {category}
                     </div>
@@ -39,7 +39,7 @@ export function SkillsCard({ skill }) {
                   return (
                     <div
                       key={index}
-                      class="text-xs text-center py-0.5 px-2 w-fit rounded-full bg-green-500 text-white"
+                      class="xl:text-xs lg:text-[11px] text-center py-0.5 px-2 w-fit rounded-full bg-green-500 text-white"
                     >
                       {category}
                     </div>
@@ -48,7 +48,7 @@ export function SkillsCard({ skill }) {
                   return (
                     <div
                       key={index}
-                      class="text-xs text-center py-0.5 px-2 w-fit rounded-full bg-blue-500 text-white"
+                      class="xl:text-xs lg:text-[11px] text-center py-0.5 px-2 w-fit rounded-full bg-blue-500 text-white"
                     >
                       {category}
                     </div>
@@ -57,7 +57,7 @@ export function SkillsCard({ skill }) {
                   return (
                     <div
                       key={index}
-                      class="text-xs text-center py-0.5 px-2 w-fit rounded-full bg-purple-500 text-white"
+                      class="xl:text-xs lg:text-[11px] text-center py-0.5 px-2 w-fit rounded-full bg-purple-500 text-white"
                     >
                       {category}
                     </div>
@@ -66,7 +66,7 @@ export function SkillsCard({ skill }) {
                   return (
                     <div
                       key={index}
-                      class="text-xs text-center py-0.5 px-2 w-fit rounded-full bg-yellow-500 text-white"
+                      class="xl:text-xs lg:text-[11px] text-center py-0.5 px-2 w-fit rounded-full bg-yellow-500 text-white"
                     >
                       {category}
                     </div>
@@ -75,7 +75,7 @@ export function SkillsCard({ skill }) {
                   return (
                     <div
                       key={index}
-                      class="text-xs text-center py-0.5 px-2 w-fit rounded-full bg-pink-500 text-white"
+                      class="xl:text-xs lg:text-[11px] text-center py-0.5 px-2 w-fit rounded-full bg-pink-500 text-white"
                     >
                       {category}
                     </div>
@@ -84,7 +84,7 @@ export function SkillsCard({ skill }) {
                   return (
                     <div
                       key={index}
-                      class="text-xs text-center py-0.5 px-2 w-fit rounded-full bg-cyan-500 text-white"
+                      class="xl:text-xs lg:text-[11px] text-center py-0.5 px-2 w-fit rounded-full bg-cyan-500 text-white"
                     >
                       {category}
                     </div>
