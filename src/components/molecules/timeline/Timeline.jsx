@@ -39,9 +39,9 @@ export function TimelineComponent({ timelineInfo }) {
 
   // affichage
   return (
-    <ol class="relative flex flex-col border-l border-gray-300 dark:border-purple-700 lg:my-4 sm:my-0 transition-all duration-200 w-full h-full max-h-full">
+    <ol class="relative flex flex-col border-l border-gray-300 dark:border-purple-700 sm:my-0 transition-all duration-200 w-full h-full max-h-full">
       {timelineInfo.map((nb) => (
-        <li class="flex gap-6 lg:mb-8 sm:mb-8 pl-4 w-full h-full max-h-full transition-all duration-200">
+        <li class="flex gap-6 pl-4 w-full h-full max-h-full transition-all duration-200">
           <div class="absolute w-3 h-3 bg-gray-400 rounded-full mt-1.5 -left-1.5 transition-all duration-200"></div>
           <div class="flex mb-6 h-full w-full max-h-full">
             <div className="flex h-[80%] w-[45%]">
@@ -53,15 +53,15 @@ export function TimelineComponent({ timelineInfo }) {
                   <span>{endsByType(nb.key, nb.title)}</span>
                 </h2>
                 <p class="xl:flex lg:flex sm:flex-row text-black dark:text-white transition-all duration-200">
-                  <p className="xl:text-sm lg:text-base sm:text-xs font-normal text-yellow-500 transition-all duration-200 mr-1">
+                  <p className="xl:text-sm lg:text-xs sm:text-xs font-normal text-yellow-500 transition-all duration-200 mr-1">
                     {nb.location}
                   </p>
-                  <p className="xl:text-sm lg:text-base sm:text-xs font-normal text-gray-400 dark:text-gray-300 transition-all duration-200 xl:ml-1 lg:ml-1 sm:ml-0">
+                  <p className="xl:text-sm lg:text-xs sm:text-xs font-normal text-gray-400 dark:text-gray-300 transition-all duration-200 xl:ml-1 lg:ml-1 sm:ml-0">
                     {nb.location2}
                   </p>
                 </p>
               </div>
-              <div class="flex items-center justify-center h-full mr-6 w-[35%]">
+              <div class="flex items-center justify-center h-full mr-6 xl:w-[35%] lg:w-[30%]">
                 <img
                   class="max-h-[6rem] object-contain"
                   src={nb.img}
@@ -69,12 +69,12 @@ export function TimelineComponent({ timelineInfo }) {
                 />
               </div>
             </div>
-            <div class="flex w-[55%] h-[100%] text-sm items-center">
+            <div class="flex xl:w-[55%] lg:w-[60%] h-[100%] text-sm items-center">
               <div class="h-[90%] w-full rounded-lg pt-2 px-3 border border-gray-200 min-h-0 max-h-[90%]">
                 {typeof nb.text === "string" ? (
                   <p>{nb.text}</p>
                 ) : (
-                  <ul class="list-disc list-inside space-y-1 pl-1">
+                  <ul class="list-disc list-inside xl:space-y-1 pl-1 lg:text-xs">
                     {nb.text.map((item, index) => (
                       <li key={index}>{item}</li>
                     ))}
