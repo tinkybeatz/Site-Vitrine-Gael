@@ -5,13 +5,18 @@
   "source": "src/index.html",
   "scripts": {
     "start": "parcel",
-    "build": "rm -rf dist .parcel-cache && parcel build src/index.html"
+    "build": "rm -rf dist .parcel-cache && parcel build src/index.html --target default"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "engines": {
     "node": "22.x"
+  },
+  "targets": {
+    "default": {
+      "distDir": "dist"
+    }
   },
   "devDependencies": {
     "parcel": "^2.8.3",
