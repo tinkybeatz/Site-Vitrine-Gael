@@ -19,7 +19,22 @@ export const NavigationProvider = ({ children, sections }) => {
     } else {
       const sectionElement = document.getElementById(sectionId);
       if (sectionElement) {
-        sectionElement.scrollIntoView({ behavior: "smooth" });
+        // For the last section, scroll to the very bottom of the page
+        const isLastSection = sectionId === `section-${sections[sections.length - 1].key}`;
+        
+        if (isLastSection) {
+          // Scroll to the bottom of the document
+          window.scrollTo({ 
+            top: document.documentElement.scrollHeight, 
+            behavior: "smooth" 
+          });
+        } else {
+          // For other sections, align to the start (top) of the section
+          sectionElement.scrollIntoView({ 
+            behavior: "smooth", 
+            block: "start" 
+          });
+        }
       }
     }
   };

@@ -25,7 +25,7 @@ export function SideNavbar({ nbMainSpace }) {
   //affichage
   return (
     <div
-      class="xl:w-[60px] lg:w-[60px] h-auto rounded-full fixed z-50 left-5 top-1/2 -translate-y-1/2 shadow-md border border-gray-200 flex flex-col justify-around items-center gap-2 py-2 bg-white"
+      class="xl:w-[60px] lg:w-[60px] md:w-[60px] h-auto rounded-full fixed z-50 left-5 top-1/2 -translate-y-1/2 shadow-md border border-gray-200 flex flex-col justify-around items-center gap-2 py-2 bg-white"
       // ref={horRefNav}
     >
       <div class="flex items-center text-center justify-center">
@@ -35,7 +35,7 @@ export function SideNavbar({ nbMainSpace }) {
             activeSection === "home"
               ? "bg-gray-100 dark:bg-gray-700"
               : "bg-white dark:bg-zinc-600"
-          } border border-gray-200 shadow-sm hover:shadow-none w-auto justify-items-center sm:text-[14px] align-items-center dark:text-white py-2 px-3 transition-all duration-200 font-semi-bold leading-normal cursor-pointer`}
+          } border border-gray-200 shadow-sm hover:shadow-none w-auto justify-items-center align-items-center dark:text-white py-2 px-3 transition-all duration-200 font-semi-bold leading-normal cursor-pointer`}
         >
           🏠
         </button>
