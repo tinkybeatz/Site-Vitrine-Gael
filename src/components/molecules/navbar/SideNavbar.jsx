@@ -1,6 +1,6 @@
 import { DarkModeSwitch } from "react-toggle-dark-mode";
 import { React, useState } from "react";
-import Resume from "../../../../public/my_resume/CV_English_Gael_DELOUIS_2023.pdf";
+import Resume from "../../../../public/my_resume/RESUME_GAEL_MALAYSIA_OCT_2025.pdf";
 import Github from "../../../../public/images/GitHub-Logo.png";
 import useDarkSide from "../../../hooks/useDarkSide";
 import { horFadeInScroll } from "../../../../gsap/horizontalFadeIn";
