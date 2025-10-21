@@ -35,16 +35,16 @@ export function CardProject({ cardInfo }) {
     <>
       <div
         onClick={() => setIsPopupOpen(true)}
-        className="shrink-0 divide relative cursor-pointer border border-gray-200 rounded-lg xl:h-auto xl:w-[27rem] lg:h-96 lg:w-80 sm:h-72 sm:w-60 bg-white dark:bg-zinc-700 text-black dark:text-white transition-all duration-200 shadow-md hover:shadow-sm"
+        className="shrink-0 divide relative cursor-pointer border border-gray-200 rounded-lg xl:h-auto xl:w-[27rem] lg:h-auto lg:w-[22rem] sm:h-72 sm:w-60 bg-white dark:bg-zinc-700 text-black dark:text-white transition-all duration-200 shadow-md hover:shadow-sm @container flex flex-col"
       >
-        <div className="flex h-4/5 w-full">
+        <div className="flex-1 w-full min-h-0">
           {cardInfo.images &&
           cardInfo.images.length > 0 &&
           cardInfo.images[0].img !== "" ? (
             <img
               src={cardInfo.images[0].img}
               alt={cardInfo.images[0].imgAlt}
-              className="rounded-lg object-fill h-full w-full"
+              className="rounded-lg object-cover h-full w-full"
             />
           ) : (
             <div className="flex h-full w-full items-center justify-center bg-gray-200">
@@ -52,7 +52,7 @@ export function CardProject({ cardInfo }) {
             </div>
           )}
         </div>
-        <div className="flex h-1/5 w-full items-center justify-center text-center font-medium">
+        <div className="flex h-16 w-full items-center justify-center text-center font-medium p-2">
           {cardInfo.title}
         </div>
       </div>
@@ -74,7 +74,7 @@ export function CardProject({ cardInfo }) {
             >
               {/* Modal Content */}
               <div
-                className="relative w-4/5 h-4/5 bg-white dark:bg-zinc-800 rounded-xl p-6 shadow-2xl overflow-y-hidden"
+                className="relative w-4/5 max-w-6xl h-[90vh] max-h-[800px] min-h-[400px] bg-white dark:bg-zinc-800 rounded-xl p-6 shadow-2xl overflow-y-hidden flex flex-col"
                 onClick={(e) => e.stopPropagation()}
               >
                 {/* Close button
@@ -99,7 +99,7 @@ export function CardProject({ cardInfo }) {
                 </button> */}
 
                 {/* Modal Header */}
-                <div className="h-[8%] pb-4 flex justify-between items-center">
+                <div className="flex-shrink-0 pb-4 flex justify-between items-center">
                   <h2 className="text-2xl font-bold text-black dark:text-white">
                     {cardInfo.title}
                   </h2>
@@ -124,7 +124,7 @@ export function CardProject({ cardInfo }) {
                 </div>
 
                 {/* Modal Body - You can customize this part as needed */}
-                <div className="text-black dark:text-white border shadow-inner border-gray-200 rounded-lg h-[92%] p-4 overflow-auto">
+                <div className="text-black dark:text-white border shadow-inner border-gray-200 rounded-lg flex-1 p-4 overflow-auto min-h-0">
                   {/* Project details will go here */}
                   {cardInfo.description && (
                     <p className="mb-4">{cardInfo.description}</p>

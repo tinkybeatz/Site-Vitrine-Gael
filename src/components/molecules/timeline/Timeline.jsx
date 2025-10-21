@@ -62,11 +62,13 @@ export function TimelineComponent({ timelineInfo }) {
                 </p>
               </div>
               <div class="flex items-center justify-center h-full mr-6 xl:w-[35%] lg:w-[30%]">
-                <img
-                  class="max-h-[6rem] object-contain"
-                  src={nb.img}
-                  alt={nb.imgAlt}
-                />
+                <div className="xl:w-20 xl:h-20 lg:w-16 lg:h-16 sm:w-10 sm:h-10 flex items-center justify-center">
+                  <img
+                    class="max-w-full max-h-full object-contain"
+                    src={nb.img}
+                    alt={nb.imgAlt}
+                  />
+                </div>
               </div>
             </div>
             <div class="flex xl:w-[55%] lg:w-[60%] h-[100%] text-sm items-center">

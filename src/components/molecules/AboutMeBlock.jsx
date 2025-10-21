@@ -76,28 +76,30 @@ export function AboutMeBlock({ deploy }) {
             ))}
           </div>
         </div>
-        <div className="relative">
-          <img
-            src={crossfitImage}
-            alt="crossfit"
-            className="absolute xl:w-64 lg:w-52 h-auto xl:top-5 lg:top-14 xl:left-8 lg:left-4 transform rotate-[-5deg] shadow-2xl rounded-lg border-4 border-gray-100 dark:border-zinc-100 duration-200 cursor-pointer"
-            style={{ zIndex: getZIndex("crossfit") }}
-            onClick={() => handleImageClick("crossfit")}
-          />
-          <img
-            src={musicImage}
-            alt="music"
-            className="absolute xl:w-64 lg:w-52 h-auto xl:top-[150px] lg:top-[170px] xl:left-[160px] lg:left-[100px] transform rotate-[5deg] shadow-2xl rounded-lg border-4 border-gray-100 dark:border-zinc-100 duration-200 cursor-pointer"
-            style={{ zIndex: getZIndex("music") }}
-            onClick={() => handleImageClick("music")}
-          />
-          <img
-            src={mechanicImage}
-            alt="mechanic"
-            className="absolute xl:w-64 lg:w-52 h-auto xl:top-[300px] lg:top-[340px] left-[60px] transform shadow-2xl rounded-lg border-4 border-gray-100 dark:border-zinc-100 duration-200 cursor-pointer"
-            style={{ zIndex: getZIndex("mechanic") }}
-            onClick={() => handleImageClick("mechanic")}
-          />
+        <div className="relative flex items-center justify-center">
+          <div className="relative xl:w-80 xl:h-96 lg:w-64 lg:h-80 sm:w-48 sm:h-60">
+            <img
+              src={crossfitImage}
+              alt="crossfit"
+              className="absolute xl:w-60 lg:w-52 sm:w-32 h-auto bottom-[15%] transform rotate-[-5deg] shadow-2xl rounded-lg border-4 border-gray-100 dark:border-zinc-100 duration-200 cursor-pointer"
+              style={{ zIndex: getZIndex("crossfit") }}
+              onClick={() => handleImageClick("crossfit")}
+            />
+            <img
+              src={mechanicImage}
+              alt="mechanic"
+              className="absolute xl:w-60 lg:w-52 sm:w-32 h-auto bottom-[5%] xl:left-[30%] lg:left-[25%] transform shadow-2xl rounded-lg border-4 border-gray-100 dark:border-zinc-100 duration-200 cursor-pointer"
+              style={{ zIndex: getZIndex("mechanic") }}
+              onClick={() => handleImageClick("mechanic")}
+            />
+            <img
+              src={musicImage}
+              alt="music"
+              className="absolute xl:w-60 lg:w-52 sm:w-32 h-auto top-[15%] right-[5%] transform rotate-[5deg] shadow-2xl rounded-lg border-4 border-gray-100 dark:border-zinc-100 duration-200 cursor-pointer"
+              style={{ zIndex: getZIndex("music") }}
+              onClick={() => handleImageClick("music")}
+            />
+          </div>
         </div>
       </div>
     </div>

@@ -43,7 +43,7 @@ export default nbMainSpace = [
     key: 1,
     name: "👤 About Me",
     deploy: {
-      text: "I'm Gaël, also known as 'Tinky'. I'm a full-stack web developer 💻 and i just graduated from an IT Engineering school in Bordeaux, France 🎓. I'm passionate about tech, problem solving and mostly coding.",
+      text: "I'm Gaël, also known as 'Tinky'. I'm a full-stack web developer 💻 and I graduated from an IT Engineering school in Bordeaux, France 🎓. I'm passionate about tech, problem solving and mostly coding.",
       text2:
         "Even though i'm passionate about IT, I also have other passions and personality traits.",
       passions: [
@@ -252,8 +252,8 @@ export default nbMainSpace = [
           key: 6,
           icon: <CloudServerOutlined />,
           iconStyling: "text-cyan-400 bg-cyan-400/25 border-cyan-400 shadow-cyan-400/25",
-          title: "Cloud & DevOps Experience",
-          text: "I have hands-on experience with cloud platforms like Azure or Vercel, as well as containerization technologies. I also have experience setting up CI/CD pipelines for efficient software delivery.",
+          title: "Cloud & DevOps",
+          text: "I have hands-on experience with cloud platforms like Azure or Vercel, containerization technologies as well as setting up CI/CD pipelines for efficient software delivery.",
         },
       ]
     }

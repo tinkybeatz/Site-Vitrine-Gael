@@ -118,7 +118,7 @@ export function ContactBlock({ deploy }) {
               ))}
           </div>
         </div>
-        <div class="col-span-2 flex flex-col rounded-lg shadow-inner border border-gray-200 justify-center items-center">
+        <div class="col-span-2 flex flex-col lg:text-sm rounded-lg shadow-inner border border-gray-200 justify-center items-center">
           <div className="h-[15%] content-center">
             {/* Status Messages */}
             {submitStatus === null && (
@@ -146,47 +146,47 @@ export function ContactBlock({ deploy }) {
             className="flex flex-col w-full h-[85%] p-4"
           >
             <div className="grid grid-cols-2 h-1/5 p-4 gap-8">
-              <div className="flex flex-col h-full gap-2">
+              <div className="flex flex-col h-full gap-1">
                 Your Name
                 <input
                   type="text"
                   name="name"
                   value={formData.name}
                   onChange={handleInputChange}
-                  className="h-2/3 rounded-lg px-3 text-sm border border-gray-200 bg-gray-100 placeholder-gray-500"
+                  className="h-full max-h-[3rem] rounded-lg px-3 text-sm border border-gray-200 bg-gray-100 placeholder-gray-500"
                   placeholder="John Doe"
                   required
                 />
               </div>
-              <div className="flex flex-col h-full gap-2">
+              <div className="flex flex-col h-full gap-1">
                 Your Email
                 <input
                   type="email"
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="h-2/3 rounded-lg px-3 text-sm border border-gray-200 bg-gray-100 placeholder-gray-500"
+                  className="h-full max-h-[3rem] rounded-lg px-3 text-sm border border-gray-200 bg-gray-100 placeholder-gray-500"
                   placeholder="john@example.com"
                   required
                 />
               </div>
             </div>
             <div className="h-1/5 p-4">
-              <div className="flex flex-col h-full gap-2">
+              <div className="flex flex-col h-full gap-1">
                 Subject
                 <input
                   type="text"
                   name="subject"
                   value={formData.subject}
                   onChange={handleInputChange}
-                  className="h-2/3 rounded-lg px-3 text-sm border border-gray-200 bg-gray-100 placeholder-gray-500"
+                  className="h-full max-h-[3rem] rounded-lg px-3 text-sm border border-gray-200 bg-gray-100 placeholder-gray-500"
                   placeholder="How can I help you?"
                   required
                 />
               </div>
             </div>
             <div className="h-2/5 px-4 pt-4 pb-5">
-              <div className="flex flex-col h-full gap-2">
+              <div className="flex flex-col h-full gap-1">
                 Your Message
                 <textarea
                   name="message"
@@ -202,7 +202,7 @@ export function ContactBlock({ deploy }) {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`rounded-lg h-2/3 text-white text-sm shadow-md hover:shadow-none cursor-pointer ${
+                className={`rounded-lg h-full max-h-[3rem] text-white text-sm shadow-md hover:shadow-none cursor-pointer ${
                   isSubmitting
                     ? "bg-gray-400 cursor-not-allowed"
                     : "bg-blue-500 hover:bg-blue-600"
@@ -214,7 +214,7 @@ export function ContactBlock({ deploy }) {
                 type="button"
                 onClick={handleReset}
                 disabled={isSubmitting}
-                className="bg-red-500 rounded-lg h-2/3 text-white text-sm shadow-md hover:bg-red-600 hover:shadow-none cursor-pointer disabled:bg-gray-400 disabled:cursor-not-allowed"
+                className="bg-red-500 rounded-lg h-full max-h-[3rem] text-white text-sm shadow-md hover:bg-red-600 hover:shadow-none cursor-pointer disabled:bg-gray-400 disabled:cursor-not-allowed"
               >
                 Reset
               </button>
