@@ -10,6 +10,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": "22.x"
+  },
   "devDependencies": {
     "parcel": "^2.8.3",
     "postcss": "^8.4.23",

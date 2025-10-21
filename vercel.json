@@ -1,0 +1,16 @@
+{
+  "functions": {
+    "app/**/*.js": {
+      "runtime": "nodejs22.x"
+    }
+  },
+  "builds": [
+    {
+      "src": "src/index.html",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ]
+}
