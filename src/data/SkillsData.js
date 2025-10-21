@@ -43,7 +43,7 @@ import proxmoxLogo from "../../public/images/logos/proxmox.png";
 import tinkercadLogo from "../../public/images/logos/tinkercad.png";
 import fusion360Logo from "../../public/images/logos/fusion360.png";
 
-export default SkillsData = [
+const SkillsData = [
   {
     name: "JavaScript",
     img: javascriptLogo,
@@ -389,3 +389,5 @@ export default SkillsData = [
     categories: ["Other"],
   },
 ];
+
+export default SkillsData;

@@ -38,7 +38,7 @@ import Orange from "../../public/images/projects/orange.jpeg";
 // import mailIcon from "../../public/images/icons/mail.png";
 // import phoneIcon from "../../public/images/icons/phone.png";
 
-export default nbMainSpace = [
+const nbMainSpace = [
   {
     key: 1,
     name: "👤 About Me",
@@ -545,36 +545,8 @@ export default nbMainSpace = [
           img: <MailOutlined />,
         },
       ],
-      // {
-      //   key: 1,
-      //   title: "Mail Pro",
-      //   value: "gaedelouis@gmail.com",
-      //   href: "",
-      //   img: <MailOutlined style={{ fontSize: "xl:24px lg:20px sm:12px" }} />,
-      // },
-      // {
-      //   key: 2,
-      //   title: "Phone Number",
-      //   value: "+33 7 62 35 81 00",
-      //   href: "",
-      //   img: <PhoneOutlined style={{ fontSize: "xl:24px lg:20px sm:12px" }} />,
-      // },
-      // {
-      //   key: 3,
-      //   title: "LinkedIn",
-      //   value: "",
-      //   href: "https://www.linkedin.com/in/ga%C3%ABl-delouis-534509212/",
-      //   img: (
-      //     <LinkedinOutlined style={{ fontSize: "xl:24px lg:20px sm:12px" }} />
-      //   ),
-      // },
-      // {
-      //   key: 4,
-      //   title: "GitHub",
-      //   value: "",
-      //   href: "https://github.com/tinkybeatz",
-      //   img: <GithubOutlined style={{ fontSize: "xl:24px lg:20px sm:12px" }} />,
-      // },
     },
   },
 ];
+
+export default nbMainSpace;
