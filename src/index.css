@@ -77,6 +77,13 @@
     height: 25px;
 }
 
+@media (max-width: 1200px) {
+    .ring-container {
+        width: 18px;
+        height: 18px;
+    }
+}
+
 .circle {
     width: 15px;
     height: 15px;
@@ -84,6 +91,13 @@
     border-radius: 50%;
     position: absolute;
     z-index: 2;
+}
+
+@media (max-width: 1200px) {
+    .circle {
+        width: 10px;
+        height: 10px;
+    }
 }
 
 .ringring {
@@ -95,6 +109,14 @@
     animation: pulsate 1s ease-out infinite;
     opacity: 0.0;
     z-index: 1;
+}
+
+@media (max-width: 1024px) {
+    .ringring {
+        border: 2px solid #62bd19;
+        height: 18px;
+        width: 18px;
+    }
 }
 @keyframes pulsate {
     0% {

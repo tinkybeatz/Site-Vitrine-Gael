@@ -19,7 +19,7 @@ export function SkillsBlock({ deploy }) {
         <div class="flex divide-x divide-gray-200 border border-gray-200 rounded-lg h-full">
           <div
             onClick={() => selectSkills("All skills")}
-            class={`flex whitespace-nowrap text-sm px-4 font-medium h-full rounded-l-lg justify-center items-center py-2 cursor-pointer ${
+            class={`flex whitespace-nowrap text-sm px-4 md:px-3 md:text-xs font-medium h-full rounded-l-lg justify-center items-center py-2 cursor-pointer ${
               skillSelection === "All skills"
                 ? "bg-gray-100 shadow-inner"
                 : "bg-white"
@@ -29,7 +29,7 @@ export function SkillsBlock({ deploy }) {
           </div>
           <div
             onClick={() => selectSkills("AI Tools")}
-            class={`flex whitespace-nowrap text-sm px-4 font-medium h-full justify-center items-center py-2 cursor-pointer ${
+            class={`flex whitespace-nowrap text-sm px-4 md:px-3 md:text-xs font-medium h-full justify-center items-center py-2 cursor-pointer ${
               skillSelection === "AI Tools"
                 ? "bg-gray-100 shadow-inner"
                 : "bg-white"
@@ -39,7 +39,7 @@ export function SkillsBlock({ deploy }) {
           </div>
           <div
             onClick={() => selectSkills("Programming Language")}
-            class={`flex whitespace-nowrap text-sm px-4 font-medium h-full justify-center items-center py-2 cursor-pointer ${
+            class={`flex whitespace-nowrap text-sm px-4 md:px-3 md:text-xs font-medium h-full justify-center items-center py-2 cursor-pointer ${
               skillSelection === "Programming Language"
                 ? "bg-gray-100 shadow-inner"
                 : "bg-white"
@@ -49,7 +49,7 @@ export function SkillsBlock({ deploy }) {
           </div>
           <div
             onClick={() => selectSkills("Front-end")}
-            class={`flex whitespace-nowrap text-sm px-4 font-medium h-full justify-center items-center py-2 cursor-pointer ${
+            class={`flex whitespace-nowrap text-sm px-4 md:px-3 md:text-xs font-medium h-full justify-center items-center py-2 cursor-pointer ${
               skillSelection === "Front-end"
                 ? "bg-gray-100 shadow-inner"
                 : "bg-white"
@@ -59,7 +59,7 @@ export function SkillsBlock({ deploy }) {
           </div>
           <div
             onClick={() => selectSkills("Back-end")}
-            class={`flex whitespace-nowrap text-sm px-4 font-medium h-full justify-center items-center py-2 cursor-pointer ${
+            class={`flex whitespace-nowrap text-sm px-4 md:px-3 md:text-xs font-medium h-full justify-center items-center py-2 cursor-pointer ${
               skillSelection === "Back-end"
                 ? "bg-gray-100 shadow-inner"
                 : "bg-white"
@@ -69,7 +69,7 @@ export function SkillsBlock({ deploy }) {
           </div>
           <div
             onClick={() => selectSkills("CI/CD")}
-            class={`flex whitespace-nowrap text-sm px-4 font-medium h-full justify-center items-center py-2 cursor-pointer ${
+            class={`flex whitespace-nowrap text-sm px-4 md:px-3 md:text-xs font-medium h-full justify-center items-center py-2 cursor-pointer ${
               skillSelection === "CI/CD"
                 ? "bg-gray-100 shadow-inner"
                 : "bg-white"
@@ -79,7 +79,7 @@ export function SkillsBlock({ deploy }) {
           </div>
           <div
             onClick={() => selectSkills("Project Management")}
-            class={`flex whitespace-nowrap text-sm px-4 font-medium h-full justify-center items-center py-2 cursor-pointer ${
+            class={`flex whitespace-nowrap text-sm px-4 md:px-3 md:text-xs font-medium h-full justify-center items-center py-2 cursor-pointer ${
               skillSelection === "Project Management"
                 ? "bg-gray-100 shadow-inner"
                 : "bg-white"
@@ -89,7 +89,7 @@ export function SkillsBlock({ deploy }) {
           </div>
           <div
             onClick={() => selectSkills("Other")}
-            class={`flex whitespace-nowrap text-sm px-4 font-medium h-full rounded-r-lg justify-center items-center py-2 cursor-pointer ${
+            class={`flex whitespace-nowrap text-sm px-4 md:px-3 md:text-xs font-medium h-full rounded-r-lg justify-center items-center py-2 cursor-pointer ${
               skillSelection === "Other"
                 ? "bg-gray-100 shadow-inner"
                 : "bg-white"
