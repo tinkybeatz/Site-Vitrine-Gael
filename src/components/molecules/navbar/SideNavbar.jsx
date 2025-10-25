@@ -1,5 +1,5 @@
 import { DarkModeSwitch } from "react-toggle-dark-mode";
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import Resume from "../../../../public/my_resume/RESUME_GAEL_MALAYSIA_OCT_2025.pdf";
 import Github from "../../../../public/images/GitHub-Logo.png";
 import useDarkSide from "../../../hooks/useDarkSide";
@@ -9,12 +9,32 @@ import { useNavigation } from "../../../context/NavigationContext"; // Import th
 export function SideNavbar({ nbMainSpace }) {
   //state
   const [colorTheme, setTheme] = useDarkSide();
+  const [bigNavbar, setBigNavbar] = useState(true);
   const [darkSide, setDarkSide] = useState(
     colorTheme === "light" ? true : false
   );
-  
+
   // Use the navigation context
   const { activeSection, goToSection, goToPrevSection, goToNextSection } = useNavigation();
+
+  // Listen for window resize to update navbar size
+  useEffect(() => {
+    const handleResize = () => {
+      const screenHeight = window.innerHeight;
+      setBigNavbar(screenHeight >= 600);
+    };
+
+    // Set initial value
+    handleResize();
+
+    // Add event listener
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   //comportements
   const toggleDarkMode = (checked) => {
@@ -41,26 +61,30 @@ export function SideNavbar({ nbMainSpace }) {
         </button>
       </div>
 
-      {/* Divider */}
-      <div class="w-3/4 h-[1px] bg-gray-200 dark:bg-zinc-500"></div>
+      {bigNavbar && (
+        <>
+          {/* Divider */}
+          <div class="w-3/4 h-[1px] bg-gray-200 dark:bg-zinc-500"></div>
 
-      {nbMainSpace.map((section) => (
-        <div
-          class="flex items-center text-center justify-center"
-          key={section.key}
-        >
-          <button
-            onClick={() => goToSection(`section-${section.key}`)}
-            class={`flex rounded-full hover:bg-gray-100 ${
-              activeSection === `section-${section.key}`
-                ? "bg-gray-100 dark:bg-gray-700"
-                : "bg-white dark:bg-zinc-600"
-            } border border-gray-200 shadow-sm hover:shadow-none w-auto justify-items-center align-items-center dark:text-white py-2 px-3 transition-all duration-200 font-semi-bold leading-normal cursor-pointer`}
-          >
-            {section.name.match(/^\p{Emoji}/u)?.[0] || section.key}
-          </button>
-        </div>
-      ))}
+          {nbMainSpace.map((section) => (
+            <div
+              class="flex items-center text-center justify-center"
+              key={section.key}
+            >
+              <button
+                onClick={() => goToSection(`section-${section.key}`)}
+                class={`flex rounded-full hover:bg-gray-100 ${
+                  activeSection === `section-${section.key}`
+                    ? "bg-gray-100 dark:bg-gray-700"
+                    : "bg-white dark:bg-zinc-600"
+                } border border-gray-200 shadow-sm hover:shadow-none w-auto justify-items-center align-items-center dark:text-white py-2 px-3 transition-all duration-200 font-semi-bold leading-normal cursor-pointer`}
+              >
+                {section.name.match(/^\p{Emoji}/u)?.[0] || section.key}
+              </button>
+            </div>
+          ))}
+        </>
+      )}
 
       {/* Divider */}
       <div class="w-3/4 h-[1px] bg-gray-200 dark:bg-zinc-500"></div>

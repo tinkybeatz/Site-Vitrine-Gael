@@ -75,7 +75,7 @@ function App() {
           {nbMainSpace.map((nb) => (
             <div
               id={`section-${nb.key}`}
-              class="flex flex-col items-center justify-center xl:w-[100%] lg:w-[100%] md:w-[100%] h-[900px] snap-start"
+              class="flex flex-col items-center justify-center xl:w-[100%] lg:w-[100%] md:w-[100%] h-screen max-h-[900px] min-h-[820px] snap-start"
             >
               <div class="flex flex-col xl:w-[88%] xl:max-w-[90rem] lg:w-[85%] md:w-[80%] h-[90%] max-h-[90%]">
                 <div class="flex items-start h-[8%] text-2xl tracking-extra-tight font-scrib transition-colors dark:text-white text-black">
