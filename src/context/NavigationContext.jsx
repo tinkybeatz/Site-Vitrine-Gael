@@ -13,40 +13,32 @@ export const NavigationProvider = ({ children, sections }) => {
   // Navigation functions
   const goToSection = (sectionId) => {
     setActiveSection(sectionId);
-    
+
     if (sectionId === "home") {
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
       const sectionElement = document.getElementById(sectionId);
-      if (sectionElement) {
-        // For the last section, scroll to the very bottom of the page
-        const isLastSection = sectionId === `section-${sections[sections.length - 1].key}`;
-        
-        if (isLastSection) {
-          // Scroll to the bottom of the document
-          window.scrollTo({ 
-            top: document.documentElement.scrollHeight, 
-            behavior: "smooth" 
-          });
-        } else {
-          // For other sections, align to the start (top) of the section
-          sectionElement.scrollIntoView({ 
-            behavior: "smooth", 
-            block: "start" 
-          });
-        }
-      }
+      sectionElement.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     }
   };
 
   const goToNextSection = () => {
     // Find current section index
-    const currentIndex = activeSection === "home" 
-      ? -1 
-      : sections.findIndex(section => `section-${section.key}` === activeSection);
-    
+    const currentIndex =
+      activeSection === "home"
+        ? -1
+        : sections.findIndex(
+            (section) => `section-${section.key}` === activeSection
+          );
+
     // If we're at the last section or something went wrong, do nothing
-    if (currentIndex === sections.length - 1 || currentIndex === -1 && activeSection !== "home") {
+    if (
+      currentIndex === sections.length - 1 ||
+      (currentIndex === -1 && activeSection !== "home")
+    ) {
       return;
     }
 
@@ -63,8 +55,10 @@ export const NavigationProvider = ({ children, sections }) => {
     }
 
     // Find current section index
-    const currentIndex = sections.findIndex(section => `section-${section.key}` === activeSection);
-    
+    const currentIndex = sections.findIndex(
+      (section) => `section-${section.key}` === activeSection
+    );
+
     // If current section is the first one, go to home
     if (currentIndex === 0) {
       goToSection("home");
@@ -105,7 +99,7 @@ export const NavigationProvider = ({ children, sections }) => {
 
     // Add scroll event listener
     window.addEventListener("scroll", handleScroll);
-    
+
     // Initial check
     handleScroll();
 
@@ -124,7 +118,7 @@ export const NavigationProvider = ({ children, sections }) => {
         goToSection,
         goToNextSection,
         goToPrevSection,
-        sections
+        sections,
       }}
     >
       {children}

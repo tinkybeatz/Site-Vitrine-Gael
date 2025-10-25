@@ -35,7 +35,7 @@ function App() {
         />
         {/* <Navbar /> */}
         <SideNavbar nbMainSpace={nbMainSpace} />
-        <div className="flex-row dark:text-white transition-all duration-200 xl:w-[70%] lg:w-[70%] md:w-[70%] h-[100vh] z-10">
+        <div className="flex-row dark:text-white transition-all duration-200 xl:w-[70%] lg:w-[70%] md:w-[70%] h-[900px] z-10">
           <div className="flex xl:h-[40%] lg:h-[40%] md:h-[40%] sm:h-1/6 items-end xl:py-2 lg:py-2 md:py-2 justify-center">
             <h1
               ref={horRef}
@@ -75,7 +75,7 @@ function App() {
           {nbMainSpace.map((nb) => (
             <div
               id={`section-${nb.key}`}
-              class="flex flex-col items-center justify-center xl:w-[100%] lg:w-[100%] md:w-[100%] h-screen snap-start"
+              class="flex flex-col items-center justify-center xl:w-[100%] lg:w-[100%] md:w-[100%] h-[900px] snap-start"
             >
               <div class="flex flex-col xl:w-[88%] xl:max-w-[90rem] lg:w-[85%] md:w-[80%] h-[90%] max-h-[90%]">
                 <div class="flex items-start h-[8%] text-2xl tracking-extra-tight font-scrib transition-colors dark:text-white text-black">
