@@ -18,7 +18,7 @@ export function MyWorkBlock({ deploy }) {
         <div class="flex w-auto h-full divide-x divide-gray-200 border border-gray-200 rounded-lg justify-center items-center">
           <div
             onClick={() => selectProjects("All Projects")}
-            class={`flex whitespace-nowrap text-sm px-4 font-medium w-full h-full rounded-l-lg justify-center items-center py-2 cursor-pointer ${
+            class={`flex whitespace-nowrap text-sm px-4 md:px-3 md:text-xs font-medium w-full h-full rounded-l-lg justify-center items-center py-2 cursor-pointer ${
               projectSelection === "All Projects"
                 ? "bg-gray-100 shadow-inner"
                 : "bg-white"
@@ -28,7 +28,7 @@ export function MyWorkBlock({ deploy }) {
           </div>
           <div
             onClick={() => selectProjects("School Project")}
-            class={`flex whitespace-nowrap text-sm px-4 font-medium w-full h-full justify-center items-center py-2 cursor-pointer ${
+            class={`flex whitespace-nowrap text-sm px-4 md:px-3 md:text-xs font-medium w-full h-full justify-center items-center py-2 cursor-pointer ${
               projectSelection === "School Project"
                 ? "bg-gray-100 shadow-inner"
                 : "bg-white"
@@ -38,7 +38,7 @@ export function MyWorkBlock({ deploy }) {
           </div>
           <div
             onClick={() => selectProjects("Professionnal Project")}
-            class={`flex whitespace-nowrap text-sm px-4 font-medium w-full h-full rounded-r-lg justify-center items-center py-2 cursor-pointer ${
+            class={`flex whitespace-nowrap text-sm px-4 md:px-3 md:text-xs font-medium w-full h-full rounded-r-lg justify-center items-center py-2 cursor-pointer ${
               projectSelection === "Professionnal Project"
                 ? "bg-gray-100 shadow-inner"
                 : "bg-white"
@@ -50,7 +50,7 @@ export function MyWorkBlock({ deploy }) {
       </div>
 
       {/* Projects */}
-      <div class="grid grid-rows-2 grid-flow-col border justify-start border-gray-200 gap-4 shadow-inner rounded-lg content-start p-4 min-h-[92%] max-h-[92%] h-[92%] w-full max-w-full overflow-x-auto overflow-y-hidden">
+      <div class="grid grid-rows-2 md:grid-rows-2 grid-flow-col border justify-start border-gray-200 gap-4 shadow-inner rounded-lg content-start p-4 min-h-[92%] max-h-[92%] h-[92%] w-full max-w-full overflow-x-auto overflow-y-hidden">
         {deploy.projects
           .filter((project) => {
             // Si "All skills" est sélectionné, afficher toutes les compétences

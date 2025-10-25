@@ -24,7 +24,7 @@ function App() {
   return (
     <NavigationProvider sections={nbMainSpace}>
       <div
-        className="justify-items-center grid font-primary scroll-smooth snap-y snap-mandatory relative"
+        className="justify-items-center grid bg-white font-primary scroll-smooth snap-y snap-mandatory relative"
         key="1"
       >
         <ParticlesBackground
@@ -75,7 +75,7 @@ function App() {
           {nbMainSpace.map((nb) => (
             <div
               id={`section-${nb.key}`}
-              class="flex flex-col items-center justify-center xl:w-[100%] lg:w-[100%] md:w-[100%] h-screen max-h-[900px] min-h-[820px] snap-start"
+              class="flex flex-col items-center justify-center xl:w-[100%] lg:w-[100%] md:w-[100%] h-screen max-h-[900px] min-h-[800px] snap-start"
             >
               <div class="flex flex-col xl:w-[88%] xl:max-w-[90rem] lg:w-[85%] md:w-[80%] h-[90%] max-h-[90%]">
                 <div class="flex items-start h-[8%] text-2xl tracking-extra-tight font-scrib transition-colors dark:text-white text-black">
@@ -89,6 +89,9 @@ function App() {
               </div>
             </div>
           ))}
+        </div>
+        <div className="z-[100] h-[90px] items-start justify-center w-full flex font-light text-gray-400 text-sm">
+          <div className="bg-white border border-gray-200 py-3 shadow-md px-4 rounded-full">© 2025 Gaël DELOUIS. All rights reserved.</div>
         </div>
       </div>
     </NavigationProvider>

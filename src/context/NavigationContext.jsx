@@ -18,10 +18,27 @@ export const NavigationProvider = ({ children, sections }) => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
       const sectionElement = document.getElementById(sectionId);
-      sectionElement.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+      if (sectionElement) {
+        // Check if this is the last section
+        const sectionIndex = sections.findIndex(
+          (section) => `section-${section.key}` === sectionId
+        );
+        const isLastSection = sectionIndex === sections.length - 1;
+
+        if (isLastSection) {
+          // For the last section, scroll to a position that accounts for the footer
+          const elementTop = sectionElement.offsetTop;
+          window.scrollTo({ 
+            top: elementTop, 
+            behavior: "smooth" 
+          });
+        } else {
+          sectionElement.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      }
     }
   };
 

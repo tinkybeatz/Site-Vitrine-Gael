@@ -541,7 +541,7 @@ const nbMainSpace = [
         },
         {
           title: "Mail",
-          href: "",
+          href: "mailto:gael.delouis.pro@gmail.com",
           img: <MailOutlined />,
         },
       ],

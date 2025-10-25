@@ -60,14 +60,16 @@ export function ContactBlock({ deploy }) {
   //affichage
   return (
     <div class="flex flex-col h-full w-full bg-white p-4">
-      <div class="pb-4 text-base">
+      <div class="pb-4 text-base md:text-sm">
         Have a question or want to work together? Feel free to drop me a
         message. I'd love to hear from you!
       </div>
       <div class="grid grid-cols-3 w-full h-full gap-4">
         <div class="col-span-1 flex flex-col rounded-lg shadow-inner border border-gray-200 p-4 gap-4 items-start">
-          <div class="font-medium text-lg">Contact informations</div>
-          <div class="flex flex-col pl-4 gap-2 mb-2">
+          <div class="font-medium text-lg md:text-base">
+            Contact informations
+          </div>
+          <div class="flex flex-col pl-4 md:pl-0 gap-2 mb-2">
             {deploy &&
               deploy.contact_informations &&
               deploy.contact_informations.map((info, index) => (
@@ -84,7 +86,7 @@ export function ContactBlock({ deploy }) {
                     {info.href ? (
                       <a
                         href={info.href}
-                        class="text-blue-600 hover:text-blue-800 text-sm"
+                        class="text-blue-600 hover:text-blue-800 text-sm md:text-xs"
                         target={
                           info.href.startsWith("mailto:") ||
                           info.href.startsWith("tel:")
@@ -95,20 +97,26 @@ export function ContactBlock({ deploy }) {
                         {info.value}
                       </a>
                     ) : (
-                      <div class="text-sm text-gray-600">{info.value}</div>
+                      <div class="text-sm text-gray-600 md:text-xs">
+                        {info.value}
+                      </div>
                     )}
                   </div>
                 </div>
               ))}
           </div>
-          <div class="font-medium text-lg">Let's connect!</div>
+          <div class="font-medium text-lg md:text-base">Let's connect!</div>
           <div class="flex gap-2 pl-4">
             {deploy &&
               deploy.connect &&
               deploy.connect.map((connect) => (
                 <a
                   href={connect.href}
-                  target="_blank"
+                  target={
+                    connect.href.startsWith("mailto:")
+                      ? "_self"
+                      : "_blank"
+                  }
                   class="bg-white border shadow-md cursor-pointer hover:bg-gray-200 border-gray-200 flex h-[2.5rem] w-[2.5rem] items-center justify-center rounded-full"
                 >
                   {React.cloneElement(connect.img, {
@@ -118,7 +126,7 @@ export function ContactBlock({ deploy }) {
               ))}
           </div>
         </div>
-        <div class="col-span-2 flex flex-col lg:text-sm rounded-lg shadow-inner border border-gray-200 justify-center items-center">
+        <div class="col-span-2 flex flex-col lg:text-sm md:text-xs rounded-lg shadow-inner border border-gray-200 justify-center items-center">
           <div className="h-[15%] content-center">
             {/* Status Messages */}
             {submitStatus === null && (
@@ -153,7 +161,7 @@ export function ContactBlock({ deploy }) {
                   name="name"
                   value={formData.name}
                   onChange={handleInputChange}
-                  className="h-full max-h-[3rem] rounded-lg px-3 text-sm border border-gray-200 bg-gray-100 placeholder-gray-500"
+                  className="h-full max-h-[3rem] rounded-lg px-3 text-sm md:text-xs border border-gray-200 bg-gray-100 placeholder-gray-500"
                   placeholder="John Doe"
                   required
                 />
@@ -165,7 +173,7 @@ export function ContactBlock({ deploy }) {
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="h-full max-h-[3rem] rounded-lg px-3 text-sm border border-gray-200 bg-gray-100 placeholder-gray-500"
+                  className="h-full max-h-[3rem] rounded-lg px-3 text-sm md:text-xs border border-gray-200 bg-gray-100 placeholder-gray-500"
                   placeholder="john@example.com"
                   required
                 />
@@ -179,7 +187,7 @@ export function ContactBlock({ deploy }) {
                   name="subject"
                   value={formData.subject}
                   onChange={handleInputChange}
-                  className="h-full max-h-[3rem] rounded-lg px-3 text-sm border border-gray-200 bg-gray-100 placeholder-gray-500"
+                  className="h-full max-h-[3rem] rounded-lg px-3 text-sm md:text-xs border border-gray-200 bg-gray-100 placeholder-gray-500"
                   placeholder="How can I help you?"
                   required
                 />
@@ -192,7 +200,7 @@ export function ContactBlock({ deploy }) {
                   name="message"
                   value={formData.message}
                   onChange={handleInputChange}
-                  className="h-full resize-none rounded-lg px-3 pt-4 text-sm border border-gray-200 bg-gray-100 placeholder-gray-500"
+                  className="h-full resize-none rounded-lg px-3 pt-4 text-sm md:text-xs border border-gray-200 bg-gray-100 placeholder-gray-500"
                   placeholder="Your message here..."
                   required
                 />
@@ -202,7 +210,7 @@ export function ContactBlock({ deploy }) {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`rounded-lg h-full max-h-[3rem] text-white text-sm shadow-md hover:shadow-none cursor-pointer ${
+                className={`rounded-lg h-full max-h-[3rem] text-white text-sm md:text-xs shadow-md hover:shadow-none cursor-pointer ${
                   isSubmitting
                     ? "bg-gray-400 cursor-not-allowed"
                     : "bg-blue-500 hover:bg-blue-600"
@@ -214,7 +222,7 @@ export function ContactBlock({ deploy }) {
                 type="button"
                 onClick={handleReset}
                 disabled={isSubmitting}
-                className="bg-red-500 rounded-lg h-full max-h-[3rem] text-white text-sm shadow-md hover:bg-red-600 hover:shadow-none cursor-pointer disabled:bg-gray-400 disabled:cursor-not-allowed"
+                className="bg-red-500 rounded-lg h-full max-h-[3rem] text-white text-sm md:text-xs shadow-md hover:bg-red-600 hover:shadow-none cursor-pointer disabled:bg-gray-400 disabled:cursor-not-allowed"
               >
                 Reset
               </button>
