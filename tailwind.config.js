@@ -11,19 +11,11 @@ module.exports = {
     },
     screens: {
       'xl': {'min': '1520px'},
-      // => @media (min-width: 1520px) { ... }
-
       'lg': {'min': '1200px', 'max': '1520px'},
-      // => @media (min-width: 1200px, max-width: 1520px) { ... }
-
       'md': {'min': '1024px', 'max': '1200px'},
-      // => @media (min-width: 1024px, max-width: 1200px) { ... }
-
-      'tablet': {'min': '768px', 'max': '1024px'},
-      // => @media (min-width: 768px, max-width: 1024px) { ... }
-
-      'mobile': {'max': '768px'},
-      // => @media (max-width: 768px) { ... }
+      'sm': {'min': '768px', 'max': '1024px'},
+      'xs': {'min': '425px', 'max': '768px'},
+      'mobile': {'max': '425px'},
     },
     safelist: [
       "animate-[fade-in_1s_ease-in-out]",

@@ -114,7 +114,7 @@ export function AboutMeBlock({ deploy }) {
       {/* MD and below: 2-column layout (text+photo | photos) */}
       <div className="lg:hidden xl:hidden w-full flex gap-4">
         {/* Left section: 3/5 width - Text on top, Gael's photo on bottom */}
-        <div className="w-3/5 flex flex-col gap-4 h-full overflow-y-auto">
+        <div className="w-3/5 sm:w-[65%] flex flex-col gap-4 h-full overflow-y-auto">
           {/* Text content */}
           <div className="flex w-full flex-col p-2 h-full">
             <div class="flex w-full justify-between">
@@ -122,7 +122,7 @@ export function AboutMeBlock({ deploy }) {
                 <p class="text-xl font-medium dark:text-white pb-2 text-black duration-200">
                   Gaël DELOUIS
                 </p>
-                <div class="flex flex-col pb-4 text-sm">
+                <div class="flex flex-col pb-4 text-sm sm:text-xs">
                   <div class="flex flex-col gap-0.5">
                     <p class="text-gray-400 font-light pr-2">
                       <span class="pr-1">📍</span> Kuala Lumpur, Malaysia
@@ -136,7 +136,7 @@ export function AboutMeBlock({ deploy }) {
                   </div>
                 </div>
               </div>
-              <div className="rounded-lg w-36 h-36 shadow-lg overflow-hidden">
+              <div className="rounded-lg w-36 h-28 sm:w-28 sm:h-32 shadow-lg overflow-hidden">
                 <img
                   className="w-full h-full object-cover object-center rounded-lg scale-[2.15] -translate-x-2 translate-y-10"
                   src={gaelImage}
@@ -169,26 +169,26 @@ export function AboutMeBlock({ deploy }) {
         </div>
 
         {/* Right section: 2/5 width - Passion photos */}
-        <div className="w-2/5 relative flex items-center justify-center">
+        <div className="w-2/5 sm:w-[35%] relative flex items-center justify-center">
           <div className="relative w-full h-full">
             <img
               src={crossfitImage}
               alt="crossfit"
-              className="absolute w-48 h-auto top-[10%] left-[10%] transform rotate-[-5deg] shadow-2xl rounded-lg border-4 border-gray-100 dark:border-zinc-100 duration-200 cursor-pointer"
+              className="absolute w-44 sm:w-36 h-auto top-[10%] sm:top-[15%] left-[10%] transform rotate-[-5deg] shadow-2xl rounded-lg border-4 border-gray-100 dark:border-zinc-100 duration-200 cursor-pointer"
               style={{ zIndex: getZIndex("crossfit") }}
               onClick={() => handleImageClick("crossfit")}
             />
             <img
               src={mechanicImage}
               alt="mechanic"
-              className="absolute w-44 h-auto top-[30%] right-[10%] transform shadow-2xl rounded-lg border-4 border-gray-100 dark:border-zinc-100 duration-200 cursor-pointer"
+              className="absolute w-44 sm:w-36 h-auto top-[30%] sm:top-[35%] right-[10%] transform shadow-2xl rounded-lg border-4 border-gray-100 dark:border-zinc-100 duration-200 cursor-pointer"
               style={{ zIndex: getZIndex("mechanic") }}
               onClick={() => handleImageClick("mechanic")}
             />
             <img
               src={musicImage}
               alt="music"
-              className="absolute w-44 h-auto top-[42%] left-[20%] transform rotate-[5deg] shadow-2xl rounded-lg border-4 border-gray-100 dark:border-zinc-100 duration-200 cursor-pointer"
+              className="absolute w-44 sm:w-36 h-auto top-[42%] sm:top-[45%] left-[20%] sm:left-[12%] transform rotate-[5deg] shadow-2xl rounded-lg border-4 border-gray-100 dark:border-zinc-100 duration-200 cursor-pointer"
               style={{ zIndex: getZIndex("music") }}
               onClick={() => handleImageClick("music")}
             />

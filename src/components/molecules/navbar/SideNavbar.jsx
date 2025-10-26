@@ -45,7 +45,7 @@ export function SideNavbar({ nbMainSpace }) {
   //affichage
   return (
     <div
-      class="xl:w-[60px] lg:w-[60px] md:w-[60px] h-auto rounded-full fixed z-50 left-5 top-1/2 -translate-y-1/2 shadow-md border border-gray-200 flex flex-col justify-around items-center gap-2 py-2 bg-white"
+      class="xl:w-[60px] lg:w-[60px] md:w-[60px] sm:w-[55px] h-auto rounded-full fixed z-50 left-5 top-1/2 -translate-y-1/2 shadow-md border border-gray-200 flex flex-col justify-around items-center gap-2 py-2 bg-white"
       // ref={horRefNav}
     >
       <div class="flex items-center text-center justify-center">
@@ -55,7 +55,8 @@ export function SideNavbar({ nbMainSpace }) {
             activeSection === "home"
               ? "bg-gray-100 dark:bg-gray-700"
               : "bg-white dark:bg-zinc-600"
-          } border border-gray-200 shadow-sm hover:shadow-none w-auto justify-items-center align-items-center dark:text-white py-2 px-3 transition-all duration-200 font-semi-bold leading-normal cursor-pointer`}
+          } border border-gray-200 shadow-sm hover:shadow-none w-auto justify-items-center align-items-center dark:text-white py-2 px-3 transition-all duration-200 font-semi-bold leading-normal cursor-pointer
+          sm:text-sm sm:py-[7px] sm:px-2.5`}
         >
           🏠
         </button>
@@ -77,7 +78,8 @@ export function SideNavbar({ nbMainSpace }) {
                   activeSection === `section-${section.key}`
                     ? "bg-gray-100 dark:bg-gray-700"
                     : "bg-white dark:bg-zinc-600"
-                } border border-gray-200 shadow-sm hover:shadow-none w-auto justify-items-center align-items-center dark:text-white py-2 px-3 transition-all duration-200 font-semi-bold leading-normal cursor-pointer`}
+                } border border-gray-200 shadow-sm hover:shadow-none w-auto justify-items-center align-items-center dark:text-white py-2 px-3 transition-all duration-200 font-semi-bold leading-normal cursor-pointer
+                sm:text-sm sm:py-[7px] sm:px-2.5`}
               >
                 {section.name.match(/^\p{Emoji}/u)?.[0] || section.key}
               </button>
@@ -91,14 +93,16 @@ export function SideNavbar({ nbMainSpace }) {
 
       <button
         onClick={() => goToPrevSection()}
-        class={`flex rounded-full hover:bg-gray-100 border border-gray-200 shadow-sm hover:shadow-none w-auto justify-items-center align-items-center dark:text-white py-2 px-3 transition-all duration-200 font-semi-bold leading-normal cursor-pointer`}
+        class={`flex rounded-full hover:bg-gray-100 border border-gray-200 shadow-sm hover:shadow-none w-auto justify-items-center align-items-center dark:text-white py-2 px-3 transition-all duration-200 font-semi-bold leading-normal cursor-pointer
+        sm:text-sm sm:py-[7px] sm:px-2.5`}
       >
         ⬆️
       </button>
 
       <button
         onClick={() => goToNextSection()}
-        class={`flex rounded-full hover:bg-gray-100 border border-gray-200 shadow-sm hover:shadow-none w-auto justify-items-center align-items-center dark:text-white py-2 px-3 transition-all duration-200 font-semi-bold leading-normal cursor-pointer`}
+        class={`flex rounded-full hover:bg-gray-100 border border-gray-200 shadow-sm hover:shadow-none w-auto justify-items-center align-items-center dark:text-white py-2 px-3 transition-all duration-200 font-semi-bold leading-normal cursor-pointer
+        sm:text-sm sm:py-[7px] sm:px-2.5`}
       >
         ⬇️
       </button>
@@ -127,7 +131,8 @@ export function SideNavbar({ nbMainSpace }) {
 
       <a
         href={Resume}
-        class="flex dark:bg-zinc-600 hover:bg-gray-100 bg-white border border-gray-200 shadow-sm hover:shadow-none rounded-full w-auto text-black justify-items-center align-items-center dark:text-white py-2 px-[10px] transition-all duration-200 font-medium leading-normal cursor-pointer"
+        class="flex dark:bg-zinc-600 hover:bg-gray-100 bg-white border border-gray-200 shadow-sm hover:shadow-none rounded-full w-auto text-black justify-items-center align-items-center dark:text-white py-2 px-[10px] transition-all duration-200 font-medium leading-normal cursor-pointer
+        sm:text-sm sm:py-[7px] sm:px-2"
         download="Resume Gael"
       >
         CV
