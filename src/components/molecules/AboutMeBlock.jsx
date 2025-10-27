@@ -170,7 +170,7 @@ export function AboutMeBlock({ deploy }) {
 
         {/* Right section: 2/5 width - Passion photos */}
         <div className="w-2/5 sm:w-[35%] relative flex items-center justify-center">
-          <div className="relative w-full h-full">
+          <div className="relative w-full h-full sm:hidden">
             <img
               src={crossfitImage}
               alt="crossfit"
@@ -192,6 +192,21 @@ export function AboutMeBlock({ deploy }) {
               style={{ zIndex: getZIndex("music") }}
               onClick={() => handleImageClick("music")}
             />
+          </div>
+          <div className="md:hidden h-full w-full grid grid-cols-1 grid-rows-3 gap-4">
+            <div className="flex row-span-1 rounded-md shadow-md">
+              <img
+                src={crossfitImage}
+                alt="crossfit"
+                className="w-full object-cover rounded-md"
+              />
+            </div>
+            <div className="flex row-span-1 rounded-md shadow-md">
+              <img src={mechanicImage} alt="mechanic" className="w-full object-cover rounded-md" />
+            </div>
+            <div className="flex row-span-1 rounded-md shadow-md">
+              <img src={musicImage} alt="music" className="w-full object-cover rounded-md" />
+            </div>
           </div>
         </div>
       </div>

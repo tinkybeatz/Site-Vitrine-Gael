@@ -13,7 +13,7 @@ export function CardProject({ cardInfo }) {
     setIsPopupOpen(false);
   };
 
-  // Close popup when clicking escape key
+  // Close popup when clicking escape key and prevent scrolling
   useEffect(() => {
     const handleEscKey = (event) => {
       if (event.key === "Escape") {
@@ -21,12 +21,31 @@ export function CardProject({ cardInfo }) {
       }
     };
 
+    const preventScroll = (e) => {
+      e.preventDefault();
+    };
+
     if (isPopupOpen) {
       document.addEventListener("keydown", handleEscKey);
+      // Prevent scrolling on tablet/mobile when popup is open
+      document.body.style.overflow = "hidden";
+      document.body.style.touchAction = "none";
+      // Prevent mouse wheel scrolling
+      document.addEventListener("wheel", preventScroll, { passive: false });
+      document.addEventListener("touchmove", preventScroll, { passive: false });
+    } else {
+      // Restore scrolling when popup is closed
+      document.body.style.overflow = "unset";
+      document.body.style.touchAction = "unset";
     }
 
     return () => {
       document.removeEventListener("keydown", handleEscKey);
+      document.removeEventListener("wheel", preventScroll);
+      document.removeEventListener("touchmove", preventScroll);
+      // Restore scrolling when component unmounts
+      document.body.style.overflow = "unset";
+      document.body.style.touchAction = "unset";
     };
   }, [isPopupOpen]);
 
@@ -63,7 +82,7 @@ export function CardProject({ cardInfo }) {
           <>
             {/* Backdrop - blurred and gray overlay */}
             <div
-              className="fixed inset-0 z-[9998] bg-gray-900/50 backdrop-blur-sm"
+              className="fixed inset-0 z-[9998] bg-gray-900/25 backdrop-blur-[2px] "
               onClick={closePopup}
             ></div>
 
@@ -74,7 +93,7 @@ export function CardProject({ cardInfo }) {
             >
               {/* Modal Content */}
               <div
-                className="relative w-4/5 max-w-6xl h-[90vh] max-h-[800px] min-h-[400px] bg-white dark:bg-zinc-800 rounded-xl p-6 shadow-2xl overflow-y-hidden flex flex-col"
+                className="relative w-4/5 max-w-6xl h-[90vh] max-h-[800px] min-h-[400px] bg-white dark:bg-zinc-800 rounded-xl p-6 shadow-xl overflow-y-hidden flex flex-col"
                 onClick={(e) => e.stopPropagation()}
               >
                 {/* Close button

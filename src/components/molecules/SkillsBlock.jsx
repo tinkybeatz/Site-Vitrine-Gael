@@ -1,22 +1,93 @@
 import { ProgressBar } from "../atoms/ProgressBar";
 import { FlipCard } from "./cards/FlipCard";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { SkillsCard } from "./cards/SkillsCard";
 
 export function SkillsBlock({ deploy }) {
   //state
   const [skillSelection, setSkillSelection] = useState("All skills");
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+    
+    const handleClickOutside = (event) => {
+      if (isDropdownOpen && !event.target.closest('.relative')) {
+        setIsDropdownOpen(false);
+      }
+    };
+    
+    window.addEventListener("resize", handleResize);
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [isDropdownOpen]);
 
   //comportements
   function selectSkills(section) {
     setSkillSelection(section);
   }
 
+  const skillCategories = [
+    "All skills",
+    "AI Tools", 
+    "Programming Language",
+    "Front-end",
+    "Back-end",
+    "CI/CD",
+    "Project Management",
+    "Other"
+  ];
+
   //affichage
   return (
     <div class="flex flex-col h-full w-full max-h-full p-4">
       <div class="flex w-full h-[6%] mb-4 items-center">
-        <div class="flex divide-x divide-gray-200 border border-gray-200 rounded-lg h-full">
+        {/* Dropdown for small screens */}
+        <div class="md:hidden lg:hidden xl:hidden relative w-full">
+          <button
+            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+            class="flex w-[15rem] justify-between items-center px-4 py-2 gap-2 text-sm font-medium border border-gray-200 rounded-lg bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            <span className="text-sm">{skillSelection}</span>
+            <svg
+              class={`w-4 h-4 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`}
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          
+          {isDropdownOpen && (
+            <div class="absolute w-[15rem] top-full left-0 right-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg z-10">
+              {skillCategories.map((category) => (
+                <div
+                  key={category}
+                  onClick={() => {
+                    selectSkills(category);
+                    setIsDropdownOpen(false);
+                  }}
+                  class={`px-4 py-2 text-xs cursor-pointer hover:bg-gray-50 first:rounded-t-lg last:rounded-b-lg ${
+                    skillSelection === category ? "bg-gray-100 font-medium" : ""
+                  }`}
+                >
+                  {category === "Programming Language" ? "Programming Languages" : category}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* Button tabs for larger screens */}
+        <div class="sm:hidden xs:hidden mobile:hidden flex divide-x divide-gray-200 border border-gray-200 rounded-lg h-full"> 
           <div
             onClick={() => selectSkills("All skills")}
             class={`flex whitespace-nowrap text-sm px-4 md:px-3 md:text-xs font-medium h-full rounded-l-lg justify-center items-center py-2 cursor-pointer ${
@@ -116,95 +187,7 @@ export function SkillsBlock({ deploy }) {
             );
           })
           .map((row) => (
-            // <button
-            //   onClick={() =>
-            //     row.linkTo !== "" ? window.open(row.linkTo, "_blank") : null
-            //   }
-            //   class="flex h-[5.5rem] shadow-sm w-auto rounded-lg border gap-2 border-gray-200 p-2"
-            // >
-            //   <img
-            //     src={row.img}
-            //     alt={row.imgAlt}
-            //     class="rounded-md aspect-square h-full"
-            //   />
-            //   <div class="flex flex-col justify-center">
-            //     <p class="text-start leading-5">{row.name}</p>
-            //     <p class="text-sm text-start text-gray-400 pb-0.5 leading-4">
-            //       {row.description}
-            //     </p>
-            //     <div class="flex flex-wrap gap-1 mt-1">
-            //       {row.categories &&
-            //         row.categories.map((category, index) => {
-            //           switch (category) {
-            //             case "Front-end":
-            //               return (
-            //                 <div
-            //                   key={index}
-            //                   class="text-xs text-center py-0.5 px-2 w-fit rounded-full bg-red-500 text-white"
-            //                 >
-            //                   {category}
-            //                 </div>
-            //               );
-            //             case "Back-end":
-            //               return (
-            //                 <div
-            //                   key={index}
-            //                   class="text-xs text-center py-0.5 px-2 w-fit rounded-full bg-green-500 text-white"
-            //                 >
-            //                   {category}
-            //                 </div>
-            //               );
-            //             case "Programming Language":
-            //               return (
-            //                 <div
-            //                   key={index}
-            //                   class="text-xs text-center py-0.5 px-2 w-fit rounded-full bg-blue-500 text-white"
-            //                 >
-            //                   {category}
-            //                 </div>
-            //               );
-            //             case "CI/CD":
-            //               return (
-            //                 <div
-            //                   key={index}
-            //                   class="text-xs text-center py-0.5 px-2 w-fit rounded-full bg-purple-500 text-white"
-            //                 >
-            //                   {category}
-            //                 </div>
-            //               );
-            //             case "Project Management":
-            //               return (
-            //                 <div
-            //                   key={index}
-            //                   class="text-xs text-center py-0.5 px-2 w-fit rounded-full bg-yellow-500 text-white"
-            //                 >
-            //                   {category}
-            //                 </div>
-            //               );
-            //             case "Other":
-            //               return (
-            //                 <div
-            //                   key={index}
-            //                   class="text-xs text-center py-0.5 px-2 w-fit rounded-full bg-cyan-500 text-white"
-            //                 >
-            //                   {category}
-            //                 </div>
-            //               );
-            //             default:
-            //               return (
-            //                 <div
-            //                   key={index}
-            //                   class="text-xs text-center py-0.5 px-2 w-fit rounded-full border border-gray-500"
-            //                 >
-            //                   {category}
-            //                 </div>
-            //               );
-            //           }
-            //         })}
-            //     </div>
-            //   </div>
-            // </button>
-            <SkillsCard skill={row} />
+            <SkillsCard skill={row} size={windowWidth >= 1024 ? "big" : "small"} />
           ))}
         {deploy.skills.filter((skill) => {
           if (skillSelection === "All skills") return true;
