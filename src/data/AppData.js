@@ -219,13 +219,15 @@ const nbMainSpace = [
           iconStyling: "text-yellow-400 bg-yellow-400/25 border-yellow-400 shadow-yellow-400/25",
           title: "Problem Solver",
           text: "I thrive on analyzing complex problems and finding effective solutions. My approach is to break down challenges into manageable parts and address them systematically.",
+          shortText: "I thrive on analyzing complex problems and breaking them down into manageable, systematic solutions.",
         },
         {
           key: 2,
           icon: <OpenAIOutlined />,
           iconStyling: "text-blue-500 bg-blue-500/25 border-blue-500 shadow-blue-500/25",
-          title: "Use of AI Technologies",
+          title: "Using AI",
           text: "I leverage AI and machine learning tools to enhance development workflows and create innovative solutions. I actively stay updated with emerging technologies.",
+          shortText: "I leverage AI and machine learning tools to enhance development workflows and stay updated with emerging technologies.",
         },
         {
           key: 3,
@@ -233,6 +235,7 @@ const nbMainSpace = [
           iconStyling: "text-red-500 bg-red-500/25 border-red-500 shadow-red-500/25",
           title: "Adaptability",
           text: "My engineering education taught me how to learn, not just memorize technologies. This allows me to quickly adapt to any tech stack or framework requirement.",
+          shortText: "My engineering education taught me how to learn, allowing me to quickly adapt to any tech stack or framework.",
         },
         {
           key: 4,
@@ -240,6 +243,7 @@ const nbMainSpace = [
           iconStyling: "text-green-500 bg-green-500/25 border-green-500 shadow-green-500/25",
           title: "Collaboration",
           text: "I believe that great results come from teamwork. I actively collaborate with colleagues and stakeholders to ensure that all perspectives are considered and that we achieve the best outcomes together.",
+          shortText: "I believe in teamwork and actively collaborate with colleagues to achieve the best outcomes together.",
         },
         {
           key: 5,
@@ -247,6 +251,7 @@ const nbMainSpace = [
           iconStyling: "text-purple-500 bg-purple-500/25 border-purple-500 shadow-purple-500/25",
           title: "Various Experiences",
           text: "I've worked in both large corporations and smaller companies, giving me insight into different work cultures and processes. This makes me adaptable to any organizational structure.",
+          shortText: "I've worked in both large corporations and smaller companies, making me adaptable to any organizational structure.",
         },
         {
           key: 6,
@@ -254,6 +259,7 @@ const nbMainSpace = [
           iconStyling: "text-cyan-400 bg-cyan-400/25 border-cyan-400 shadow-cyan-400/25",
           title: "Cloud & DevOps",
           text: "I have hands-on experience with cloud platforms like Azure or Vercel, containerization technologies as well as setting up CI/CD pipelines for efficient software delivery.",
+          shortText: "I have hands-on experience with cloud platforms, containerization, and CI/CD pipelines for efficient software delivery.",
         },
       ]
     }
@@ -268,7 +274,7 @@ const nbMainSpace = [
           description:
             "I had the opportunity to work on a 'Real-Time editing feature' on a complex Digital Content Creation Platform during my last internship. This feature was Full-Stack, I had to create the whole features logic. Project was very important for the company so i'm glad I could have a great impact for their platform.",
           techno: ["React", "NestJS", "CucumberTS", "Kubernetes"],
-          categories: ["Professionnal Project"],
+          categories: ["Professional Projects"],
           images: [
             {
               key: 1,
@@ -287,7 +293,7 @@ const nbMainSpace = [
           description:
             "Web application to analyze and visualize Spotify playlists using the Spotify API. Planning on adding more features : AI-powered analytics (mood, tempo, etc...), user authentification (required by the Spotify API to be able to analyse private playlists), and more... Personal project for fun, to learn more about web development.",
           techno: ["Angular", "Flask"],
-          categories: ["Personal Project"],
+          categories: ["Personal Projects"],
           link: "https://spotify-insights-ten.vercel.app",
           images: [
             {
@@ -307,7 +313,7 @@ const nbMainSpace = [
           description:
             "Worked on a platform to manage the domotics products catalog for Hager Group. The platform allows to create, update and delete products, categories, etc... It also allows to export data in a normalized format. Project was made using Angular for the front-end, Flask for the back-end and C# .NET Core for the DB extraction algorithm. (No picture because confidential project)",
           techno: ["Angular", "Flask", "JasmineTS", "Azure", "Azure DevOps", "MySQL", "C#", "C# .NET Core"],
-          categories: ["Professionnal Project"],
+          categories: ["Professional Projects"],
           images: [
             {
               key: 1,
@@ -321,7 +327,7 @@ const nbMainSpace = [
           description:
             "Worked on a platform to manage telecom subscriptions for the biggest telecom operator in France. Engineered the platform from scratch, using Symfony for the back-end and Orange's version of Bootstrap for the front-end. (No picture because confidential project)",
           techno: ["Symfony", "PHP", "Bootstrap", "Jira"],
-          categories: ["Professionnal Project"],
+          categories: ["Professional Projects"],
           images: [
             {
               key: 1,
@@ -335,7 +341,7 @@ const nbMainSpace = [
           description:
             "Created an online platform game (Fall-Guys style) and a VR Map Editor for that same game. Project was made for a school project, we had a lot of fun working on it and learning a lot about Unity.",
           techno: ["Unity C#", "C#", "Photon Unity", "XR Interaction Toolkit"],
-          categories: ["School Project"],
+          categories: ["School Projects"],
           images: [
             {
               key: 1,
@@ -354,7 +360,7 @@ const nbMainSpace = [
           description:
             "Creation of a demo program to make the TiaGO robot move, grab objects and interact with its environment for an open doors day at school. The robot was programmed to give people flyers about the different courses available at school, with an AI voice assistant and automatic decision making.",
           techno: ["Linux", "Python", "ROS 1"],
-          categories: ["School Project"],
+          categories: ["School Projects"],
           images: [
             {
               key: 1,
@@ -373,7 +379,7 @@ const nbMainSpace = [
           description:
             "Creation and developement of a weather station using several sensors",
           techno: ["Autodesk TinkerCAD", "C Arduino"],
-          categories: ["School Project"],
+          categories: ["School Projects"],
           images: [
             {
               key: 1,
@@ -387,7 +393,7 @@ const nbMainSpace = [
           description:
             "Creation and developement of an audio signal encryption/decryption system",
           techno: ["Python"],
-          categories: ["School Project"],
+          categories: ["School Projects"],
           images: [
             {
               key: 1,
@@ -401,7 +407,7 @@ const nbMainSpace = [
           description:
             "Configuration of a VM Server during an internship (also including the server bios update, whole server firmware configuration, RAID configuration, proxy configuration)",
           techno: ["Proxmox VE"],
-          categories: ["Professionnal Project"],
+          categories: ["Professional Projects"],
           images: [
             {
               key: 1,
@@ -415,7 +421,7 @@ const nbMainSpace = [
           description:
             "Coding of a digital password vault using arduino online IDE, simulating the hardware, 4 digits password",
           techno: ["C Arduino"],
-          categories: ["School Project"],
+          categories: ["School Projects"],
           images: [
             {
               key: 1,

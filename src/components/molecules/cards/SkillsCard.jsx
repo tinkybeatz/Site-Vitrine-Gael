@@ -131,7 +131,7 @@ export function SkillsCard({ skill, size }) {
                       <div className="w-[8%] flex justify-center items-start">
                         <button
                           onClick={closePopup}
-                          className="text-gray-500 shadow-md w-full flex rounded-full border border-gray-200 aspect-square items-center justify-center hover:shadow-none active:bg-gray-100"
+                          className="text-gray-500 shadow-md w-10 h-10 flex rounded-full border border-gray-200 aspect-square items-center justify-center hover:shadow-none active:bg-gray-100"
                         >
                           <svg
                             xmlns="http://www.w3.org/2000/svg"

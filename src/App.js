@@ -91,7 +91,7 @@ function App() {
               class="flex flex-col items-center justify-center w-full h-screen max-h-[900px] min-h-[800px] snap-start"
             >
               <div class="flex flex-col xl:w-[88%] xl:max-w-[90rem] lg:w-[85%] md:w-[80%] sm:w-[75%] xs:w-[95%] mobile:w-[98%] h-[90%] max-h-[90%]">
-                <div class="flex items-start h-[8%] text-2xl tracking-extra-tight font-scrib transition-colors dark:text-white text-black">
+                <div class="flex items-start h-[8%] text-2xl sm:text-xl tracking-extra-tight font-scrib transition-colors dark:text-white text-black">
                   <div class="flex bg-white px-5 h-[78%] rounded-lg items-center border border-gray-200 shadow-md">
                     {nb.key}. {nb.name.toUpperCase()}
                   </div>

@@ -122,7 +122,7 @@ export function MainSpace({ nb }) {
         {nb.key === 7 ? null : (
         <div
           onClick={goToNextSection}
-          className={`absolute font-scrib flex rounded-full px-4 py-3 bg-red-500 text-white text-md md:text-sm md:px-4 md:py-2 cursor-pointer -bottom-5 -right-5 z-[1000] select-none hover:bg-red-600 active:scale-95 transition-all duration-200 shadow-md hover:shadow-sm active:shadow-none ${isWiggling ? 'wiggle-button' : ''}`}
+          className={`absolute font-scrib flex rounded-full px-4 py-3 bg-red-500 text-white text-md md:text-sm md:px-4 md:py-2 sm:text-sm sm:px-4 sm:py-2 cursor-pointer -bottom-5 -right-5 z-[1000] select-none hover:bg-red-600 active:scale-95 transition-all duration-200 shadow-md hover:shadow-sm active:shadow-none ${isWiggling ? 'wiggle-button' : ''}`}
         >
           Next section
         </div>)}

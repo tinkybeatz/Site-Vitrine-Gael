@@ -22,7 +22,10 @@ export function CardProject({ cardInfo }) {
     };
 
     const preventScroll = (e) => {
-      e.preventDefault();
+      // Only prevent scroll if the target is not inside the modal content
+      if (!e.target.closest('.modal-content')) {
+        e.preventDefault();
+      }
     };
 
     if (isPopupOpen) {
@@ -30,7 +33,7 @@ export function CardProject({ cardInfo }) {
       // Prevent scrolling on tablet/mobile when popup is open
       document.body.style.overflow = "hidden";
       document.body.style.touchAction = "none";
-      // Prevent mouse wheel scrolling
+      // Prevent mouse wheel scrolling only outside the modal
       document.addEventListener("wheel", preventScroll, { passive: false });
       document.addEventListener("touchmove", preventScroll, { passive: false });
     } else {
@@ -54,7 +57,7 @@ export function CardProject({ cardInfo }) {
     <>
       <div
         onClick={() => setIsPopupOpen(true)}
-        className="shrink-0 divide relative cursor-pointer border border-gray-200 rounded-lg xl:h-auto xl:w-[27rem] lg:h-auto lg:w-[22rem] md:h-auto md:w-[20rem] bg-white dark:bg-zinc-700 text-black dark:text-white transition-all duration-200 shadow-md hover:shadow-sm @container flex flex-col"
+        className="shrink-0 divide relative cursor-pointer border border-gray-200 rounded-lg xl:h-auto xl:w-[27rem] lg:h-auto lg:w-[22rem] md:h-auto md:w-[20rem] sm:h-[15rem] sm:w-full bg-white dark:bg-zinc-700 text-black dark:text-white transition-all duration-200 shadow-md hover:shadow-sm @container flex flex-col"
       >
         <div className="flex-1 w-full min-h-0">
           {cardInfo.images &&
@@ -63,7 +66,7 @@ export function CardProject({ cardInfo }) {
             <img
               src={cardInfo.images[0].img}
               alt={cardInfo.images[0].imgAlt}
-              className="rounded-lg object-cover h-full w-full"
+              className="rounded-t-lg object-cover h-full w-full"
             />
           ) : (
             <div className="flex h-full w-full items-center justify-center bg-gray-200">
@@ -71,7 +74,7 @@ export function CardProject({ cardInfo }) {
             </div>
           )}
         </div>
-        <div className="flex h-16 md:text-sm w-full items-center justify-center text-center font-medium p-2">
+        <div className="flex h-16 md:text-sm sm:text-sm w-full items-center justify-center text-center p-2">
           {cardInfo.title}
         </div>
       </div>
@@ -93,7 +96,7 @@ export function CardProject({ cardInfo }) {
             >
               {/* Modal Content */}
               <div
-                className="relative w-4/5 max-w-6xl h-[90vh] max-h-[800px] min-h-[400px] bg-white dark:bg-zinc-800 rounded-xl p-6 shadow-xl overflow-y-hidden flex flex-col"
+                className="modal-content relative w-4/5 max-w-6xl h-[90vh] max-h-[800px] min-h-[400px] bg-white dark:bg-zinc-800 rounded-xl p-6 shadow-xl overflow-y-hidden flex flex-col"
                 onClick={(e) => e.stopPropagation()}
               >
                 {/* Close button
@@ -134,10 +137,23 @@ export function CardProject({ cardInfo }) {
                     )}
                     {/* Close button */}
                     <button
-                      className="bg-red-500 flex h-full content-center items-center justify-center px-3 rounded-full text-white text-sm hover:bg-red-600 transition-all duration-200 shadow-md hover:shadow-none"
                       onClick={closePopup}
+                      className="text-gray-500 shadow-md w-10 h-10 flex rounded-full border border-gray-200 items-center justify-center hover:shadow-none active:bg-gray-100"
                     >
-                      Close
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-6 w-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M6 18L18 6M6 6l12 12"
+                        />
+                      </svg>
                     </button>
                   </div>
                 </div>
