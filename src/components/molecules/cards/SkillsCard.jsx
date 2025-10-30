@@ -157,7 +157,12 @@ export function SkillsCard({ skill, size }) {
                             ? window.open(skill.linkTo, "_blank")
                             : null
                         }
-                        className="cursor-pointer flex bg-white border border-gray-200 shadow-md text-sm h-full items-center justify-center px-4 rounded-md hover:shadow-none active:bg-gray-100"
+                        disabled={skill.linkTo === ""}
+                        className={`flex text-sm h-full items-center justify-center px-4 rounded-md ${
+                          skill.linkTo === ""
+                            ? "cursor-not-allowed bg-gray-100 border border-gray-200 text-gray-400"
+                            : "cursor-pointer bg-white border border-gray-200 shadow-md hover:shadow-none active:bg-gray-100"
+                        }`}
                       >
                         Visit official page
                       </button>
