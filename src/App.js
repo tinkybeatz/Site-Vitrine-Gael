@@ -1,19 +1,41 @@
 import { inject } from "@vercel/analytics";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { MainSpace } from "./components/organisms/MainSpace";
 import nbMainSpace from "./data/AppData";
 import { SideNavbar } from "./components/molecules/navbar/SideNavbar";
 import { vertFadeInPres, vertFadeInScroll } from "../gsap/verticalFadeIn";
-import { horFadeInPres } from "../gsap/horizontalFadeIn";
+import { horFadeInPres, horFadeInScroll } from "../gsap/horizontalFadeIn";
 import { NavigationProvider } from "./context/NavigationContext"; // Import the NavigationProvider
 import NavigationButtons from "./components/molecules/buttons/NavigationButtons";
 import ParticlesBackground from "./components/atoms/ParticlesBackground";
+import { NextSectionButton } from "./components/atoms/NextSectionButton";
 
 function App() {
   inject();
   // constantes (état, données)
   let verRef = React.useRef(null);
   let horRef = React.useRef(null);
+
+  // Window width state for responsive behavior
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  React.useEffect(() => {
+    horFadeInScroll(horRef.current, +80);
+  }, []);
+
+
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Check if we're on xs breakpoint (< 768px based on Tailwind default)
+  const isXs = windowWidth < 768;
 
   React.useEffect(() => {
     vertFadeInPres(verRef, 2, 0);
@@ -35,10 +57,10 @@ function App() {
         />
         {/* <Navbar /> */}
         <SideNavbar nbMainSpace={nbMainSpace} />
-        <div className="flex-row dark:text-white transition-all duration-200 z-10 h-[900px] w-[70%] sm:w-[80%] xs:w-[95%] mobile:w-[95%]">
+        <div className="flex-row dark:text-white transition-all duration-200 z-10 h-[900px] w-[70%] sm:w-[80%] xs:w-[95%] xs:h-[100vh] mobile:w-[95%]">
           <div
             className="flex items-end justify-center py-2 h-[40%]
-          sm:h-[35%]"
+          sm:h-[35%] xs:h-[30%]"
           >
             <h1
               ref={horRef}
@@ -46,7 +68,8 @@ function App() {
               xl:text-8xl 
               lg:text-7xl 
               md:text-6xl 
-              sm:text-5xl xm:py-3 xm:px-6"
+              sm:text-5xl sm:py-3 sm:px-6
+              xs:text-3xl xs:py-3 xs:px-6"
             >
               GAËL DELOUIS
             </h1>
@@ -56,13 +79,24 @@ function App() {
           xl:text-xl
           lg:text-lg
           md:text-sm
-          sm:text-sm sm:flex-col sm:justify-start sm:items-center"
+          sm:text-sm sm:flex-col sm:justify-start sm:items-center
+          xs:text-sm xs:flex-col xs:justify-start xs:items-center xs:h-[30%]"
           >
-            <div class="flex h-min bg-white border border-gray-200 rounded-full pt-2 pb-2 pr-3 px-4 shadow-sm">
-              Full-Stack Web Developper | Product Engineer | Your next{" "}
-              <span class="pl-1 pr-2 font-semibold italic">best</span> hire
+            <div class="flex h-min bg-white border border-gray-200 rounded-full xs:bg-transparent xs:shadow-none xs:border-none pt-2 pb-2 pr-3 px-4 shadow-sm xs:flex-col xs:gap-2 xs:items-center">
+              <span class="pr-2 text-center xs:py-1.5 xs:px-3 xs:border xs:border-gray-200 xs:rounded-full xs:bg-white xs:shadow-md">
+                Full-Stack Web Developper
+              </span>
+              {!isXs && "|"}
+              <span class="pl-2 pr-2 text-center xs:py-1.5 xs:px-3 xs:border xs:border-gray-200 xs:rounded-full xs:bg-white xs:shadow-md">
+                Product Engineer
+              </span>
+              {!isXs && "|"}
+              <span class="pl-2 pr-2 text-center xs:py-1.5 xs:px-3 xs:border xs:border-gray-200 xs:rounded-full xs:bg-white xs:shadow-md">
+                Your next{" "}
+                <span class="pl-0.5 pr-1 font-semibold italic">best</span> hire
+              </span>
             </div>
-            <div class="flex h-min gap-2 items-center bg-white border border-gray-200 rounded-full pt-2 pb-2 pr-3 px-4 shadow-sm font-medium">
+            <div class="flex h-min gap-2 items-center bg-white border border-gray-200 rounded-full pt-2 pb-2 pr-3 px-4 shadow-md font-medium">
               Available to work now
               {/* <div class="blink_me"></div> */}
               <div class="ring-container">
@@ -71,8 +105,8 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="items-center text-xl font-light flex flex-col xl:h-[45%] md:h-[45%] lg:h-[45%] sm:h-[50%]">
-            <div class="flex flex-col items-center w-[60%] sm:w-[70%] px-4 py-4 h-min rounded-[2rem] shadow-lg bg-white border border-gray-200">
+          <div className="items-center text-xl font-light flex flex-col xl:h-[45%] md:h-[45%] lg:h-[45%] sm:h-[50%] xs:h-[40%]">
+            <div class="flex flex-col items-center w-[60%] sm:w-[70%] px-4 py-4 h-min rounded-[2rem] shadow-lg bg-white border border-gray-200 xs:hidden">
               <p class="text-center text-lg font-medium underline underline-offset-4 decoration-red-600">
                 All sections
               </p>
@@ -81,6 +115,13 @@ function App() {
                   <NavigationButtons section={section} />
                 ))}
               </div>
+            </div>
+            <div className="xl:hidden lg:hidden md:hidden sm:hidden flex w-full items-center justify-center relative h-[50%]">
+              <NextSectionButton 
+                className=""
+                show={true}
+                text="Start Exploring"
+              />
             </div>
           </div>
         </div>
