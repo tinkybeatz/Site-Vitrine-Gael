@@ -1,412 +1,147 @@
-import { useState, useRef } from "react";
-import { inject } from '@vercel/analytics';
-import React from "react";
-import MainPagePic from "../public/images/imageGael.jpg";
+import { inject } from "@vercel/analytics";
+import React, { useState, useEffect } from "react";
 import { MainSpace } from "./components/organisms/MainSpace";
-import { Navbar } from "./components/molecules/navbar/Navbar";
+import nbMainSpace from "./data/AppData";
+import { SideNavbar } from "./components/molecules/navbar/SideNavbar";
 import { vertFadeInPres, vertFadeInScroll } from "../gsap/verticalFadeIn";
-import { horFadeInPres } from "../gsap/horizontalFadeIn";
-import {
-  MailOutlined,
-  PhoneOutlined,
-  GithubOutlined,
-  LinkedinOutlined,
-} from "@ant-design/icons";
+import { horFadeInPres, horFadeInScroll } from "../gsap/horizontalFadeIn";
+import { NavigationProvider } from "./context/NavigationContext"; // Import the NavigationProvider
+import NavigationButtons from "./components/molecules/buttons/NavigationButtons";
+import ParticlesBackground from "./components/atoms/ParticlesBackground";
+import { NextSectionButton } from "./components/atoms/NextSectionButton";
 
 function App() {
   inject();
   // constantes (état, données)
   let verRef = React.useRef(null);
-  let horRef = React.useRef(null);
+
+  // Window width state for responsive behavior
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   React.useEffect(() => {
     vertFadeInPres(verRef, 2, 0);
-    horFadeInPres(horRef, 2, 0);
   }, []);
 
-  const nbMainSpace = [
-    {
-      key: 1,
-      name: "About Me",
-      deploy: {
-        text: "Hello and welcome to my portfolio !! Thanks for coming here and taking the time to know me better ! while strolling between the menus you can learn a little more about me, my ambitions and my passions!",
-        passions: [
-          {
-            key: 1,
-            image: "",
-            text: "Computer Science & IT",
-          },
-          {
-            key: 2,
-            image: "",
-            text: "Mechanics & Automobile Preparation",
-          },
-          {
-            key: 3,
-            image: "",
-            text: "Fashion & Haute Couture",
-          },
-          {
-            key: 4,
-            image: "",
-            text: "Music",
-          },
-          {
-            key: 5,
-            image: "",
-            text: "Sports & Video Games",
-          },
-          {
-            key: 6,
-            image: "",
-            text: "Travelling",
-          },
-        ],
-        softSkills: [
-          {
-            key: 1,
-            image: "",
-            text: "Creative",
-          },
-          {
-            key: 2,
-            image: "",
-            text: "Public Speaker",
-          },
-          {
-            key: 3,
-            image: "",
-            text: "Autonomous",
-          },
-          {
-            key: 4,
-            image: "",
-            text: "Applied",
-          },
-          {
-            key: 5,
-            image: "",
-            text: "Active Listener",
-          },
-          {
-            key: 6,
-            image: "",
-            text: "Open Minded",
-          },
-        ],
-      },
-    },
-    {
-      key: 2,
-      name: "My Professional Experience",
-      deploy: {
-        timelineInfo: [
-          {
-            key: 1,
-            title: "Butcher at the outdoor market",
-            location: "Boucherie Marques",
-            location2: "Gradignan, France",
-            dates: "2020-2021",
-          },
-          {
-            key: 2,
-            title: "System Administrator and Internal IT Support - Intern",
-            location: "Omnitech Security",
-            location2: "Bordeaux, France",
-            dates: "April 2022 - July 2022",
-          },
-          {
-            key: 3,
-            title: "Self-Service Employee",
-            location: "Carrefour Bordeaux",
-            location2: "Bordeaux, France",
-            dates: "September 2022 - January 2023",
-          },
-          {
-            key: 4,
-            title: "Web Developper BAC +3 - Intern",
-            location: "Orange SA",
-            location2: "Pessac, France",
-            dates: "January 2023 - April 2023",
-          },
-          {
-            key: 5,
-            title: "Web Developper - Freelance",
-            location: "TB PAYE Conseils",
-            location2: "Bordeaux, France",
-            dates: "March 2023 - May 2023",
-          },
-          {
-            key: 6,
-            title: "Engineer Full-Stack Web Developper - Intern",
-            location: "Foleon",
-            location2: "Amsterdam, Netherlands",
-            dates: "September 2023 - February 2024",
-          },
-          {
-            key: 7,
-            title: "Full Stack Web Developper - Freelance",
-            location: "Kamileon Fitness",
-            location2: "Kuala Lumpur, Malaysia",
-            dates: "April 2024 - January 2025",
-          },
-        ],
-        texts: [
-          "First Profesionnal Experience.",
-          "During this internship, i was a system administrator and had to configure serveral servers, help the collegues and fix their computer problems.",
-          "I got this job because i needed experience and money to pay my appartement to be fair, though i can say this experience ended-up being very fun.",
-          "This was my favourite profesionnal experience so-far ! the mission was very interesting and the team I worked with was very nice to me.",
-          "I did my first Free-Lance mission to see how it would fit with my schedule, my team and i ended-up finishing the mission in only a week.",
-          "First internation Professionnal Experience. Added a Realtime Edition feature on an existing online content creation platform.",
-          "Worked on a few websites for a fitness company in Malaysia. Some of them contain booking systems and online shoping.",
-        ],
-      },
-    },
-    {
-      key: 3,
-      name: "IT Hard Skills",
-      deploy: {
-        text: "During my studies at CESI and throughout my personnal projects, i've gained quite a few Hard Skills which are displayed on the right. I absolutely love coding and trying to make things work, thinking about algorithm stimulates my brain and i'm starting to get used to certain languages which allows me to go a bit deeper",
-        list: [
-          "HTML, CSS (and TailwindCSS, Bootstrap)",
-          "JS / TS (and ReactJS, NestJS, CucumberJS)",
-          "PHP (and Laravel, Symfony)",
-          "C++ / C# (and .NET) / C Arduino",
-          "WordPress / Wix",
-        ],
-        progress: [
-          {
-            nline:
-              "Programing (C, Python, SQL, C++, Arduino, JavaScript, C#, PHP, Windows, PowerShell)",
-            progress: 75,
-          },
-          {
-            nline:
-              "System and Networks (Acitve Directory, Creating and Setting up Servers (Windows/Linux))",
-            progress: 60,
-          },
-        ],
-      },
-    },
-    {
-      key: 4,
-      name: "My Best Projects",
-      deploy: [
-        {
-          id: 1,
-          title: "Real-Time editing feature on Content Creation Platform",
-          desc: "I had the opportunity to work on a 'Real-Time editing feature' on a complex Digital Content Creation Platform during my last internship. This feature was Full-Stack, I had to create the whole features logic. Project was very important for the company so i'm glad I could have a great impact for their platform.",
-          techno: "ReactTS, NestTS, CucumberTS, Kubernetes",
-        },
-        {
-          id: 2,
-          title: "Online Platform Game (Fall-Guys style) and VR Map Editor",
-          desc: "Created an online platform game (Fall-Guys style) and a VR Map Editor for that same game. Project was made for a school project, we had a lot of fun working on it and learning a lot about Unity.",
-          techno: "Unity, C#, Photon Unity, XR Interaction Toolkit",
-        },
-        {
-          id: 3,
-          title: "This Website !",
-          desc: "This website is my personnal favourite. It's the one I've learned how to use ReactJS, the one I spent the most time on to make it look like nice (I've always focused more on the back-end, working on the front-end is very interesting as well !)",
-          techno: "ReactJS, Parcel, Vercel",
-        },
-        {
-          id: 4,
-          title: "Websites (Full Stack)",
-          desc: "I've developped many websites for many reasons during my life, some were for school projects, others were training projects, some others were professionnal projects...",
-          techno: "HTML, CSS, PHP, JS, Laravel, Symfony, Wordpress",
-        },
-        {
-          id: 5,
-          title: "Weather Station",
-          desc: "Creation and developement of a weather station using several sensors",
-          techno: "C/Arduino",
-        },
-        {
-          id: 6,
-          title: "Audio encryptor/decryptor",
-          desc: "Creation and developement of an audio signal encryption/decryption system",
-          techno: "Python",
-        },
-        {
-          id: 7,
-          title: "CRUD Softwares",
-          desc: "Creation and developement of a database management application (and many more CRUDs)",
-          techno: "C++, C#",
-        },
-        {
-          id: 8,
-          title: "VM Server",
-          desc: "Configuration of a VM Server during an internship (also including the server bios update, whole server firmware configuration, RAID configuration, proxy configuration)",
-          techno: "Proxmox VE",
-        },
-        {
-          id: 9,
-          title: "Digital Password Vault",
-          desc: "Coding of a digital password vault using arduino online IDE, simulating the hardware, 4 digits password",
-          techno: "Autodesk TinkerCAD, C/Arduino",
-        },
-      ],
-    },
-    {
-      key: 5,
-      name: "My Future Career Goals",
-      deploy: [
-        {
-          key: 1,
-          job: "Full Stack Web Developper",
-          stack: "JS (Any Framework), PHP (Symfony)",
-          more: "I'm not very good at front-end developping but I like trying and learning",
-        },
-        {
-          key: 2,
-          job: "Software Developper",
-          stack: "C#, C++",
-          more: "I've always wanted to developp softwares in a tech company, in the car industry mainly",
-        },
-        {
-          key: 3,
-          job: "On-Board Electronics Engineer",
-          stack: "Electronics, C",
-          more: "On-board electronics is incredible in my opinion, having skills and working in this industry would allow me to work on any personnal projects",
-        },
-      ],
-    },
-    {
-      key: 6,
-      name: "Education",
-      deploy: {
-        texts: [
-          "Option 'Computer Science and Digital Science' for 3 years.",
-          "PBL Method (Problem Based Learning), with group projects and diverse Engineering topics in General.",
-          "Continuing the PBL Method, only working on IT projects and project management. The last two years are going to be more focused on a specialty that we're supposed to pick in the beginning of the 4th year.",
-          "Academic Semester abroad in Malaysia, in a University that is specialized in IT, with a focus on AI and Entrepreneurship. Also did a thesis on 'Use of AI to help foreigners relocate into a new country'.",
-        ],
-        timelineInfo: [
-          {
-            key: 1,
-            title: "General Scientific Baccalaureate",
-            location: "Lycée des Graves",
-            location2: "Gradignan, France",
-            dates: "2017-2020",
-          },
-          {
-            key: 2,
-            title: "Integrated Preparatory Class",
-            location: "CESI Bordeaux",
-            location2: "Bordeaux, France",
-            dates: "2020-2022",
-          },
-          {
-            key: 3,
-            title: "Computer Science Engineering Degree",
-            location: "CESI Bordeaux",
-            location2: "Bordeaux, France",
-            dates: "2022-2025",
-          },
-          {
-            key: 4,
-            title: "Abroad IT Master Academic Semester",
-            location: "UniKL MIIT",
-            location2: "Kuala Lumpur, Malaysia",
-            dates: "2024",
-          },
-        ],
-      },
-    },
-    {
-      key: 7,
-      name: "Contact Me",
-      deploy: [
-        {
-          key: 1,
-          title: "Mail Pro",
-          value: "gaedelouis@gmail.com",
-          href: "",
-          img: <MailOutlined style={{ fontSize: "xl:24px lg:20px sm:12px" }} />,
-        },
-        {
-          key: 2,
-          title: "Phone Number",
-          value: "+33 7 62 35 81 00",
-          href: "",
-          img: <PhoneOutlined style={{ fontSize: "xl:24px lg:20px sm:12px" }} />,
-        },
-        {
-          key: 3,
-          title: "LinkedIn",
-          value: "",
-          href: "https://www.linkedin.com/in/ga%C3%ABl-delouis-534509212/",
-          img: <LinkedinOutlined style={{ fontSize: "xl:24px lg:20px sm:12px" }} />,
-        },
-        {
-          key: 4,
-          title: "GitHub",
-          value: "",
-          href: "https://github.com/tinkybeatz",
-          img: <GithubOutlined style={{ fontSize: "xl:24px lg:20px sm:12px" }} />,
-        },
-      ],
-    },
-  ];
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Check if we're on xs breakpoint (< 768px based on Tailwind default)
+  const isXs = windowWidth < 768;
 
   // affichage (render)
   return (
-    <div className="justify-items-center xl:w-{80%} lg:w-{85%} grid font-primary" key="1">
-      <Navbar />
-      <div className="flex-row dark:text-white transition-all duration-200 xl:w-{70%} lg:w-{80%} sm:w-{70%} xl:h-[100vh] lg:h-[110vh] sm:h-[100vh] pb-5">
-        <div className="flex xl:h-1/4 lg:h-1/5 sm:h-1/6 justify-center items-center font-bold xl:py-2 lg:py-4 sm:py-2 xl:mb-5 text-center lg:mb-5 sm:mb-0">
-          <h1 ref={horRef} className="xl:text-8xl lg:text-6xl sm:text-4xl">
-            Welcome to Gaël's portfolio!
-          </h1>
-        </div>
-        <div className="xl:grid lg:grid xl:grid-cols-3 lg:grid-cols-3 sm:flex-row xl:h-3/4 lg:h-4/5 sm:h-5/6 xl:pb-10 lg:pb-10 px-10">
-          <div class="col-span-1 xl:h-full lg:h-full sm:h-36 grid xl:mr-10 lg:mr-10 rounded-md">
-            <img
-              src={MainPagePic}
-              alt="image"
-              class="xl:h-full xl:w-full xl:object-cover obj col-span-1 rounded-md drop-shadow-md
-                    lg:h-full lg:w-full lg:object-cover
-                    sm:h-36 sm:w-full sm:object-contain"
-            />
+    <NavigationProvider sections={nbMainSpace}>
+      <div
+        className="justify-items-center grid bg-white font-primary scroll-smooth snap-y snap-mandatory relative w-full"
+        key="1"
+      >
+        <ParticlesBackground
+          particleColor="#888888"
+          linkColor="#888888"
+          particlesNumber={120}
+          speed={1.5}
+        />
+        {/* <Navbar /> */}
+        <SideNavbar nbMainSpace={nbMainSpace} />
+        <div className="flex-row dark:text-white transition-all duration-200 z-10 h-[900px] w-[70%] sm:w-[80%] mobile:h-[100vh] mobile:w-[95%]">
+          <div
+            className="flex items-end justify-center py-2 h-[40%]
+          sm:h-[35%] mobile:h-[30%]"
+          >
+            <h1
+              className="font-scrib tracking-extra-tight mb-2 shadow-md bg-white border font-light border-gray-200 rounded-full py-5 px-10 
+              xl:text-8xl 
+              lg:text-7xl 
+              md:text-6xl 
+              sm:text-5xl sm:py-3 sm:px-6
+              mobile:text-3xl mobile:py-3 mobile:px-6"
+            >
+              GAËL DELOUIS
+            </h1>
           </div>
-          <div class="xl:col-span-2 lg:col-span-2 sm:col-span-1 rounded-md bg-gray-200 dark:bg-zinc-500 dark:text-white text-black transition duration-200 drop-shadow-md flex-row sm:mt-4 sm:pb-10 sm:h-[400px]">
-            <div class="xl:h-1/3 lg:h-1/4 sm:h-1/5 flex items-center place-content-center font-bold text-center xl:text-6xl lg:text-4xl sm:text-lg xl:px-4 lg:px-2 sm:px-2 sm:py-4">
-              First of all, thank you for coming on my website!
+          <div
+            className="flex font-light justify-center gap-3 h-[15%]
+          xl:text-xl
+          lg:text-lg
+          md:text-sm
+          sm:text-sm sm:flex-col sm:justify-start sm:items-center
+          mobile:text-sm mobile:flex-col mobile:justify-start mobile:items-center mobile:h-[30%]"
+          >
+            <div class="flex h-min bg-white border border-gray-200 rounded-full mobile:bg-transparent mobile:shadow-none mobile:border-none pt-2 pb-2 pr-3 px-4 shadow-md mobile:flex-col mobile:gap-2 mobile:items-center">
+              <span class="pr-2 text-center mobile:py-1.5 mobile:px-3 mobile:border mobile:border-gray-200 mobile:rounded-full mobile:bg-white mobile:shadow-md">
+                Full-Stack Web Developper
+              </span>
+              {!isXs && "|"}
+              <span class="pl-2 pr-2 text-center mobile:py-1.5 mobile:px-3 mobile:border mobile:border-gray-200 mobile:rounded-full mobile:bg-white mobile:shadow-md">
+                Product Engineer
+              </span>
+              {!isXs && "|"}
+              <span class="pl-2 pr-2 text-center mobile:py-1.5 mobile:px-3 mobile:border mobile:border-gray-200 mobile:rounded-full mobile:bg-white mobile:shadow-md">
+                Your next{" "}
+                <span class="pl-0.5 pr-1 font-semibold italic">best</span> hire
+              </span>
             </div>
-            <div class="xl:h-2/3 lg:h-3/4 sm:h-4/5 xl:text-xl lg:text-[13px] sm:text-[11px] flex place-content-center text-center xl:px-28 lg:px-20 sm:px-5">
-              <p>
-                My name is Gaël DELOUIS and I am an Student in an IT Engineering School. 
-                I am currently comming to the end of my 4th year out of the whole 5 years of the formation. 
-                I love coding and made this website in order to present myself !
-                <br></br>
-                <br></br>
-                On this website, you are going to learn a bit more about me and
-                I am going to share my Professional Experience. This is kind of
-                an extension of my resume (that you can download in the navbar
-                downhere). This website is divided in 7 blocks that you can open
-                in order to see the informations contained in it.
-                <br></br>
-                <br></br>
-                You can also toggle the dark mode if you eyes struggle to read
-                properly the informations, using the button also located in the
-                navbar. I will continue to update this site in the future to add
-                few more features.
+            <div class="flex h-min gap-2 items-center bg-white border border-gray-200 rounded-full pt-2 pb-2 pr-3 px-4 shadow-md font-medium">
+              Available to work now
+              {/* <div class="blink_me"></div> */}
+              <div class="ring-container">
+                <div class="ringring"></div>
+                <div class="circle"></div>
+              </div>
+            </div>
+          </div>
+          <div className="items-center text-xl font-light flex flex-col xl:h-[45%] md:h-[45%] lg:h-[45%] sm:h-[50%] mobile:h-[40%]">
+            <div class="flex flex-col items-center w-[60%] sm:w-[70%] px-4 py-4 h-min rounded-[2rem] shadow-lg bg-white border border-gray-200 mobile:hidden">
+              <p class="text-center text-lg font-medium underline underline-offset-4 decoration-red-600">
+                All sections
               </p>
+              <div className="flex flex-wrap justify-center gap-3 mt-3">
+                {nbMainSpace.map((section) => (
+                  <NavigationButtons section={section} />
+                ))}
+              </div>
+            </div>
+            <div className="xl:hidden lg:hidden md:hidden sm:hidden flex w-full items-center justify-center relative h-[50%]">
+              <NextSectionButton 
+                className=""
+                show={true}
+                text="Start Exploring"
+              />
             </div>
           </div>
         </div>
+        <div class="w-full z-10 overflow-x-hidden overflow-y-hidden">
+          {nbMainSpace.map((nb) => (
+            <div
+              id={`section-${nb.key}`}
+              class="flex flex-col items-center justify-center w-full h-screen max-h-[900px] min-h-[800px] mobile:h-[100vh] snap-start"
+            >
+              <div class="flex flex-col xl:w-[88%] xl:max-w-[90rem] lg:w-[85%] md:w-[80%] sm:w-[75%] mobile:w-[80%] h-[90%] max-h-[90%]">
+                <div class="flex items-start h-[8%] mobile:h-[6%] text-2xl sm:text-xl mobile:text-xs tracking-extra-tight font-scrib transition-colors dark:text-white text-black">
+                  <div class="flex bg-white px-5 mobile:px-3 h-[78%] rounded-lg items-center border border-gray-200 shadow-md">
+                    {nb.key}. {nb.name.toUpperCase()}
+                  </div>
+                </div>
+                <div class="flex w-full h-[92%] max-h-[94%] mobile:h-[94%]">
+                  <MainSpace nb={nb} />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="z-[100] h-[90px] items-start justify-center w-full flex font-light text-gray-400 text-sm sm:text-sm xs:text-xs mobile:text-xs">
+          <div className="bg-white border border-gray-200 py-3 shadow-md px-4 rounded-full">
+            © 2025 Gaël DELOUIS. All rights reserved.
+          </div>
+        </div>
       </div>
-      <div class="z-10 w-full grid justify-items-center">
-        {nbMainSpace.map((nb) => (
-          <MainSpace nb={nb} />
-        ))}
-      </div>
-      <div className="xl:h-28 lg:h-28 sm:h-28 w-full grid grid-cols-2 items-center sm:mb-10 justify-items-center">
-        <div className="text-sm text-gray-400">Gaël DELOUIS</div>
-        <div className="text-sm text-gray-400">gael.delouis@viacesi.fr</div>
-      </div>
-    </div>
+    </NavigationProvider>
   );
 }
 

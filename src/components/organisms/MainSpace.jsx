@@ -1,74 +1,55 @@
-import { Button1 } from "../atoms/buttons/Button1";
-import { FirstBlock } from "../molecules/FirstBlock";
-import { SecondBlock } from "../molecules/SecondBlock";
-import { ThirdBlock } from "../molecules/ThirdBlock";
-import { FourthBlock } from "../molecules/FourthBlock";
-import { FifthBlock } from "../molecules/FifthBlock";
-import { SixthBlock } from "../molecules/SixthBlock";
-import { SeventhBlock } from "../molecules/SeventhBlock";
-import { useState } from "react";
+import { AboutMeBlock } from "../molecules/AboutMeBlock";
+import { ExperiencesBlock } from "../molecules/ExperiencesBlock";
+import { SkillsBlock } from "../molecules/SkillsBlock";
+import { MyWorkBlock } from "../molecules/MyWorkBlock";
+import { EducationBlock } from "../molecules/EducationBlock";
+import { ContactBlock } from "../molecules/ContactBlock";
+import { HireMeBlock } from "../molecules/HireMeBlock";
+import { NextSectionButton } from "../atoms/NextSectionButton";
 import React from "react";
 import { gsap } from "gsap";
-// import { CSSTransition } from "react-transition-group";
 
-import {
-  vertFadeInDeploy,
-  vertFadeInPres,
-  vertFadeInScroll,
-} from "../../../gsap/verticalFadeIn";
+import { vertFadeInScroll } from "../../../gsap/verticalFadeIn";
 import { horFadeInScroll } from "../../../gsap/horizontalFadeIn";
 
-export function MainSpace({ nb }) {
-  //state
-  const [isDeployed, setIsDeployed] = useState(true);
+import "./MainSpace.css";
 
+export function MainSpace({ nb }) {
   let horRef = React.useRef(null);
 
+  // Effect for the horizontal fade in
   React.useEffect(() => {
     horFadeInScroll(horRef.current, +80);
   }, []);
 
-  // |||||||||||||||||||||||
-
-  const parentContainer = document.querySelector(".parent-container");
-  const content = React.useRef(null);
-  const triggerDeploy = React.useRef(null);
-
-  React.useEffect(() => {
-    triggerDeploy.current.addEventListener("click", () => {
-      vertFadeInDeploy(content, content.current.offsetHeight);
-      setIsDeployed(!isDeployed);
-    });
-  }, [triggerDeploy]);
-
   let nbDeploy;
   switch (nb.key) {
     case 1:
-      nbDeploy = <FirstBlock deploy={nb.deploy} />;
+      nbDeploy = <AboutMeBlock deploy={nb.deploy} />;
       break;
 
     case 2:
-      nbDeploy = <SecondBlock deploy={nb.deploy} />;
+      nbDeploy = <SkillsBlock deploy={nb.deploy} />;
       break;
 
     case 3:
-      nbDeploy = <ThirdBlock deploy={nb.deploy} />;
+      nbDeploy = <ExperiencesBlock deploy={nb.deploy} />;
       break;
 
     case 4:
-      nbDeploy = <FourthBlock deploy={nb.deploy} />;
+      nbDeploy = <HireMeBlock deploy={nb.deploy} />;
       break;
 
     case 5:
-      nbDeploy = <FifthBlock deploy={nb.deploy} />;
+      nbDeploy = <MyWorkBlock deploy={nb.deploy} />;
       break;
 
     case 6:
-      nbDeploy = <SixthBlock deploy={nb.deploy} />;
+      nbDeploy = <EducationBlock deploy={nb.deploy} />;
       break;
 
     case 7:
-      nbDeploy = <SeventhBlock deploy={nb.deploy} />;
+      nbDeploy = <ContactBlock deploy={nb.deploy} />;
       break;
 
     default:
@@ -77,45 +58,22 @@ export function MainSpace({ nb }) {
 
   //affichage
   return (
-    <div className="w-[90%] h-auto xl:mt-10 lg:mt-8 sm:mt-8 drop-shadow-md" ref={horRef} id={nb.key}>
-      <div className="parent-container grid xl:p-4 lg:p-4 sm:px-2 sm:py-3 grid-cols-9 drop-shadow-md bg-gray-200 dark:bg-zinc-500 dark:text-white transition duration-200 rounded-md">
-        <div className="font-primary xl:text-2xl lg:text-2xl sm:text-lg border-r-2 border-gray-300 justify-center items-center flex xl:col-span-1 lg:col-span-1 sm:col-span-2">
-          <p>{nb.key}</p>
-        </div>
-        <div className="font-primary xl:text-3xl lg:text-2xl sm:text-sm border-r-2 border-gray-300 justify-center items-center flex xl:col-span-7 lg:col-span-7 sm:col-span-5">
-          <p>{nb.name}</p>
-        </div>
-        {/* <div className="font-primary text-2xl justify-center items-center flex col-span-1">
-          <Button1
-            id="button"
-            text={isDeployed ? "-" : "+"}
-            onClick={() => changeHeight(event)}
-          />
-        </div>
-        <CSSTransition
-          in={isDeployed}
-          timeout={200}
-          classNames="grow"
-          className="col-span-9"
-          unmountOnExit
-        >
-          <div className="p-4 font-primary rounded rounded-b-md bg-gray-300 grid">
-            {nbDeploy}
+    <>
+      <div
+        className="relative flex w-full h-full max-h-full overflow-visible"
+        ref={horRef}
+      >
+        <div className="flex w-full h-full max-h-full overflow-hidden shadow-lg rounded-lg border border-gray-200 transition duration-200">
+          <div className="flex w-full h-full max-h-full font-primary rounded bg-white dark:bg-zinc-600 transition-all duration-200">
+            <div className="flex h-full max-h-full w-full">{nbDeploy}</div>
           </div>
-        </CSSTransition> */}
-        <div
-          className="font-primary text-2xl justify-center items-center flex xl:col-span-1 lg:col-span-1 sm:col-span-2"
-          ref={triggerDeploy}
-        >
-          <Button1 href={nb.key} text="+" onClick="" />
         </div>
-        <div
-          className="content opacity-0 col-span-9 font-primary rounded rounded-b-md bg-gray-300 dark:bg-zinc-600 transition-all duration-200 grid overflow-hidden"
-          ref={content}
-        >
-          <div className="p-4">{nbDeploy}</div>
-        </div>
+        <NextSectionButton 
+          className="absolute -bottom-5 -right-5"
+          show={nb.key !== 7}
+          text={"Next section"}
+        />
       </div>
-    </div>
+    </>
   );
 }

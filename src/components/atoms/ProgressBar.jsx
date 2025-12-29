@@ -5,7 +5,7 @@ export function ProgressBar({ progress }) {
   const Parentdiv = {
     height: "xl:30px lg:25px sm:15px",
     width: "100%",
-    backgroundColor: "white",
+    backgroundColor: "#f3f4f6",
     borderRadius: 40,
   };
 
@@ -20,12 +20,12 @@ export function ProgressBar({ progress }) {
   const progresstext = {
     padding: 10,
     color: "black",
-    fontWeight: 900,
+    fontWeight: 400,
   };
 
   //rendu
   return (
-    <div class="drop-shadow-md" style={Parentdiv}>
+    <div class="" style={Parentdiv}>
       <div style={Childdiv}>
         <span style={progresstext}>{`${progress}%`}</span>
       </div>
