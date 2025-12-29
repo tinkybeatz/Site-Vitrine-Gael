@@ -71,7 +71,7 @@ export function NextSectionButton({
   return (
     <div
       onClick={goToNextSection}
-      className={`font-scrib flex rounded-full px-4 py-3 bg-red-500 text-white text-md md:text-sm md:px-4 md:py-2 sm:text-sm sm:px-4 sm:py-2 cursor-pointer z-[1000] select-none hover:bg-red-600 active:scale-95 transition-all duration-200 shadow-md hover:shadow-sm active:shadow-none ${isWiggling ? 'wiggle-button' : ''} ${className}`}
+      className={`font-scrib flex rounded-full px-4 py-3 bg-red-500 text-white text-md md:text-sm md:px-4 md:py-2 sm:text-sm sm:px-4 sm:py-2 mobile:text-sm mobile:px-4 mobile:py-2 cursor-pointer z-[1000] select-none hover:bg-red-600 active:scale-95 transition-all duration-200 shadow-md hover:shadow-sm active:shadow-none ${isWiggling ? 'wiggle-button' : ''} ${className}`}
       style={style}
     >
       {text}

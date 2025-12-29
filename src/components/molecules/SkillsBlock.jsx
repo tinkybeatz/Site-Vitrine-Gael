@@ -53,9 +53,9 @@ export function SkillsBlock({ deploy }) {
         <div class="md:hidden lg:hidden xl:hidden relative w-full">
           <button
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            class="flex w-[15rem] justify-between items-center px-4 py-2 gap-2 text-sm font-medium border border-gray-200 rounded-lg bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            class="flex w-[15rem] mobile:w-[13rem] justify-between items-center px-4 py-2 gap-2 text-sm font-medium border border-gray-200 rounded-lg bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
-            <span className="text-sm">{skillSelection}</span>
+            <span className="text-sm mobile:text-xs">{skillSelection}</span>
             <svg
               class={`w-4 h-4 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`}
               fill="none"
@@ -67,7 +67,7 @@ export function SkillsBlock({ deploy }) {
           </button>
           
           {isDropdownOpen && (
-            <div class="absolute w-[15rem] top-full left-0 right-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg z-10">
+            <div class="absolute w-[15rem] mobile:w-[13rem] top-full left-0 right-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg z-10">
               {skillCategories.map((category) => (
                 <div
                   key={category}

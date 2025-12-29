@@ -116,7 +116,7 @@ const nbMainSpace = [
   },
   {
     key: 3,
-    name: "💼 My Professional Experiences",
+    name: "💼 My Experiences",
     deploy: {
       timelineInfo: [
         {

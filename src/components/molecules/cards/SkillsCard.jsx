@@ -76,7 +76,7 @@ export function SkillsCard({ skill, size }) {
         <>
           <button
             onClick={() => setIsPopupOpen(true)}
-            class="flex xl:h-[5.5rem] lg:h-[5rem] md:h-[4.5rem] sm:h-[4.5rem] shadow-md w-auto rounded-lg border gap-2 border-gray-200 p-2 hover:shadow-sm"
+            class="flex xl:h-[5.5rem] lg:h-[5rem] md:h-[4.5rem] sm:h-[4.5rem] mobile:h-[2.6rem] shadow-md w-auto rounded-lg border gap-2 border-gray-200 p-2 mobile:p-1 hover:shadow-sm"
           >
             {skill.img !== "" ? (
               <img
