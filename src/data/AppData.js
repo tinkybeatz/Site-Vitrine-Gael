@@ -33,6 +33,8 @@ import AudioEncryption from "../../public/images/projects/audio-encryption.png";
 import ProxmoxVE from "../../public/images/projects/proxmox.jpeg";
 import HagerProject from "../../public/images/projects/hager-project.png";
 import Orange from "../../public/images/projects/orange.jpeg";
+import Announcify from "../../public/images/projects/announcify.png";
+import PlasticOdyssey from "../../public/images/projects/plastic-odyssey.png";
 
 // // Icons import
 // import mailIcon from "../../public/images/icons/mail.png";
@@ -269,6 +271,35 @@ const nbMainSpace = [
     name: "📁 My Work",
     deploy: {
       projects: [
+        {
+          title: "Card creation website [ongoing]",
+          description:
+            "I am currently working on a card creation website using Nextjs. The website allows users to create and customize their own cards with various templates and designs. The project is still ongoing.",
+          techno: ["NextJS", "PostgreSQL", "TailwindCSS"],
+          categories: ["Personnal Projects"],
+          link: "https://announcify.tinky.cloud",
+          images: [
+            {
+              key: 1,
+              img: Announcify,
+              imgAlt: "Announcify project",
+            },
+          ],
+        },
+        {
+          title: "Plastic Odyssey [ongoing]",
+          description:
+            "I am currently working on a Whatsapp bot automation for Plastic Odyssey, an organization that aims to facilitate recycling in areas where plastic waste is a major issue. The bot will help users to make a request for plastic waste collection, and help admins manage these requests. The project is still ongoing.",
+          techno: ["n8n", "JavaScript", "ChatGPT"],
+          categories: ["Professional Projects"],
+          images: [
+            {
+              key: 1,
+              img: PlasticOdyssey,
+              imgAlt: "Plastic Odyssey project",
+            },
+          ],
+        },
         {
           title: "Real-time editing feature",
           description:

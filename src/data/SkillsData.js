@@ -42,8 +42,26 @@ import rosLogo from "../../public/images/logos/ros.png";
 import proxmoxLogo from "../../public/images/logos/proxmox.png";
 import tinkercadLogo from "../../public/images/logos/tinkercad.png";
 import fusion360Logo from "../../public/images/logos/fusion360.png";
+import n8nLogo from "../../public/images/logos/n8n.png";
+import postgresLogo from "../../public/images/logos/postgres.png";
 
 const SkillsData = [
+  {
+    name: "n8n",
+    img: n8nLogo,
+    imgAlt: "n8n Logo",
+    description: "Workflow automation tool",
+    linkTo: "https://n8n.io/",
+    categories: ["AI Tools", "CI/CD", "Back-end", "Other"],
+  },
+  {
+    name: "PostgreSQL",
+    img: postgresLogo,
+    imgAlt: "PostgreSQL Logo",
+    description: "Powerful open source relational database",
+    linkTo: "https://www.postgresql.org/",
+    categories: ["Other"],
+  },
   {
     name: "JavaScript",
     img: javascriptLogo,
