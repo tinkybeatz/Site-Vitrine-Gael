@@ -76,7 +76,7 @@ export function SkillsCard({ skill, size }) {
         <>
           <button
             onClick={() => setIsPopupOpen(true)}
-            class="flex xl:h-[5.5rem] lg:h-[5rem] md:h-[4.5rem] sm:h-[4.5rem] mobile:h-[2.6rem] shadow-md w-auto rounded-lg border gap-2 border-gray-200 p-2 mobile:p-1 hover:shadow-sm"
+            class="flex xl:h-[5.5rem] lg:h-[5rem] md:h-[4.5rem] sm:h-[4.5rem] xs:h-[3.5rem] mobile:h-[2.6rem] shadow-md w-auto rounded-lg border gap-2 border-gray-200 p-2 mobile:p-1 hover:shadow-sm"
           >
             {skill.img !== "" ? (
               <img
@@ -100,10 +100,10 @@ export function SkillsCard({ skill, size }) {
                   onClick={closePopup}
                 ></div>
                 <div className="fixed inset-0 z-[9999] flex items-center justify-center">
-                  <div className="flex flex-col bg-white rounded-xl h-[12rem] w-[35rem] shadow-xl items-center gap-4 p-4">
-                    <div className="flex h-[55%] w-full">
+                  <div className="flex flex-col bg-white rounded-xl h-[12rem] w-[35rem] xs:w-[20rem] xs:h-[14rem] shadow-xl items-center gap-4 p-4">
+                    <div className="flex h-[55%] xs:h-[60%] w-full">
                       <div className="flex w-[92%] gap-4">
-                        <div className="flex rounded-md aspect-square h-full">
+                        <div className="flex rounded-md aspect-square h-full xs:h-[50%]">
                           <img
                             src={skill.img}
                             alt={skill.imgAlt}
@@ -150,7 +150,7 @@ export function SkillsCard({ skill, size }) {
                         </button>
                       </div>
                     </div>
-                    <div className="flex h-[45%] w-full border-t border-gray-200 pt-3 items-center justify-center">
+                    <div className="flex h-[45%] xs:h-[40%] w-full border-t border-gray-200 pt-3 items-center justify-center">
                       <button
                         onClick={() =>
                           skill.linkTo !== ""

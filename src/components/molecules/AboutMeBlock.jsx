@@ -112,7 +112,7 @@ export function AboutMeBlock({ deploy }) {
       </div>
 
       {/* MD and SM: 2-column layout (text+photo | photos) */}
-      <div className="lg:hidden xl:hidden mobile:hidden w-full flex gap-4">
+      <div className="lg:hidden xl:hidden xs:hidden mobile:hidden w-full flex gap-4">
         {/* Left section: 3/5 width - Text on top, Gael's photo on bottom */}
         <div className="w-3/5 sm:w-[65%] flex flex-col gap-4 h-full overflow-y-auto">
           {/* Text content */}
@@ -219,7 +219,55 @@ export function AboutMeBlock({ deploy }) {
         </div>
       </div>
 
-      {/* XS and below: Single column layout */}
+      {/* XS: Vertical single column layout */}
+      <div className="lg:hidden xl:hidden md:hidden sm:hidden hidden xs:flex flex-col w-full h-full gap-3 overflow-y-auto">
+        <div className="flex flex-col">
+          <p class="text-lg font-medium dark:text-white pb-1 text-black duration-200">
+            Gaël DELOUIS
+          </p>
+          <div class="flex flex-col text-xs pb-2">
+            <div class="flex flex-col gap-0.5">
+              <p class="text-gray-400 font-light">
+                <span class="pr-1">📍</span> Kuala Lumpur, Malaysia
+              </p>
+              <p class="text-gray-400 font-light">
+                <span class="pr-1">💻</span> Full-Stack Web Developer
+              </p>
+              <p class="text-gray-400 font-light">
+                <span class="pr-1">🇫🇷</span> French
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="rounded-lg w-full h-48 shadow-lg overflow-hidden">
+          <img
+            className="w-full h-full object-cover object-center rounded-lg"
+            src={gaelImage}
+            alt="Gael Image"
+          />
+        </div>
+        <div class="flex flex-col text-xs pb-2">
+          <p class="pb-1 font-light">Hey 👋</p>
+          <p class="pb-2">{deploy.text}</p>
+          <p class="line-clamp-2">{deploy.text2}</p>
+        </div>
+        <div class="text-sm font-medium pb-1">My passions</div>
+        <div class="flex flex-wrap gap-1 pb-2">
+          {deploy.passions.map((passion) => (
+            <div class="rounded-full text-[10px] bg-white border border-gray-200 px-2 py-0.5">
+              {passion.text}
+            </div>
+          ))}
+        </div>
+        <div class="text-sm font-medium pb-1">My personality traits</div>
+        <div class="flex flex-wrap gap-1 pb-2">
+          {deploy.softSkills.map((softSkill) => (
+            <div class="rounded-full text-[10px] bg-white border border-gray-200 px-2 py-0.5">
+              {softSkill.text}
+            </div>
+          ))}
+        </div>
+      </div>
       <div className="hidden mobile:flex flex-col w-full h-full gap-4">
         <div className="flex flex-col">
           <p class="text-base font-medium dark:text-white pb-2 text-black duration-200">

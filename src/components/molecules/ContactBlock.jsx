@@ -59,33 +59,33 @@ export function ContactBlock({ deploy }) {
 
   //affichage
   return (
-    <div class="flex flex-col h-full w-full bg-white p-4">
-      <div class="pb-4 text-base md:text-sm sm:text-xs">
+    <div class="flex flex-col h-full w-full bg-white p-4 xs:p-3 mobile:p-3">
+      <div class="pb-4 text-base md:text-sm sm:text-xs xs:text-sm mobile:text-xs xs:pb-3 mobile:pb-3">
         Have a question or want to work together? Feel free to drop me a
         message. I'd love to hear from you!
       </div>
-      <div class="grid grid-cols-3 sm:grid-cols-1 w-full h-full gap-4">
-        <div class="col-span-1 flex flex-col sm:flex-row rounded-lg shadow-inner border border-gray-200 p-4 gap-4 items-start">
-          <div class="flex flex-col gap-4 sm:gap-2">
-            <div class="font-medium text-lg md:text-base sm:text-sm">
+      <div class="grid grid-cols-3 sm:grid-cols-1 xs:flex xs:flex-col mobile:flex mobile:flex-col w-full h-full xs:min-h-0 mobile:min-h-0 gap-4 xs:gap-3 mobile:gap-3">
+        <div class="col-span-1 flex flex-col sm:flex-row rounded-lg shadow-inner border border-gray-200 p-4 xs:p-3 mobile:p-3 gap-4 xs:gap-3 mobile:gap-3 items-start xs:items-stretch mobile:items-stretch xs:flex-none mobile:flex-none xs:shrink-0 mobile:shrink-0">
+          <div class="flex flex-col gap-4 sm:gap-2 xs:gap-2 mobile:gap-2">
+            <div class="font-medium text-lg md:text-base sm:text-sm xs:text-sm mobile:text-sm">
               Contact informations
             </div>
-            <div class="flex flex-col pl-4 md:pl-0 sm:pl-0 gap-2 sm:gap-1 mb-2 sm:mb-0">
+            <div class="flex flex-col pl-4 md:pl-0 sm:pl-0 xs:pl-0 mobile:pl-0 gap-2 sm:gap-1 mb-2 sm:mb-0 xs:mb-1 mobile:mb-1 xs:gap-1">
               {deploy &&
                 deploy.contact_informations &&
                 deploy.contact_informations.map((info, index) => (
-                  <div key={index} class="flex items-center h-[3rem] sm:h-[2rem]">
+                  <div key={index} class="flex items-center h-[3rem] sm:h-[2rem] xs:h-[2.5rem] mobile:h-[2.25rem]">
                     {info.img && (
-                      <div class="h-full aspect-square flex items-center justify-center text-base sm:text-sm">
+                      <div class="h-full aspect-square flex items-center justify-center text-base sm:text-sm xs:text-sm mobile:text-xs">
                         {info.img}
                       </div>
                     )}
                     <div class="flex flex-col sm:flex-row sm:gap-2">
-                      <div class="font-medium text-sm sm:text-xs">{info.title}</div>
+                      <div class="font-medium text-sm sm:text-xs xs:text-xs mobile:text-xs">{info.title}</div>
                       {info.href ? (
                         <a
                           href={info.href}
-                          class="text-blue-600 hover:text-blue-800 text-sm md:text-xs sm:text-xs"
+                          class="text-blue-600 hover:text-blue-800 text-sm md:text-xs sm:text-xs xs:text-xs mobile:text-xs"
                           target={
                             info.href.startsWith("mailto:") ||
                             info.href.startsWith("tel:")
@@ -96,7 +96,7 @@ export function ContactBlock({ deploy }) {
                           {info.value}
                         </a>
                       ) : (
-                        <div class="text-sm text-gray-600 md:text-xs sm:text-xs">
+                        <div class="text-sm text-gray-600 md:text-xs sm:text-xs xs:text-xs mobile:text-xs">
                           {info.value}
                         </div>
                       )}
@@ -105,9 +105,9 @@ export function ContactBlock({ deploy }) {
                 ))}
             </div>
           </div>
-          <div class="flex flex-col gap-4">
-            <div class="font-medium text-lg md:text-base sm:text-sm">Let's connect!</div>
-            <div class="flex gap-2 pl-4">
+          <div class="flex flex-col gap-4 xs:gap-2 mobile:gap-3">
+            <div class="font-medium text-lg md:text-base sm:text-sm xs:text-sm mobile:text-sm">Let's connect!</div>
+            <div class="flex gap-2 pl-4 xs:pl-0 mobile:pl-0 xs:gap-3 mobile:gap-3">
               {deploy &&
                 deploy.connect &&
                 deploy.connect.map((connect) => (
@@ -116,7 +116,7 @@ export function ContactBlock({ deploy }) {
                     target={
                       connect.href.startsWith("mailto:") ? "_self" : "_blank"
                     }
-                    class="bg-white border shadow-md cursor-pointer hover:bg-gray-200 border-gray-200 flex h-[2.5rem] w-[2.5rem] items-center justify-center rounded-full text-base sm:text-xs"
+                    class="bg-white border shadow-md cursor-pointer hover:bg-gray-200 border-gray-200 flex h-[2.5rem] w-[2.5rem] xs:h-[2.25rem] xs:w-[2.25rem] mobile:h-[2rem] mobile:w-[2rem] items-center justify-center rounded-full text-base sm:text-xs xs:text-sm mobile:text-xs"
                   >
                     {connect.img}
                   </a>
@@ -124,23 +124,23 @@ export function ContactBlock({ deploy }) {
             </div>
           </div>
         </div>
-        <div class="col-span-2 flex flex-col lg:text-sm md:text-xs sm:text-xs rounded-lg shadow-inner border border-gray-200 justify-center items-center">
-          <div className="h-[15%] sm:h-[15%] content-end">
+        <div class="col-span-2 flex flex-col lg:text-sm md:text-xs sm:text-xs xs:text-xs mobile:text-xs rounded-lg shadow-inner border border-gray-200 justify-center items-center xs:items-stretch mobile:items-stretch xs:justify-start mobile:justify-start xs:flex-1 mobile:flex-1 xs:min-h-0 mobile:min-h-0">
+          <div className="h-[15%] sm:h-[15%] xs:h-[20%] mobile:h-auto content-end xs:content-center">
             {/* Status Messages */}
             {submitStatus === null && (
-              <div className="mx-4 p-3 sm:p-2 bg-blue-100 border border-blue-400 text-blue-700 rounded-lg">
+              <div className="mx-4 p-3 sm:p-2 xs:p-2 mobile:mx-1 bg-blue-100 border border-blue-400 text-blue-700 rounded-lg">
                 Please fill up the form down bellow and I'll get back to you as
                 soon as possible.
               </div>
             )}
             {submitStatus === "success" && (
-              <div className="mx-4 p-3 sm:p-2 bg-green-100 border border-green-400 text-green-700 rounded-lg">
+              <div className="mx-4 p-3 sm:p-2 xs:p-2 mobile:mx-1 bg-green-100 border border-green-400 text-green-700 rounded-lg">
                 Your message has been sent successfully! I'll get back to you
                 soon.
               </div>
             )}
             {submitStatus === "error" && (
-              <div className="mx-4 p-3 sm:p-2 bg-red-100 border border-red-400 text-red-700 rounded-lg">
+              <div className="mx-4 p-3 sm:p-2 xs:p-2 mobile:mx-1 bg-red-100 border border-red-400 text-red-700 rounded-lg">
                 There was an error sending your message. Please try again or
                 contact me directly.
               </div>
@@ -149,13 +149,13 @@ export function ContactBlock({ deploy }) {
 
           <form
             onSubmit={handleSubmit}
-            className="flex flex-col w-full h-[85%] sm:h-[85%] p-4"
+            className="flex flex-col w-full h-[85%] sm:h-[85%] xs:h-[80%] xs:flex-1 xs:min-h-0 xs:overflow-y-auto mobile:flex-1 mobile:min-h-0 mobile:overflow-y-auto p-4 xs:p-1 mobile:p-3 xs:pr-2 mobile:pr-2"
           >
-            <div className="grid grid-cols-2 h-1/5 p-4 sm:p-2 gap-8 sm:gap-4">
+            <div className="grid grid-cols-2 xs:grid-cols-1 mobile:grid-cols-1 h-1/5 xs:h-auto mobile:h-auto p-4 xs:p-1 mobile:p-2 sm:p-2 gap-8 sm:gap-4 xs:gap-2 mobile:gap-3">
               {/* Name input */}
               <div className="flex flex-col h-full gap-1">
                 {/* Regular input for larger screens */}
-                <div className="sm:hidden flex flex-col h-full gap-1">
+                <div className="sm:hidden xs:hidden mobile:hidden flex flex-col h-full gap-1">
                   Your Name
                   <input
                     type="text"
@@ -168,7 +168,7 @@ export function ContactBlock({ deploy }) {
                   />
                 </div>
                 {/* Floating label input for small screens */}
-                <div className="relative z-0 w-full h-full group hidden sm:flex sm:items-end mb-2 my-1">
+                <div className="relative z-0 w-full h-full group hidden sm:flex xs:flex mobile:flex sm:items-end xs:items-end mobile:items-end mb-2 my-1">
                   <input
                     type="text"
                     name="name"
@@ -191,7 +191,7 @@ export function ContactBlock({ deploy }) {
               {/* Email input */}
               <div className="flex flex-col h-full gap-1">
                 {/* Regular input for larger screens */}
-                <div className="sm:hidden flex flex-col h-full gap-1">
+                <div className="sm:hidden xs:hidden mobile:hidden flex flex-col h-full gap-1">
                   Your Email
                   <input
                     type="email"
@@ -204,7 +204,7 @@ export function ContactBlock({ deploy }) {
                   />
                 </div>
                 {/* Floating label input for small screens */}
-                <div className="relative z-0 w-full h-full mb-2 group hidden sm:flex sm:items-end my-1">
+                <div className="relative z-0 w-full h-full mb-2 group hidden sm:flex xs:flex mobile:flex sm:items-end xs:items-end mobile:items-end my-1">
                   <input
                     type="email"
                     name="email"
@@ -224,10 +224,10 @@ export function ContactBlock({ deploy }) {
                 </div>
               </div>
             </div>
-            <div className="h-1/5 p-4 sm:p-2">
+            <div className="h-1/5 xs:h-auto mobile:h-auto p-4 xs:p-1 mobile:p-2 sm:p-2">
               <div className="flex flex-col h-full gap-1">
                 {/* Regular input for larger screens */}
-                <div className="sm:hidden flex flex-col h-full gap-1">
+                <div className="sm:hidden xs:hidden mobile:hidden flex flex-col h-full gap-1">
                   Subject
                   <input
                     type="text"
@@ -240,7 +240,7 @@ export function ContactBlock({ deploy }) {
                   />
                 </div>
                 {/* Floating label input for small screens */}
-                <div className="relative z-0 w-full h-full group hidden sm:flex sm:items-end mb-2 my-1">
+                <div className="relative z-0 w-full h-full group hidden sm:flex xs:flex mobile:flex sm:items-end xs:items-end mobile:items-end mb-2 my-1">
                   <input
                     type="text"
                     name="subject"
@@ -260,10 +260,10 @@ export function ContactBlock({ deploy }) {
                 </div>
               </div>
             </div>
-            <div className="h-2/5 px-4 pt-4 pb-5 sm:p-2">
+            <div className="h-2/5 xs:h-auto mobile:h-auto px-4 pt-4 pb-5 sm:p-2 xs:p-1 mobile:p-2">
               <div className="flex flex-col h-full gap-1">
                 {/* Regular textarea for larger screens */}
-                <div className="sm:hidden flex flex-col h-full gap-1">
+                <div className="sm:hidden xs:hidden mobile:hidden flex flex-col h-full gap-1">
                   Your Message
                   <textarea
                     name="message"
@@ -275,7 +275,7 @@ export function ContactBlock({ deploy }) {
                   />
                 </div>
                 {/* Floating label textarea for small screens */}
-                <div className="relative z-0 w-full h-full group hidden sm:flex my-1 sm:items-end">
+                <div className="relative z-0 w-full h-full group hidden sm:flex xs:flex mobile:flex my-1 sm:items-end xs:items-end mobile:items-end">
                   <textarea
                     name="message"
                     id="floating_message"
@@ -295,11 +295,11 @@ export function ContactBlock({ deploy }) {
                 </div>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-8 h-1/5 p-4 sm:pt-4 sm:px-0 sm:pb-0 sm:gap-4">
+            <div className="grid grid-cols-2 mobile:grid-cols-1 gap-8 sm:gap-4 xs:gap-4 mobile:gap-3 h-1/5 xs:h-auto mobile:h-auto p-4 xs:p-2 mobile:p-2 sm:pt-4 sm:px-0 sm:pb-0">
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`rounded-lg h-full max-h-[3rem] text-white text-sm md:text-xs sm:text-xs shadow-md hover:shadow-none cursor-pointer ${
+                className={`rounded-lg h-full xs:h-11 mobile:h-11 max-h-[3rem] text-white text-sm md:text-xs sm:text-xs mobile:text-xs shadow-md hover:shadow-none cursor-pointer ${
                   isSubmitting
                     ? "bg-gray-400 cursor-not-allowed"
                     : "bg-blue-500 hover:bg-blue-600"
@@ -311,7 +311,7 @@ export function ContactBlock({ deploy }) {
                 type="button"
                 onClick={handleReset}
                 disabled={isSubmitting}
-                className="bg-red-500 rounded-lg h-full max-h-[3rem] text-white text-sm md:text-xs sm:text-xs shadow-md hover:bg-red-600 hover:shadow-none cursor-pointer disabled:bg-gray-400 disabled:cursor-not-allowed"
+                className="bg-red-500 rounded-lg h-full xs:h-11 mobile:h-11 max-h-[3rem] text-white text-sm md:text-xs sm:text-xs mobile:text-xs shadow-md hover:bg-red-600 hover:shadow-none cursor-pointer disabled:bg-gray-400 disabled:cursor-not-allowed"
               >
                 Reset
               </button>

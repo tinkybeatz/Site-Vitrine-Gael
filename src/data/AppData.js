@@ -276,7 +276,7 @@ const nbMainSpace = [
           description:
             "I am currently working on a card creation website using Nextjs. The website allows users to create and customize their own cards with various templates and designs. The project is still ongoing.",
           techno: ["NextJS", "PostgreSQL", "TailwindCSS"],
-          categories: ["Personnal Projects"],
+          categories: ["Personal Projects"],
           link: "https://announcify.tinky.cloud",
           images: [
             {

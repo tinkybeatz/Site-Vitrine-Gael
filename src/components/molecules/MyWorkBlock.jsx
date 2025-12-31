@@ -94,9 +94,9 @@ export function MyWorkBlock({ deploy }) {
             All Projects
           </div>
           <div
-            onClick={() => selectProjects("School Project")}
+            onClick={() => selectProjects("School Projects")}
             class={`flex whitespace-nowrap text-sm px-4 md:px-3 md:text-xs font-medium h-full justify-center items-center py-2 cursor-pointer ${
-              projectSelection === "School Project"
+              projectSelection === "School Projects"
                 ? "bg-gray-100 shadow-inner"
                 : "bg-white"
             }`}
@@ -104,9 +104,9 @@ export function MyWorkBlock({ deploy }) {
             School Projects
           </div>
           <div
-            onClick={() => selectProjects("Professional Project")}
+            onClick={() => selectProjects("Professional Projects")}
             class={`flex whitespace-nowrap text-sm px-4 md:px-3 md:text-xs font-medium h-full justify-center items-center py-2 cursor-pointer ${
-              projectSelection === "Professional Project"
+              projectSelection === "Professional Projects"
                 ? "bg-gray-100 shadow-inner"
                 : "bg-white"
             }`}
@@ -114,9 +114,9 @@ export function MyWorkBlock({ deploy }) {
             Professional Projects
           </div>
           <div
-            onClick={() => selectProjects("Personal Project")}
+            onClick={() => selectProjects("Personal Projects")}
             class={`flex whitespace-nowrap text-sm px-4 md:px-3 md:text-xs font-medium h-full rounded-r-lg justify-center items-center py-2 cursor-pointer ${
-              projectSelection === "Personal Project"
+              projectSelection === "Personal Projects"
                 ? "bg-gray-100 shadow-inner"
                 : "bg-white"
             }`}
@@ -127,16 +127,17 @@ export function MyWorkBlock({ deploy }) {
       </div>
 
       {/* Projects */}
-      <div class="grid grid-rows-2 sm:grid-cols-2 sm:grid-rows-none grid-flow-col sm:grid-flow-row border justify-start border-gray-200 gap-4 shadow-inner rounded-lg content-start p-4 min-h-[92%] max-h-[92%] h-[92%] w-full max-w-full overflow-x-auto overflow-y-hidden sm:overflow-x-hidden sm:overflow-y-auto">
+      <div class="grid grid-rows-2 sm:grid-cols-2 sm:grid-rows-none grid-flow-col sm:grid-flow-row border justify-start border-gray-200 gap-4 shadow-inner rounded-lg content-start p-4 min-h-[92%] max-h-[92%] h-[92%] w-full max-w-full overflow-x-auto overflow-y-hidden sm:overflow-x-hidden sm:overflow-y-auto xs:flex-col xs:flex mobile:grid-cols-1 xs:overflow-y-auto xs:overflow-x-hidden mobile:overflow-y-auto mobile:overflow-x-hidden">
         {deploy.projects
           .filter((project) => {
             // Si "All skills" est sélectionné, afficher toutes les compétences
             if (projectSelection === "All Projects") return true;
 
-            // Sinon, vérifier si la compétence appartient à la catégorie sélectionnée
+            // Sinon, vérifier si le projet appartient à la catégorie sélectionnée
             return (
               project.categories &&
               project.categories.some((category) => {
+                console.log(category, projectSelection);
                 return category === projectSelection;
               })
             );
@@ -153,7 +154,7 @@ export function MyWorkBlock({ deploy }) {
             })
           );
         }).length === 0 && (
-          <div class="w-full text-center text-gray-500 mt-4">
+          <div class="w-full text-center text-gray-500">
             No projects fit in this category
           </div>
         )}

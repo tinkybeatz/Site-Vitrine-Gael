@@ -48,11 +48,11 @@ function App() {
           speed={1.5}
         />
         {/* <Navbar /> */}
-        <SideNavbar nbMainSpace={nbMainSpace} />
-        <div className="flex-row dark:text-white transition-all duration-200 z-10 h-[900px] w-[70%] sm:w-[80%] mobile:h-[100vh] mobile:w-[95%]">
+        {!isXs && <SideNavbar nbMainSpace={nbMainSpace} />}
+        <div className="flex-row dark:text-white transition-all duration-200 z-10 h-[900px] w-[70%] sm:w-[80%] xs:w-[85%] mobile:h-[100vh] mobile:w-[95%]">
           <div
             className="flex items-end justify-center py-2 h-[40%]
-          sm:h-[35%] mobile:h-[30%]"
+          sm:h-[35%] xs:h-[45%] mobile:h-[30%]"
           >
             <h1
               className="font-scrib tracking-extra-tight mb-2 shadow-md bg-white border font-light border-gray-200 rounded-full py-5 px-10 
@@ -60,6 +60,7 @@ function App() {
               lg:text-7xl 
               md:text-6xl 
               sm:text-5xl sm:py-3 sm:px-6
+              xs:text-4xl xs:py-2 xs:text-center xs:flex xs:w-min
               mobile:text-3xl mobile:py-3 mobile:px-6"
             >
               GAËL DELOUIS
@@ -71,23 +72,24 @@ function App() {
           lg:text-lg
           md:text-sm
           sm:text-sm sm:flex-col sm:justify-start sm:items-center
+          xs:flex-col xs:justify-start xs:items-center xs:h-[28%]
           mobile:text-sm mobile:flex-col mobile:justify-start mobile:items-center mobile:h-[30%]"
           >
-            <div class="flex h-min bg-white border border-gray-200 rounded-full mobile:bg-transparent mobile:shadow-none mobile:border-none pt-2 pb-2 pr-3 px-4 shadow-md mobile:flex-col mobile:gap-2 mobile:items-center">
-              <span class="pr-2 text-center mobile:py-1.5 mobile:px-3 mobile:border mobile:border-gray-200 mobile:rounded-full mobile:bg-white mobile:shadow-md">
+            <div class="flex h-min bg-white border border-gray-200 rounded-full xs:bg-transparent xs:shadow-none xs:border-none mobile:bg-transparent mobile:shadow-none mobile:border-none pt-2 pb-2 pr-3 px-4 shadow-md xs:flex-col xs:gap-2 xs:items-center mobile:flex-col mobile:gap-2 mobile:items-center xs:text-base">
+              <span class="pr-2 text-center xs:py-1 xs:px-2 xs:border xs:border-gray-200 xs:rounded-full xs:bg-white xs:shadow-sm mobile:py-1.5 mobile:px-3 mobile:border mobile:border-gray-200 mobile:rounded-full mobile:bg-white mobile:shadow-md">
                 Full-Stack Web Developper
               </span>
               {!isXs && "|"}
-              <span class="pl-2 pr-2 text-center mobile:py-1.5 mobile:px-3 mobile:border mobile:border-gray-200 mobile:rounded-full mobile:bg-white mobile:shadow-md">
+              <span class="pl-2 pr-2 text-center xs:py-1 xs:px-2 xs:border xs:border-gray-200 xs:rounded-full xs:bg-white xs:shadow-sm mobile:py-1.5 mobile:px-3 mobile:border mobile:border-gray-200 mobile:rounded-full mobile:bg-white mobile:shadow-md">
                 Product Engineer
               </span>
               {!isXs && "|"}
-              <span class="pl-2 pr-2 text-center mobile:py-1.5 mobile:px-3 mobile:border mobile:border-gray-200 mobile:rounded-full mobile:bg-white mobile:shadow-md">
+              <span class="pl-2 pr-2 text-center xs:py-1 xs:px-2 xs:border xs:border-gray-200 xs:rounded-full xs:bg-white xs:shadow-sm mobile:py-1.5 mobile:px-3 mobile:border mobile:border-gray-200 mobile:rounded-full mobile:bg-white mobile:shadow-md">
                 Your next{" "}
                 <span class="pl-0.5 pr-1 font-semibold italic">best</span> hire
               </span>
             </div>
-            <div class="flex h-min gap-2 items-center bg-white border border-gray-200 rounded-full pt-2 pb-2 pr-3 px-4 shadow-md font-medium">
+            <div class="flex h-min gap-2 items-center bg-white border border-gray-200 rounded-full pt-2 pb-2 pr-3 px-4 shadow-md font-medium xs:py-1 xs:px-2 xs:text-base xs:gap-1">
               Available to work now
               {/* <div class="blink_me"></div> */}
               <div class="ring-container">
@@ -96,8 +98,8 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="items-center text-xl font-light flex flex-col xl:h-[45%] md:h-[45%] lg:h-[45%] sm:h-[50%] mobile:h-[40%]">
-            <div class="flex flex-col items-center w-[60%] sm:w-[70%] px-4 py-4 h-min rounded-[2rem] shadow-lg bg-white border border-gray-200 mobile:hidden">
+          <div className="items-center text-xl font-light flex flex-col xl:h-[45%] md:h-[45%] lg:h-[45%] sm:h-[50%] xs:h-[40%] mobile:h-[40%]">
+            <div class="flex flex-col items-center w-[60%] sm:w-[70%] xs:w-[80%] px-4 py-4 h-min rounded-[2rem] shadow-lg bg-white border border-gray-200 xs:hidden mobile:hidden">
               <p class="text-center text-lg font-medium underline underline-offset-4 decoration-red-600">
                 All sections
               </p>
@@ -122,8 +124,8 @@ function App() {
               id={`section-${nb.key}`}
               class="flex flex-col items-center justify-center w-full h-screen max-h-[900px] min-h-[800px] mobile:h-[100vh] snap-start"
             >
-              <div class="flex flex-col xl:w-[88%] xl:max-w-[90rem] lg:w-[85%] md:w-[80%] sm:w-[75%] mobile:w-[80%] h-[90%] max-h-[90%]">
-                <div class="flex items-start h-[8%] mobile:h-[6%] text-2xl sm:text-xl mobile:text-xs tracking-extra-tight font-scrib transition-colors dark:text-white text-black">
+              <div class="flex flex-col xl:w-[88%] xl:max-w-[90rem] lg:w-[85%] md:w-[80%] sm:w-[75%] xs:w-[80%] mobile:w-[80%] h-[90%] max-h-[90%]">
+                <div class="flex items-start h-[8%] mobile:h-[6%] text-2xl sm:text-xl xs:text-lg mobile:text-xs tracking-extra-tight font-scrib transition-colors dark:text-white text-black">
                   <div class="flex bg-white px-5 mobile:px-3 h-[78%] rounded-lg items-center border border-gray-200 shadow-md">
                     {nb.key}. {nb.name.toUpperCase()}
                   </div>
