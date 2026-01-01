@@ -109,7 +109,7 @@ function App() {
                 ))}
               </div>
             </div>
-            <div className="xl:hidden lg:hidden md:hidden sm:hidden flex w-full items-center justify-center relative h-[50%]">
+            <div className="xl:hidden lg:hidden md:hidden sm:hidden mobile:hidden xs:hidden flex w-full items-center justify-center relative h-[50%]">
               <NextSectionButton 
                 className=""
                 show={true}

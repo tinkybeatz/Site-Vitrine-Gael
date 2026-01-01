@@ -69,7 +69,7 @@ export function MainSpace({ nb }) {
           </div>
         </div>
         <NextSectionButton 
-          className="absolute -bottom-5 -right-5"
+          className="absolute -bottom-5 -right-5 xs:hidden mobile:hidden"
           show={nb.key !== 7}
           text={"Next section"}
         />
