@@ -32,7 +32,7 @@ export function SkillsCategoriesCard({ category }) {
 
   return (
     <div
-      className={`xl:text-xs lg:text-[11px] md:text-[10px] sm:text-xs xs:text-xs text-center py-0.5 px-2 sm:px-2.5 sm:py-1 w-fit rounded-full ${color}`}
+      className={`xl:text-xs lg:text-[11px] md:text-[10px] sm:text-xs xs:text-xs mobile:text-xs text-center py-0.5 px-2 sm:px-2.5 sm:py-1 w-fit rounded-full ${color}`}
     >
       {category}
     </div>

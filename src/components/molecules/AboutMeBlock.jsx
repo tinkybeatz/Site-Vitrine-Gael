@@ -220,7 +220,7 @@ export function AboutMeBlock({ deploy }) {
       </div>
 
       {/* XS: Vertical single column layout */}
-      <div className="lg:hidden xl:hidden md:hidden sm:hidden hidden xs:flex flex-col w-full h-full gap-3 overflow-y-auto">
+      <div className="lg:hidden xl:hidden md:hidden sm:hidden mobile:hidden hidden xs:flex flex-col w-full h-full gap-3 mobile:gap-2 overflow-y-auto">
         <div className="flex flex-col">
           <p class="text-lg font-medium dark:text-white pb-1 text-black duration-200">
             Gaël DELOUIS
@@ -239,7 +239,7 @@ export function AboutMeBlock({ deploy }) {
             </div>
           </div>
         </div>
-        <div className="rounded-lg w-full h-48 shadow-lg overflow-hidden">
+        <div className="rounded-lg w-full h-48 mobile:h-96 shadow-lg overflow-hidden">
           <img
             className="w-full h-full object-cover object-center rounded-lg"
             src={gaelImage}
@@ -268,36 +268,40 @@ export function AboutMeBlock({ deploy }) {
           ))}
         </div>
       </div>
-      <div className="hidden mobile:flex flex-col w-full h-full gap-4">
-        <div className="flex flex-col">
-          <p class="text-base font-medium dark:text-white pb-2 text-black duration-200">
-            Gaël DELOUIS
-          </p>
-          <div class="flex flex-col text-xs">
-            <div class="flex flex-col gap-0.5">
-              <p class="text-gray-400 font-light pr-2">
-                <span class="pr-1">📍</span> Kuala Lumpur, Malaysia
-              </p>
-              <p class="text-gray-400 font-light pr-2">
-                <span class="pr-1">💻</span> Full-Stack Web Developer
-              </p>
-              <p class="text-gray-400 font-light pr-2">
-                <span class="pr-1">🇫🇷</span> French
-              </p>
+
+      {/* Mobile: Compact single column layout */}
+      <div className="lg:hidden xl:hidden md:hidden sm:hidden hidden xs:hidden mobile:flex flex-col w-full h-full gap-2">
+        <div className="flex justify-between">
+          <div className="flex flex-col">
+            <p class="text-base font-medium dark:text-white pb-2 text-black duration-200">
+              Gaël DELOUIS
+            </p>
+            <div class="flex flex-col text-xs">
+              <div class="flex flex-col gap-0.5">
+                <p class="text-gray-400 font-light pr-2">
+                  <span class="pr-1">📍</span> Kuala Lumpur, Malaysia
+                </p>
+                <p class="text-gray-400 font-light pr-2">
+                  <span class="pr-1">💻</span> Full-Stack Web Developer
+                </p>
+                <p class="text-gray-400 font-light pr-2">
+                  <span class="pr-1">🇫🇷</span> French
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="flex w-full h-36 justify-center">
-          <div className="flex w-[70%] h-full rounded-lg shadow-lg overflow-hidden">
-            <img
-              className="object-cover rounded-lg w-full h-full"
-              style={{
-                objectPosition: "80% 30%",
-                transform: "scale(1.6)",
-              }}
-              src={gaelImage}
-              alt="Gael Image"
-            />
+          <div className="flex w-24 h-24 justify-center">
+            <div className="flex w-full h-full rounded-lg shadow-lg overflow-hidden">
+              <img
+                className="object-cover rounded-lg w-full h-full"
+                style={{
+                  objectPosition: "80% 30%",
+                  transform: "scale(1.6)",
+                }}
+                src={gaelImage}
+                alt="Gael Image"
+              />
+            </div>
           </div>
         </div>
         <div>

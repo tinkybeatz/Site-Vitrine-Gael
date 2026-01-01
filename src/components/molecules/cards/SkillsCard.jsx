@@ -100,10 +100,10 @@ export function SkillsCard({ skill, size }) {
                   onClick={closePopup}
                 ></div>
                 <div className="fixed inset-0 z-[9999] flex items-center justify-center">
-                  <div className="flex flex-col bg-white rounded-xl h-[12rem] w-[35rem] xs:w-[20rem] xs:h-[14rem] shadow-xl items-center gap-4 p-4">
-                    <div className="flex h-[55%] xs:h-[60%] w-full">
+                  <div className="flex flex-col bg-white rounded-xl h-[12rem] w-[35rem] xs:w-[20rem] xs:h-[14rem] mobile:w-[20rem] mobile:h-[16rem] shadow-xl items-center gap-4 p-4">
+                    <div className="flex h-[55%] xs:h-[60%] mobile:h-[75%] w-full">
                       <div className="flex w-[92%] gap-4">
-                        <div className="flex rounded-md aspect-square h-full xs:h-[50%]">
+                        <div className="flex rounded-md aspect-square h-full xs:h-[50%] mobile:h-[50%]">
                           <img
                             src={skill.img}
                             alt={skill.imgAlt}
@@ -111,10 +111,10 @@ export function SkillsCard({ skill, size }) {
                           />
                         </div>
                         <div className="flex flex-col justify-start py-4 gap-1">
-                          <p className="text-lg font-medium leading-none">
+                          <p className="text-lg mobile:text-base font-medium leading-none">
                             {skill.name}
                           </p>
-                          <p className="text-sm text-gray-400 leading-none">
+                          <p className="text-sm mobile:text-xs text-gray-400 leading-none">
                             {skill.description}
                           </p>
                           <div className="flex flex-wrap pt-1 gap-2">
@@ -131,11 +131,11 @@ export function SkillsCard({ skill, size }) {
                       <div className="w-[8%] flex justify-center items-start">
                         <button
                           onClick={closePopup}
-                          className="text-gray-500 shadow-md w-10 h-10 flex rounded-full border border-gray-200 aspect-square items-center justify-center hover:shadow-none active:bg-gray-100"
+                          className="text-gray-500 shadow-md w-10 h-10 mobile:w-8 mobile:h-8 flex rounded-full border border-gray-200 aspect-square items-center justify-center hover:shadow-none active:bg-gray-100"
                         >
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            className="h-6 w-6"
+                            className="h-6 w-6 mobile:h-5 mobile:w-5"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor"
@@ -150,7 +150,7 @@ export function SkillsCard({ skill, size }) {
                         </button>
                       </div>
                     </div>
-                    <div className="flex h-[45%] xs:h-[40%] w-full border-t border-gray-200 pt-3 items-center justify-center">
+                    <div className="flex h-[45%] xs:h-[40%] mobile:h-[25%] w-full border-t border-gray-200 pt-3 items-center justify-center">
                       <button
                         onClick={() =>
                           skill.linkTo !== ""

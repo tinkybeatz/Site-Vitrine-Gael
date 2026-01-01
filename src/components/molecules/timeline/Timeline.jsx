@@ -42,26 +42,26 @@ export function TimelineComponent({ timelineInfo }) {
     <ol class="relative flex flex-col border-l border-gray-300 dark:border-purple-700 transition-all duration-200 w-full h-full max-h-full">
       {timelineInfo.map((nb) => (
         <li class="flex gap-6 pl-4 w-full h-full max-h-full transition-all duration-200">
-          <div class="absolute w-3 h-3 sm:h-2 sm:w-2 xs:h-2 xs:w-2 bg-gray-400 rounded-full mt-1 -left-1 transition-all duration-200"></div>
-          <div class="flex mb-6 h-full w-full max-h-full sm:flex-col xs:flex-col sm:pb-2 xs:pb-2">
-            <div className="flex h-[80%] xl:w-[45%] lg:w-[40%] md:w-[40%] sm:w-full xs:w-full">
-              <div class="flex flex-col w-[65%] sm:w-auto xs:w-full sm:pr-10 xs:pr-0">
-                <time class="xl:text-sm lg:text-sm md:text-xs sm:text-xs xs:text-xs leading-none text-gray-400 dark:text-gray-400 transition-all duration-200">
+          <div class="absolute w-3 h-3 sm:h-2 sm:w-2 xs:h-2 xs:w-2 mobile:h-2 mobile:w-2 bg-gray-400 rounded-full mt-1 -left-1 transition-all duration-200"></div>
+          <div class="flex mb-6 h-full w-full max-h-full sm:flex-col xs:flex-col mobile:flex-col sm:pb-2 xs:pb-2 mobile:mb-3">
+            <div className="flex h-[80%] xl:w-[45%] lg:w-[40%] md:w-[40%] sm:w-full xs:w-full mobile:w-full mobile:h-[100%]">
+              <div class="flex flex-col w-[65%] sm:w-auto xs:w-full mobile:w-full sm:pr-10 xs:pr-0 mobile:pr-0">
+                <time class="xl:text-sm lg:text-sm md:text-xs sm:text-xs xs:text-xs mobile:text-xs leading-none text-gray-400 dark:text-gray-400 transition-all duration-200">
                   {nb.dates}
                 </time>
-                <h2 class="xl:text-md lg:text-sm md:text-xs sm:text-sm xs:text-sm font-semibold text-gray-900 dark:text-white transition-all duration-200 line-clamp-2">
+                <h2 class="xl:text-md lg:text-sm md:text-xs sm:text-sm xs:text-sm mobile:text-xs font-semibold text-gray-900 dark:text-white transition-all duration-200 line-clamp-2">
                   <span>{endsByType(nb.key, nb.title)}</span>
                 </h2>
-                <p class="xl:flex lg:flex sm:flex-row xs:flex-col text-black dark:text-white transition-all duration-200">
-                  <p className="xl:text-sm lg:text-xs md:text-xs sm:text-xs xs:text-xs font-normal text-yellow-500 transition-all duration-200 mr-1">
+                <p class="xl:flex lg:flex sm:flex-row xs:flex-col mobile:flex-col text-black dark:text-white transition-all duration-200">
+                  <p className="xl:text-sm lg:text-xs md:text-xs sm:text-xs xs:text-xs mobile:text-xs font-normal text-yellow-500 transition-all duration-200 mr-1">
                     {nb.location}
                   </p>
-                  <p className="xl:text-sm lg:text-xs md:text-xs sm:text-xs xs:text-xs font-normal text-gray-400 dark:text-gray-300 transition-all duration-200 xl:ml-1 lg:ml-1 sm:ml-0 xs:ml-0">
+                  <p className="xl:text-sm lg:text-xs md:text-xs sm:text-xs xs:text-xs mobile:text-xs font-normal text-gray-400 dark:text-gray-300 transition-all duration-200 xl:ml-1 lg:ml-1 sm:ml-0 xs:ml-0 mobile:ml-0">
                     {nb.location2}
                   </p>
                 </p>
               </div>
-              <div class="flex items-center justify-center h-full mr-6 xl:w-[35%] lg:w-[30%] md:w-[25%] sm:w-auto xs:hidden">
+              <div class="flex items-center justify-center h-full mr-6 xl:w-[35%] lg:w-[30%] md:w-[25%] sm:w-auto xs:hidden mobile:hidden">
                 <div className="xl:w-20 xl:h-20 lg:w-16 lg:h-16 md:w-16 md:h-16 sm:w-16 sm:h-16 flex items-center justify-center">
                   <img
                     class="max-w-full max-h-full object-contain"
@@ -72,7 +72,7 @@ export function TimelineComponent({ timelineInfo }) {
               </div>
             </div>
             {/* hidden for small screens and xs */}
-            <div class="flex xl:w-[55%] lg:w-[60%] md:w-[60%] h-[100%] text-sm md:text-xs sm:text-xs items-center sm:hidden xs:hidden">
+            <div class="flex xl:w-[55%] lg:w-[60%] md:w-[60%] h-[100%] text-sm md:text-xs sm:text-xs items-center sm:hidden xs:hidden mobile:hidden">
               <div class="h-[90%] w-full rounded-lg pt-2 px-3 border border-gray-200 min-h-0 max-h-[90%]">
                 {typeof nb.text === "string" ? (
                   <p>{nb.text}</p>
