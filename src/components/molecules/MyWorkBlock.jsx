@@ -43,7 +43,7 @@ export function MyWorkBlock({ deploy }) {
   //affichage
   return (
     <div class="flex flex-col h-full w-full max-h-full p-4">
-      <div class="flex w-full h-[6%] mb-4 items-center">
+      <div class="flex w-full h-[6%] mobile:h-[8%] mb-4 items-center">
         {/* Dropdown for small screens */}
         <div class="md:hidden lg:hidden xl:hidden relative w-full">
           <button
@@ -127,7 +127,10 @@ export function MyWorkBlock({ deploy }) {
       </div>
 
       {/* Projects */}
-      <div class="grid grid-rows-2 sm:grid-cols-2 sm:grid-rows-none grid-flow-col sm:grid-flow-row border justify-start border-gray-200 gap-4 shadow-inner rounded-lg content-start p-4 min-h-[92%] max-h-[92%] h-[92%] w-full max-w-full overflow-x-auto overflow-y-hidden sm:overflow-x-hidden sm:overflow-y-auto xs:flex-col xs:flex mobile:grid-cols-1 xs:overflow-y-auto xs:overflow-x-hidden mobile:overflow-y-auto mobile:overflow-x-hidden">
+      <div class="grid grid-rows-2 justify-start border-gray-200 gap-4 shadow-inner rounded-lg content-start p-4 min-h-[92%] max-h-[92%] h-[92%] w-full max-w-full overflow-x-auto overflow-y-hidden
+      sm:grid-cols-2 sm:grid-rows-none grid-flow-col sm:grid-flow-row border sm:overflow-x-hidden sm:overflow-y-auto 
+      xs:flex-col xs:flex mobile:flex-col xs:overflow-y-auto xs:overflow-x-hidden
+      mobile:flex mobile:overflow-y-auto mobile:overflow-x-hidden mobile:min-h-[88%] mobile:max-h-[88%] mobile:h-[88%]">
         {deploy.projects
           .filter((project) => {
             // Si "All skills" est sélectionné, afficher toutes les compétences

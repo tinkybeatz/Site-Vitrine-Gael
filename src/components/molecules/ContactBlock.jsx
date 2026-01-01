@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
+import "./ContactBlock.css";
 
 export function ContactBlock({ deploy }) {
   //state
@@ -11,8 +12,21 @@ export function ContactBlock({ deploy }) {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
+  const [copiedIndex, setCopiedIndex] = useState(null);
+  const [toastMessage, setToastMessage] = useState(null);
 
   //comportements
+  const handleCopyToClipboard = (text, index, label = "Information") => {
+    navigator.clipboard.writeText(text).then(() => {
+      setCopiedIndex(index);
+      setToastMessage(`${label} copied to clipboard`);
+      setTimeout(() => {
+        setCopiedIndex(null);
+        setToastMessage(null);
+      }, 2000);
+    });
+  };
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -65,8 +79,9 @@ export function ContactBlock({ deploy }) {
         message. I'd love to hear from you!
       </div>
       <div class="grid grid-cols-3 sm:grid-cols-1 xs:flex xs:flex-col mobile:flex mobile:flex-col w-full h-full xs:min-h-0 mobile:min-h-0 gap-4 xs:gap-3 mobile:gap-3">
-        <div class="col-span-1 flex flex-col sm:flex-row rounded-lg shadow-inner border border-gray-200 p-4 xs:p-3 mobile:p-3 gap-4 xs:gap-3 mobile:gap-3 items-start xs:items-stretch mobile:items-stretch xs:flex-none mobile:flex-none xs:shrink-0 mobile:shrink-0">
-          <div class="flex flex-col gap-4 sm:gap-2 xs:gap-2 mobile:gap-2">
+        <div class="col-span-1 flex flex-col sm:flex-row rounded-lg shadow-inner border border-gray-200 p-4 xs:p-3 mobile:p-3 gap-4 xs:gap-3 mobile:gap-3 items-start xs:items-stretch mobile:items-stretch xs:flex-none mobile:flex-none xs:shrink-0 mobile:shrink-0 mobile:flex-row mobile:justify-between mobile:items-center">
+          {/* Desktop/Tablet layout */}
+          <div class="flex flex-col gap-4 sm:gap-2 xs:gap-2 mobile:hidden">
             <div class="font-medium text-lg md:text-base sm:text-sm xs:text-sm mobile:text-sm">
               Contact informations
             </div>
@@ -74,14 +89,19 @@ export function ContactBlock({ deploy }) {
               {deploy &&
                 deploy.contact_informations &&
                 deploy.contact_informations.map((info, index) => (
-                  <div key={index} class="flex items-center h-[3rem] sm:h-[2rem] xs:h-[2.5rem] mobile:h-[2.25rem]">
+                  <div
+                    key={index}
+                    class="flex items-center h-[3rem] sm:h-[2rem] xs:h-[2.5rem] mobile:h-[2.5rem]"
+                  >
                     {info.img && (
-                      <div class="h-full aspect-square flex items-center justify-center text-base sm:text-sm xs:text-sm mobile:text-xs">
+                      <div class="h-full aspect-square flex items-center justify-center text-base sm:text-sm xs:text-sm mobile:text-sm">
                         {info.img}
                       </div>
                     )}
                     <div class="flex flex-col sm:flex-row sm:gap-2">
-                      <div class="font-medium text-sm sm:text-xs xs:text-xs mobile:text-xs">{info.title}</div>
+                      <div class="font-medium text-sm sm:text-xs xs:text-xs mobile:text-xs">
+                        {info.title}
+                      </div>
                       {info.href ? (
                         <a
                           href={info.href}
@@ -105,18 +125,75 @@ export function ContactBlock({ deploy }) {
                 ))}
             </div>
           </div>
-          <div class="flex flex-col gap-4 xs:gap-2 mobile:gap-3">
-            <div class="font-medium text-lg md:text-base sm:text-sm xs:text-sm mobile:text-sm">Let's connect!</div>
+
+          {/* Mobile layout - Let's connect with copy buttons */}
+          <div class="hidden mobile:flex mobile:flex-col mobile:gap-3 mobile:flex-1">
+            <div class="font-medium text-sm mobile:text-sm">Let's connect</div>
+            <div class="flex gap-2 mobile:gap-2">
+              {deploy &&
+                deploy.contact_informations &&
+                deploy.contact_informations
+                  .filter((info) => info.title !== "Location")
+                  .map((info, index) => {
+                    let copyText = info.value;
+                    if (info.href?.startsWith("mailto:")) {
+                      copyText = info.href.replace("mailto:", "");
+                    } else if (info.href?.startsWith("tel:")) {
+                      copyText = info.href.replace("tel:", "");
+                    } else if (info.href?.startsWith("https://wa.me/")) {
+                      copyText = info.href;
+                    }
+                    return (
+                      <button
+                        key={index}
+                        onClick={() => handleCopyToClipboard(copyText, index, info.title)}
+                        class={`border shadow-md cursor-pointer flex h-[2rem] w-[2rem] items-center justify-center rounded-full text-sm transition-all duration-200 ${
+                          copiedIndex === index
+                            ? "bg-green-500 border-green-500 text-white"
+                            : "bg-white border-gray-200 hover:bg-gray-200"
+                        }`}
+                        title={`Copy ${info.title}`}
+                      >
+                        {info.img}
+                      </button>
+                    );
+                  })}
+
+              {deploy &&
+                deploy.connect &&
+                deploy.connect
+                  .filter((connect) => !connect.href.startsWith("mailto:"))
+                  .map((connect, index) => (
+                    <button
+                      key={index}
+                      onClick={() => handleCopyToClipboard(connect.href, `connect-${index}`, connect.title || "Link")}
+                      class={`border shadow-md cursor-pointer flex h-[2rem] w-[2rem] items-center justify-center rounded-full text-sm transition-all duration-200 ${
+                        copiedIndex === `connect-${index}`
+                          ? "bg-green-500 border-green-500 text-white"
+                          : "bg-white border-gray-200 hover:bg-gray-200"
+                      }`}
+                    >
+                      {connect.img}
+                    </button>
+                  ))}
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-4 xs:gap-2 mobile:hidden">
+            <div class="font-medium text-lg md:text-base sm:text-sm xs:text-sm mobile:text-sm">
+              Let's connect!
+            </div>
             <div class="flex gap-2 pl-4 xs:pl-0 mobile:pl-0 xs:gap-3 mobile:gap-3">
               {deploy &&
                 deploy.connect &&
                 deploy.connect.map((connect) => (
                   <a
+                    key={connect.href}
                     href={connect.href}
                     target={
                       connect.href.startsWith("mailto:") ? "_self" : "_blank"
                     }
-                    class="bg-white border shadow-md cursor-pointer hover:bg-gray-200 border-gray-200 flex h-[2.5rem] w-[2.5rem] xs:h-[2.25rem] xs:w-[2.25rem] mobile:h-[2rem] mobile:w-[2rem] items-center justify-center rounded-full text-base sm:text-xs xs:text-sm mobile:text-xs"
+                    class="bg-white border shadow-md cursor-pointer hover:bg-gray-200 border-gray-200 flex h-[2.5rem] w-[2.5rem] xs:h-[2.25rem] xs:w-[2.25rem] mobile:h-[2.25rem] mobile:w-[2.25rem] items-center justify-center rounded-full text-base sm:text-xs xs:text-sm mobile:text-sm"
                   >
                     {connect.img}
                   </a>
@@ -125,22 +202,22 @@ export function ContactBlock({ deploy }) {
           </div>
         </div>
         <div class="col-span-2 flex flex-col lg:text-sm md:text-xs sm:text-xs xs:text-xs mobile:text-xs rounded-lg shadow-inner border border-gray-200 justify-center items-center xs:items-stretch mobile:items-stretch xs:justify-start mobile:justify-start xs:flex-1 mobile:flex-1 xs:min-h-0 mobile:min-h-0">
-          <div className="h-[15%] sm:h-[15%] xs:h-[20%] mobile:h-auto content-end xs:content-center">
+          <div className="h-[15%] sm:h-[15%] xs:h-[20%] mobile:h-[20%] content-end xs:content-center">
             {/* Status Messages */}
             {submitStatus === null && (
-              <div className="mx-4 p-3 sm:p-2 xs:p-2 mobile:mx-1 bg-blue-100 border border-blue-400 text-blue-700 rounded-lg">
+              <div className="mx-4 p-3 sm:p-2 xs:p-2 mobile:p-2 bg-blue-100 border border-blue-400 text-blue-700 rounded-lg">
                 Please fill up the form down bellow and I'll get back to you as
                 soon as possible.
               </div>
             )}
             {submitStatus === "success" && (
-              <div className="mx-4 p-3 sm:p-2 xs:p-2 mobile:mx-1 bg-green-100 border border-green-400 text-green-700 rounded-lg">
+              <div className="mx-4 p-3 sm:p-2 xs:p-2 mobile:p-2 bg-green-100 border border-green-400 text-green-700 rounded-lg">
                 Your message has been sent successfully! I'll get back to you
                 soon.
               </div>
             )}
             {submitStatus === "error" && (
-              <div className="mx-4 p-3 sm:p-2 xs:p-2 mobile:mx-1 bg-red-100 border border-red-400 text-red-700 rounded-lg">
+              <div className="mx-4 p-3 sm:p-2 xs:p-2 mobile:p-2 bg-red-100 border border-red-400 text-red-700 rounded-lg">
                 There was an error sending your message. Please try again or
                 contact me directly.
               </div>
@@ -149,9 +226,9 @@ export function ContactBlock({ deploy }) {
 
           <form
             onSubmit={handleSubmit}
-            className="flex flex-col w-full h-[85%] sm:h-[85%] xs:h-[80%] xs:flex-1 xs:min-h-0 xs:overflow-y-auto mobile:flex-1 mobile:min-h-0 mobile:overflow-y-auto p-4 xs:p-1 mobile:p-3 xs:pr-2 mobile:pr-2"
+            className="flex flex-col w-full h-[85%] sm:h-[85%] xs:h-[80%] mobile:h-[80%] xs:flex-1 mobile:flex-1 xs:min-h-0 mobile:min-h-0 xs:overflow-y-auto mobile:overflow-y-auto p-4 xs:p-1 mobile:p-1 xs:pr-2 mobile:pr-2"
           >
-            <div className="grid grid-cols-2 xs:grid-cols-1 mobile:grid-cols-1 h-1/5 xs:h-auto mobile:h-auto p-4 xs:p-1 mobile:p-2 sm:p-2 gap-8 sm:gap-4 xs:gap-2 mobile:gap-3">
+            <div className="grid grid-cols-2 xs:grid-cols-1 mobile:grid-cols-1 h-1/5 xs:h-auto mobile:h-auto p-4 xs:p-1 mobile:p-1 sm:p-2 gap-8 sm:gap-4 xs:gap-2 mobile:gap-2">
               {/* Name input */}
               <div className="flex flex-col h-full gap-1">
                 {/* Regular input for larger screens */}
@@ -162,7 +239,7 @@ export function ContactBlock({ deploy }) {
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="h-full max-h-[3rem] rounded-lg px-3 text-sm md:text-xs border border-gray-200 bg-gray-100 placeholder-gray-500"
+                    className="h-full max-h-[2.5rem] rounded-lg px-3 text-sm md:text-xs border border-gray-200 bg-gray-100 placeholder-gray-500 placeholder:text-xs"
                     placeholder="John Doe"
                     required
                   />
@@ -187,7 +264,7 @@ export function ContactBlock({ deploy }) {
                   </label>
                 </div>
               </div>
-              
+
               {/* Email input */}
               <div className="flex flex-col h-full gap-1">
                 {/* Regular input for larger screens */}
@@ -198,7 +275,7 @@ export function ContactBlock({ deploy }) {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="h-full max-h-[3rem] rounded-lg px-3 text-sm md:text-xs border border-gray-200 bg-gray-100 placeholder-gray-500"
+                    className="h-full max-h-[2.5rem] rounded-lg px-3 text-sm md:text-xs border border-gray-200 bg-gray-100 placeholder-gray-500 placeholder:text-xs"
                     placeholder="john@example.com"
                     required
                   />
@@ -224,7 +301,7 @@ export function ContactBlock({ deploy }) {
                 </div>
               </div>
             </div>
-            <div className="h-1/5 xs:h-auto mobile:h-auto p-4 xs:p-1 mobile:p-2 sm:p-2">
+            <div className="h-1/5 xs:h-auto mobile:h-auto p-4 xs:p-1 mobile:p-1 sm:p-2">
               <div className="flex flex-col h-full gap-1">
                 {/* Regular input for larger screens */}
                 <div className="sm:hidden xs:hidden mobile:hidden flex flex-col h-full gap-1">
@@ -234,7 +311,7 @@ export function ContactBlock({ deploy }) {
                     name="subject"
                     value={formData.subject}
                     onChange={handleInputChange}
-                    className="h-full max-h-[3rem] rounded-lg px-3 text-sm md:text-xs border border-gray-200 bg-gray-100 placeholder-gray-500"
+                    className="h-full max-h-[2.5rem] rounded-lg px-3 text-sm md:text-xs border border-gray-200 bg-gray-100 placeholder-gray-500 placeholder:text-xs"
                     placeholder="How can I help you?"
                     required
                   />
@@ -260,7 +337,7 @@ export function ContactBlock({ deploy }) {
                 </div>
               </div>
             </div>
-            <div className="h-2/5 xs:h-auto mobile:h-auto px-4 pt-4 pb-5 sm:p-2 xs:p-1 mobile:p-2">
+            <div className="h-2/5 xs:h-auto mobile:h-auto px-4 pt-4 pb-5 sm:p-2 xs:p-1 mobile:p-1">
               <div className="flex flex-col h-full gap-1">
                 {/* Regular textarea for larger screens */}
                 <div className="sm:hidden xs:hidden mobile:hidden flex flex-col h-full gap-1">
@@ -269,7 +346,7 @@ export function ContactBlock({ deploy }) {
                     name="message"
                     value={formData.message}
                     onChange={handleInputChange}
-                    className="h-full resize-none rounded-lg px-3 pt-4 text-sm md:text-xs border border-gray-200 bg-gray-100 placeholder-gray-500"
+                    className="h-full resize-none rounded-lg px-3 pt-4 text-sm md:text-xs border border-gray-200 bg-gray-100 placeholder-gray-500 placeholder:text-xs"
                     placeholder="Your message here..."
                     required
                   />
@@ -295,7 +372,7 @@ export function ContactBlock({ deploy }) {
                 </div>
               </div>
             </div>
-            <div className="grid grid-cols-2 mobile:grid-cols-1 gap-8 sm:gap-4 xs:gap-4 mobile:gap-3 h-1/5 xs:h-auto mobile:h-auto p-4 xs:p-2 mobile:p-2 sm:pt-4 sm:px-0 sm:pb-0">
+            <div className="grid grid-cols-2 gap-8 sm:gap-4 xs:gap-4 mobile:gap-4 h-1/5 xs:h-auto mobile:h-auto p-4 xs:p-2 mobile:p-2 sm:pt-4 sm:px-0 sm:pb-0">
               <button
                 type="submit"
                 disabled={isSubmitting}
@@ -319,6 +396,13 @@ export function ContactBlock({ deploy }) {
           </form>
         </div>
       </div>
+      
+      {/* Toast Notification */}
+      {toastMessage && (
+        <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 mobile:bottom-4 mobile:left-4 mobile:right-4 mobile:translate-x-0 bg-green-500 text-white px-4 py-3 rounded-lg shadow-lg text-sm animate-fade-in-out">
+          {toastMessage}
+        </div>
+      )}
     </div>
   );
 }

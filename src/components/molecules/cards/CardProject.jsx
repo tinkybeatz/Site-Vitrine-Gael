@@ -69,7 +69,7 @@ export function CardProject({ cardInfo }) {
     <>
       <div
         onClick={() => setIsPopupOpen(true)}
-        className="shrink-0 divide relative cursor-pointer border border-gray-200 rounded-lg xl:h-auto xl:w-[27rem] lg:h-auto lg:w-[22rem] md:h-auto md:w-[20rem] sm:h-[15rem] sm:w-full xs:h-[15rem] xs:w-full bg-white dark:bg-zinc-700 text-black dark:text-white transition-all duration-200 shadow-md hover:shadow-sm @container flex flex-col"
+        className="shrink-0 divide relative cursor-pointer border border-gray-200 rounded-lg xl:h-auto xl:w-[27rem] lg:h-auto lg:w-[22rem] md:h-auto md:w-[20rem] sm:h-[15rem] sm:w-full xs:h-[15rem] xs:w-full mobile:h-[8rem] mobile:w-full bg-white dark:bg-zinc-700 text-black dark:text-white transition-all duration-200 shadow-md hover:shadow-sm @container flex flex-col"
       >
         <div className="flex-1 w-full min-h-0">
           {cardInfo.images &&
@@ -86,7 +86,7 @@ export function CardProject({ cardInfo }) {
             </div>
           )}
         </div>
-        <div className="flex h-16 md:text-sm sm:text-sm w-full items-center justify-center text-center p-2">
+        <div className="flex h-16 mobile:h-10 mobile:text-xs md:text-sm sm:text-sm w-full items-center justify-center text-center p-2">
           {cardInfo.title}
         </div>
       </div>
@@ -108,7 +108,7 @@ export function CardProject({ cardInfo }) {
             >
               {/* Modal Content */}
               <div
-                className="modal-content relative w-4/5 max-w-6xl h-[90vh] max-h-[800px] min-h-[400px] bg-white dark:bg-zinc-800 rounded-xl p-6 shadow-xl overflow-y-hidden flex flex-col xs:h-auto"
+                className="modal-content relative w-4/5 max-w-6xl h-[90vh] max-h-[800px] min-h-[400px] bg-white dark:bg-zinc-800 rounded-xl p-6 shadow-xl overflow-y-hidden flex flex-col xs:h-auto mobile:h-auto mobile:min-h-[200px]"
                 onClick={(e) => e.stopPropagation()}
               >
                 {/* Close button
@@ -134,10 +134,10 @@ export function CardProject({ cardInfo }) {
 
                 {/* Modal Header */}
                 <div className="flex-shrink-0 pb-4 flex justify-between items-center">
-                  <h2 className="text-2xl xs:text-xl font-bold text-black dark:text-white xs:w-4/6">
+                  <h2 className="text-2xl xs:text-xl mobile:text-xl font-bold text-black dark:text-white xs:w-4/6 mobile:w-4/6">
                     {cardInfo.title}
                   </h2>
-                  <div class="flex items-center gap-3 xs:gap-2 h-full">
+                  <div class="flex items-center gap-3 xs:gap-2 mobile:gap-2 h-full">
                     {cardInfo.link &&
                       (!isXs ? (
                         <a
